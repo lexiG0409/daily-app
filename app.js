@@ -395,8 +395,8 @@ const DEFAULT_EXERCISES = [
   ['深蹲', '腿臀'], ['弓步', '腿臀'], ['臀推', '腿臀'], ['腿举', '腿臀'], ['罗马尼亚硬拉', '腿臀'], ['硬拉', '腿臀'],
   ['高位下拉', '背'], ['下背上拉', '背'], ['划船', '背'], ['引体向上', '背'],
   ['卧推', '胸'], ['哑铃飞鸟', '胸'],
-  ['肩推', '肩'], ['哑铃肩外旋', '肩'], ['侧平举', '肩'],
-  ['哑铃颈后臂屈伸', '手臂'], ['理疗师手臂伸展', '手臂', 'time'], ['二头弯举', '手臂'], ['三头下压', '手臂'],
+  ['肩推', '肩'], ['哑铃肩外旋', '肩'], ['仰卧哑铃支撑', '肩', 'time'], ['侧平举', '肩'],
+  ['哑铃颈后臂屈伸', '手臂'], ['二头弯举', '手臂'], ['三头下压', '手臂'],
   ['核心左右绕球', '核心'], ['平板支撑', '核心', 'time'],
   ['椭圆机', '有氧', 'cardio'], ['跑步机', '有氧', 'cardio'], ['动感单车', '有氧', 'cardio']
 ].map(([name, part, type]) => ({ id: uid(), name, part, type: type || 'reps' }));
@@ -412,6 +412,16 @@ if (!exercises) {
     }
   });
   store.set('exercises', exercises);
+}
+
+// 一次性更新：把手机里已存的"理疗师手臂伸展"改名为"仰卧哑铃支撑"，放到"肩"
+if (!store.get('mig.supineHold', false)) {
+  const ex = exercises.find(e => e.name === '理疗师手臂伸展');
+  if (ex && !exercises.some(e => e.name === '仰卧哑铃支撑')) Object.assign(ex, { name: '仰卧哑铃支撑', part: '肩' });
+  lifts.forEach(l => { if (l.name === '理疗师手臂伸展') l.name = '仰卧哑铃支撑'; });
+  store.set('exercises', exercises);
+  store.set('lifts', lifts);
+  store.set('mig.supineHold', true);
 }
 
 let fDay = todayStr();     // 正在看的那一天
