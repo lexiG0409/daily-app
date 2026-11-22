@@ -440,6 +440,10 @@ let libEditing = null;     // 动作库里正在修改的动作
 
 function sameName(a, b) { return a.trim().toLowerCase() === b.trim().toLowerCase(); }
 const findExercise = name => exercises.find(e => sameName(e.name, name));
+// 某条记录练的部位（从动作库里查；查不到算"其他"）
+const partOf = l => { const e = findExercise(l.name); return e ? e.part : '其他'; };
+// 一组记录练了哪些部位，按 PARTS 的顺序排好
+const partsOf = items => PARTS.filter(p => items.some(l => partOf(l) === p));
 const typeOf = l => l.type || 'reps';
 const fmtKg = n => (Math.round(n * 10) / 10).toString();
 // 只有"重量×次数"算进总训练量
@@ -480,6 +484,12 @@ function renderFitness() {
   $('f-count').textContent = dayItems.length;
   $('f-volume').textContent = Math.round(dayItems.reduce((s, l) => s + volumeOf(l), 0)).toLocaleString('en-US');
 
+  const parts = partsOf(dayItems);
+  const partsBox = $('f-parts-today');
+  partsBox.innerHTML = '';
+  parts.forEach(p => partsBox.appendChild(el('span', 'part-pill', p)));
+  partsBox.style.display = parts.length ? '' : 'none';
+
   const list = $('f-list');
   list.innerHTML = '';
   dayItems.forEach(l => {
@@ -490,6 +500,7 @@ function renderFitness() {
     item.appendChild(icon);
     const main = el('div', 'item-main');
     const title = el('div', 'item-title', l.name);
+    title.appendChild(el('span', 'part-tag', partOf(l)));
     if (type === 'reps') {
       const best = previousBest(l);
       if (best !== null && maxWeight(l) > best) title.appendChild(el('span', 'pr-badge', '🏆 新纪录'));
@@ -520,6 +531,9 @@ function renderFitness() {
     const item = el('button', 'item');
     const main = el('div', 'item-main');
     main.appendChild(el('div', 'item-title', dayLabel(date)));
+    const partLine = el('div', 'hist-parts');
+    partsOf(items).forEach(p => partLine.appendChild(el('span', 'part-tag', p)));
+    main.appendChild(partLine);
     main.appendChild(el('div', 'item-sub', items.map(l => l.name).join(' · ')));
     item.appendChild(main);
     item.appendChild(el('div', 'item-right', `${items.length}个动作`));
