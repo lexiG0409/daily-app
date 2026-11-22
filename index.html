@@ -96,6 +96,7 @@
         <p>没有待办，喵～<br>今天可以好好休息</p>
       </div>
     </section>
+    <p class="app-version" id="app-version"></p>
   </main>
 
   <!-- 底部三个按钮 -->
@@ -159,6 +160,7 @@
         <button type="button" data-type="reps">重量×次数</button>
         <button type="button" data-type="time">重量×秒数</button>
         <button type="button" data-type="cardio">有氧·分钟</button>
+        <button type="button" data-type="session">打卡</button>
       </div>
 
       <div class="last-time" id="f-last"></div>
@@ -169,6 +171,8 @@
         <div id="f-sets"></div>
         <button type="button" class="link-btn add-set" id="f-addset">＋ 再加一组（复制上一组）</button>
       </div>
+
+      <p class="session-tip" id="f-session-tip">✅ 点“保存”就记一次，不用填数字</p>
 
       <div id="f-cardio-wrap">
         <label class="field-label" for="f-min">时长（分钟）</label>
@@ -198,6 +202,7 @@
             <option value="reps">重量×次数</option>
             <option value="time">重量×秒数</option>
             <option value="cardio">有氧·分钟</option>
+            <option value="session">打卡·次</option>
           </select>
         </div>
         <p class="form-error" id="lib-error"></p>

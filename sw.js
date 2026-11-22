@@ -1,6 +1,6 @@
 // 离线小助手：把 app 的文件存一份在手机里，没网也能打开。
 // 每次更新 app 文件后，把下面的版本号 +1，手机就会拿到新版本。
-const VERSION = 'daily-v8';
+const VERSION = 'daily-v9';
 const FILES = [
   './',
   'index.html',
@@ -35,7 +35,8 @@ self.addEventListener('fetch', e => {
   // 只管 app 自己的文件；汇率等外部网站的请求不存
   if (new URL(e.request.url).origin !== self.location.origin) return;
   e.respondWith(
-    fetch(e.request)
+    // cache: 'no-cache' = 每次都问一下服务器"有没有新版本"，不用等 10 分钟
+    fetch(e.request, { cache: 'no-cache' })
       .then(res => {
         const copy = res.clone();
         caches.open(VERSION).then(c => c.put(e.request, copy));
