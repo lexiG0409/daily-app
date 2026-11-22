@@ -470,3 +470,35 @@ main { padding: 10px 16px; }
 .seg button { font-size: 12px; }
 
 .app-version { text-align: center; font-size: 11px; color: var(--text-light); opacity: .6; margin-top: 30px; }
+
+/* ---------- 早报 ---------- */
+.blue { background: var(--blue); }
+.blue-btn { background: var(--blue-dark); color: #fff; }
+.tab.active[data-page="briefing"] { background: var(--blue); color: var(--text); }
+.brief-sub { text-align: center; font-size: 13px; opacity: .8; margin: 2px 0 12px; }
+.region-filter { display: flex; gap: 6px; justify-content: center; }
+.region-filter button {
+  padding: 6px 12px; border-radius: 999px; font-size: 13px; font-weight: 700;
+  background: rgba(255,255,255,.6); color: var(--text-light);
+}
+.region-filter button.on { background: var(--blue-text); color: #fff; }
+
+.news {
+  background: var(--card); border-radius: 20px; padding: 16px;
+  box-shadow: var(--shadow);
+}
+.news-head { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+.region-tag { font-size: 12px; font-weight: 800; padding: 3px 10px; border-radius: 999px; }
+.region-eu { background: var(--blue); color: var(--blue-text); }
+.region-us { background: var(--peach); color: var(--peach-text); }
+.region-cn { background: var(--lavender); color: var(--lavender-text); }
+.region-x  { background: var(--line); }
+.news-country { font-size: 12px; color: var(--text-light); }
+.news-title-en { font-size: 16px; line-height: 1.35; }
+.news-title-zh { font-size: 15px; font-weight: 700; color: var(--blue-text); margin-top: 3px; line-height: 1.4; }
+.news-body { margin-top: 10px; display: flex; flex-direction: column; gap: 8px; }
+.pair .en { font-size: 14px; line-height: 1.5; }
+.pair .zh { font-size: 14px; line-height: 1.55; color: #7A7684; margin-top: 1px; }
+.insight { margin-top: 12px; background: #EEF3FA; border-radius: 14px; padding: 10px 12px; display: flex; flex-direction: column; gap: 6px; }
+.insight-label { font-size: 12px; font-weight: 800; color: var(--blue-text); }
+.news-src { display: inline-block; margin-top: 10px; font-size: 12px; color: var(--blue-text); text-decoration: none; font-weight: 600; }

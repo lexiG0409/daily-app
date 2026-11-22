@@ -28,6 +28,25 @@
   </header>
 
   <main>
+    <!-- ================= 早报 ================= -->
+    <section id="page-briefing" class="page" data-title="早报" data-mascot="img/bear.svg">
+      <div class="card summary blue">
+        <div class="month-switch">
+          <button class="icon-btn" id="n-prev" aria-label="前一期">‹</button>
+          <span id="n-date">风电早报</span>
+          <button class="icon-btn" id="n-next" aria-label="后一期">›</button>
+        </div>
+        <div class="brief-sub">🌬️ 陆上风电 Onshore Wind · 欧洲 · 美国 · 中国</div>
+        <div class="region-filter" id="n-filter"></div>
+      </div>
+
+      <div id="n-list" class="list"></div>
+      <div id="n-empty" class="empty">
+        <img src="img/bear.svg" alt="">
+        <p id="n-empty-text">早报还没到～<br>工作日早上 6 点前更新</p>
+      </div>
+    </section>
+
     <!-- ================= 记账 ================= -->
     <section id="page-budget" class="page" data-title="记账" data-mascot="img/pig.svg">
       <div class="card summary mint">
@@ -98,6 +117,9 @@
 
   <!-- 底部三个按钮 -->
   <nav class="tab-bar">
+    <a href="#briefing" class="tab" data-page="briefing">
+      <span class="tab-icon">📰</span><span>早报</span>
+    </a>
     <a href="#todo" class="tab" data-page="todo">
       <span class="tab-icon">✅</span><span>待办</span>
     </a>

@@ -77,11 +77,11 @@ document.querySelectorAll('.sheet-bg').forEach(bg => {
 // ================================
 // 1. 页面切换
 // ================================
-const PAGES = ['budget', 'fitness', 'todo'];
+const PAGES = ['briefing', 'todo', 'fitness', 'budget'];
 
 function showPage() {
   let name = location.hash.replace('#', '');
-  if (!PAGES.includes(name)) name = 'budget';
+  if (!PAGES.includes(name)) name = 'briefing'; // 默认打开早报
 
   document.querySelectorAll('.page').forEach(p => p.classList.toggle('active', p.id === 'page-' + name));
   document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.page === name));
@@ -819,7 +819,105 @@ $('lib-sheet').addEventListener('click', e => {
 });
 
 
-const APP_VERSION = 'v12';
+// ================================
+// 5. 风电早报（由 Claude 每个工作日早上写好，放在 briefing/ 文件夹）
+// ================================
+let nIndex = [];          // 所有期数的日期列表（新的在前）
+let nPos = 0;             // 正在看第几期
+let nRegion = '全部';
+let nData = null;
+const REGIONS = ['全部', '欧洲', '美国', '中国'];
+
+async function loadJSON(path) {
+  const res = await fetch(path, { cache: 'no-cache' });
+  if (!res.ok) throw new Error(res.status);
+  return res.json();
+}
+
+async function loadBriefing(pos) {
+  try {
+    if (!nIndex.length) {
+      const idx = await loadJSON('briefing/index.json');
+      nIndex = (idx.dates || []).slice().sort().reverse();
+    }
+    if (!nIndex.length) throw new Error('empty');
+    nPos = Math.max(0, Math.min(pos, nIndex.length - 1));
+    nData = await loadJSON(`briefing/${nIndex[nPos]}.json`);
+  } catch (e) {
+    nData = null;
+  }
+  renderBriefing();
+}
+
+function renderBriefing() {
+  $('n-prev').style.visibility = nPos < nIndex.length - 1 ? 'visible' : 'hidden';
+  $('n-next').style.visibility = nPos > 0 ? 'visible' : 'hidden';
+  $('n-date').textContent = nData ? dayLabel(nData.date) : '风电早报';
+
+  const filter = $('n-filter');
+  filter.innerHTML = '';
+  REGIONS.forEach(r => {
+    const count = nData ? (r === '全部' ? nData.items.length : nData.items.filter(i => i.region === r).length) : 0;
+    const b = el('button', r === nRegion ? 'on' : '', `${r} ${count}`);
+    b.onclick = () => { nRegion = r; renderBriefing(); };
+    filter.appendChild(b);
+  });
+
+  const list = $('n-list');
+  list.innerHTML = '';
+  const items = nData ? nData.items.filter(i => nRegion === '全部' || i.region === nRegion) : [];
+  items.forEach((it, n) => {
+    const card = el('article', 'news');
+    const head = el('div', 'news-head');
+    head.appendChild(el('span', 'region-tag region-' + ({ '欧洲': 'eu', '美国': 'us', '中国': 'cn' }[it.region] || 'x'), it.region));
+    if (it.country) head.appendChild(el('span', 'news-country', it.country));
+    card.appendChild(head);
+
+    // 标题：英文一行、中文一行
+    card.appendChild(el('h3', 'news-title-en', it.title.en));
+    card.appendChild(el('div', 'news-title-zh', it.title.zh));
+
+    // 摘要：逐句对照（一句英文，紧跟一句中文）
+    const body = el('div', 'news-body');
+    it.sentences.forEach(p => {
+      const pair = el('div', 'pair');
+      pair.appendChild(el('p', 'en', p.en));
+      pair.appendChild(el('p', 'zh', p.zh));
+      body.appendChild(pair);
+    });
+    card.appendChild(body);
+
+    // 行业解读
+    if (it.insight) {
+      const ins = el('div', 'insight');
+      ins.appendChild(el('div', 'insight-label', '💡 行业解读 Industry take'));
+      (Array.isArray(it.insight) ? it.insight : [it.insight]).forEach(p => {
+        const pair = el('div', 'pair');
+        pair.appendChild(el('p', 'en', p.en));
+        pair.appendChild(el('p', 'zh', p.zh));
+        ins.appendChild(pair);
+      });
+      card.appendChild(ins);
+    }
+
+    // 来源链接
+    if (it.url) {
+      const a = el('a', 'news-src', `🔗 ${it.source || '原文'}${it.published ? ' · ' + it.published : ''}`);
+      a.href = it.url; a.target = '_blank'; a.rel = 'noopener';
+      card.appendChild(a);
+    }
+    list.appendChild(card);
+  });
+
+  $('n-empty').style.display = items.length ? 'none' : '';
+  $('n-empty-text').innerHTML = nData ? '这个地区今天没有大新闻' : '早报还没到～<br>工作日早上 6 点前更新';
+}
+
+$('n-prev').onclick = () => loadBriefing(nPos + 1);
+$('n-next').onclick = () => loadBriefing(nPos - 1);
+
+
+const APP_VERSION = 'v13';
 
 // ================================
 // 启动
@@ -829,6 +927,7 @@ $('app-version').textContent = 'Daily ' + APP_VERSION;
 renderTodos();
 renderBudget();
 renderFitness();
+loadBriefing(0);
 fetchRates(); // 顺手更新一次汇率（没网也没关系）
 
 // 离线可用

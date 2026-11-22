@@ -1,0 +1,173 @@
+{
+  "date": "2026-11-23",
+  "generatedAt": "2026-11-23T01:10:00+01:00",
+  "items": [
+    {
+      "region": "欧洲",
+      "country": "德国 Germany",
+      "title": {
+        "en": "World's tallest wind turbine inaugurated in Germany",
+        "zh": "全球最高风机在德国揭幕"
+      },
+      "sentences": [
+        { "en": "GICON has inaugurated its 365-metre pilot turbine in Schipkau, Brandenburg, and says it plans five more.", "zh": "GICON 在勃兰登堡州 Schipkau 为其 365 米高的试点风机举行了揭幕仪式，并表示还计划再建五台。" },
+        { "en": "The hub sits about 300 metres above ground on a telescoping lattice tower, and the turbine is rated at around 3.8 MW.", "zh": "轮毂安装在一座可伸缩桁架塔上，离地约 300 米，风机额定功率约 3.8 兆瓦。" },
+        { "en": "It was built for SPRIND, Germany's federal agency for disruptive innovation, to test 'second-storey' wind farms above existing sites.", "zh": "该项目为德国联邦颠覆性创新署（SPRIND）建造，用于测试在现有风场上方加建“第二层”风机的思路。" }
+      ],
+      "insight": [
+        { "en": "If operating data confirms the promised yield gain, high-altitude turbines could add capacity without new land, easing Germany's permitting and space bottlenecks.", "zh": "如果运行数据证实发电量确有提升，高空风机可以在不新增用地的情况下扩容，缓解德国的审批与用地瓶颈。" }
+      ],
+      "source": "Renewables Now / Electrek",
+      "url": "https://renewablesnow.com/news/wind/",
+      "published": "2026-11-20"
+    },
+    {
+      "region": "欧洲",
+      "country": "德国 Germany",
+      "title": {
+        "en": "Germany's November onshore auction closed; results pending",
+        "zh": "德国 11 月陆上风电招标已截止，结果待公布"
+      },
+      "sentences": [
+        { "en": "The Bundesnetzagentur's latest round offered about 2.5 GW of onshore wind with a ceiling of 7.25 ct/kWh, and bids were due by 2 November.", "zh": "德国联邦网络局本轮招标约 2.5 吉瓦陆上风电，上限价为 7.25 欧分/千瓦时，投标截止日为 11 月 2 日。" },
+        { "en": "In the August round, 5.25 GW of bids competed for 2.52 GW, and the average award price fell to 4.79 ct/kWh.", "zh": "在 8 月那一轮中，5.25 吉瓦的投标争夺 2.52 吉瓦的配额，平均中标价降至 4.79 欧分/千瓦时。" },
+        { "en": "That was down from 5.54 ct in February and 5.06 ct in May.", "zh": "这一价格低于 2 月的 5.54 欧分和 5 月的 5.06 欧分。" }
+      ],
+      "insight": [
+        { "en": "Three straight rounds of falling prices show strong competition among German developers; watch whether the November result breaks below 4.5 ct.", "zh": "连续三轮价格下降，说明德国开发商竞争激烈；可以关注 11 月结果是否跌破 4.5 欧分。" }
+      ],
+      "source": "Bundesnetzagentur",
+      "url": "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Ausschreibungen/Wind_Onshore/BeendeteAusschreibungen/start.html",
+      "published": "2026-11"
+    },
+    {
+      "region": "欧洲",
+      "country": "西班牙 Spain",
+      "title": {
+        "en": "Iberdrola completes 97.5 MW repowering in Spain",
+        "zh": "Iberdrola 完成西班牙 97.5 兆瓦风场“以大代小”改造"
+      },
+      "sentences": [
+        { "en": "Iberdrola has completed a 97.5 MW wind farm repowering in Spain, according to Renewables Now.", "zh": "据 Renewables Now 报道，Iberdrola 在西班牙完成了一个 97.5 兆瓦的风场“以大代小”改造。" },
+        { "en": "The size matches its first repowering pair in Albacete, Molar de Molinar (49.5 MW) and Isabela (48 MW), where 139 old turbines were planned to be replaced by 22 Vestas 4.5 MW machines.", "zh": "这个规模与其在阿尔瓦塞特省的首批改造项目 Molar de Molinar（49.5 兆瓦）和 Isabela（48 兆瓦）相符，该项目计划用 22 台 4.5 兆瓦的 Vestas 风机替换 139 台老风机。" }
+      ],
+      "insight": [
+        { "en": "Spain has a large fleet of turbines over 20 years old, so repowering is becoming a major onshore market of its own.", "zh": "西班牙有大量运行超过 20 年的风机，因此“以大代小”正在成为一个独立的陆上风电大市场。" }
+      ],
+      "source": "Renewables Now / Iberdrola",
+      "url": "https://renewablesnow.com/news/wind/",
+      "published": "2026-11-20"
+    },
+    {
+      "region": "欧洲",
+      "country": "德国 Germany",
+      "title": {
+        "en": "Steady German order flow for GE Vernova and Vestas",
+        "zh": "GE Vernova 与 Vestas 在德国订单不断"
+      },
+      "sentences": [
+        { "en": "GE Vernova will supply four 5.5 MW-158 turbines to wpd for the Haseloff wind farm in Germany.", "zh": "GE Vernova 将为 wpd 的德国 Haseloff 风场供应四台 5.5 兆瓦、158 米风轮的风机。" },
+        { "en": "Vestas separately booked 62 MW of orders in Germany and Austria, and Exus bought a 45 MW portfolio of operating German wind farms from Ingka Investments.", "zh": "另外，Vestas 在德国和奥地利拿下 62 兆瓦订单；Exus 则从 Ingka Investments 收购了德国 45 兆瓦已运行风场资产包。" }
+      ],
+      "insight": [
+        { "en": "Small but frequent orders reflect Germany's record permitting pipeline turning into real turbine demand.", "zh": "这些订单规模不大但很密集，说明德国创纪录的审批量正在转化为实际的风机需求。" }
+      ],
+      "source": "Renewable Energy Magazine / reNEWS",
+      "url": "https://www.renewableenergymagazine.com/wind",
+      "published": "2026-11-17"
+    },
+    {
+      "region": "美国",
+      "country": "美国 USA",
+      "title": {
+        "en": "About 400 US onshore wind projects stuck in Pentagon review",
+        "zh": "约 400 个美国陆上风电项目卡在五角大楼审查环节"
+      },
+      "sentences": [
+        { "en": "A Defense Department official told a federal court that around 400 onshore wind projects are waiting for military-impact reviews.", "zh": "一名美国国防部官员向联邦法院表示，约有 400 个陆上风电项目正在等待军事影响审查。" },
+        { "en": "He said only eight federal employees handle this work, which contractors are not allowed to do.", "zh": "他说这项工作只有八名联邦雇员负责，而且不能交给承包商来做。" },
+        { "en": "Clean energy groups and states are suing over what DOD called a temporary pause, and a court ordered that pause stayed in August.", "zh": "清洁能源行业组织和多个州就国防部所谓的“暂时停止审查”提起诉讼，法院已在 8 月下令中止该暂停措施。" }
+      ],
+      "insight": [
+        { "en": "Developers warn that delays could push turbine deliveries past tax-credit deadlines, so this backlog directly threatens project economics.", "zh": "开发商警告，延误可能让风机交付错过税收抵免的截止期限，因此这一积压会直接影响项目的经济性。" }
+      ],
+      "source": "Utility Dive",
+      "url": "https://www.utilitydive.com/news/around-400-onshore-wind-projects-await-dod-action-official-says-in-court/874521/",
+      "published": "2026-11-12"
+    },
+    {
+      "region": "美国",
+      "country": "北美 North America",
+      "title": {
+        "en": "Nordex sets new record for most powerful onshore turbines in North America",
+        "zh": "Nordex 刷新北美最大功率陆上风机纪录"
+      },
+      "sentences": [
+        { "en": "Recharge reports that a wind farm using Nordex turbines has overtaken Vestas' record for the most powerful onshore machines in North America.", "zh": "据 Recharge 报道，一座采用 Nordex 风机的风场超越了 Vestas 此前保持的北美最大功率陆上风机纪录。" },
+        { "en": "Nordex builds its N163 and N169 models for the US at its plant in West Branch, Iowa.", "zh": "Nordex 在美国艾奥瓦州 West Branch 的工厂生产面向美国市场的 N163 和 N169 机型。" }
+      ],
+      "insight": [
+        { "en": "Larger rotors with local production help Western OEMs compete in the US, where tariffs keep Chinese turbines largely out.", "zh": "大风轮加本地化生产，帮助西方整机商在美国市场竞争；由于关税，中国风机基本进不了美国市场。" }
+      ],
+      "source": "Recharge",
+      "url": "https://www.rechargenews.com/onshore-wind/nordex-breaks-vestas-record-for-most-powerful-wind-turbines-in-north-america/2-1-2077022",
+      "published": "2026-11-19"
+    },
+    {
+      "region": "中国",
+      "country": "中国 China",
+      "title": {
+        "en": "China's wind capacity reaches 700 GW, up 20.4% year on year",
+        "zh": "中国风电装机达 7 亿千瓦，同比增长 20.4%"
+      },
+      "sentences": [
+        { "en": "By the end of September, China's grid-connected wind capacity reached about 700 GW, according to the National Energy Administration.", "zh": "据国家能源局数据，截至 9 月底，中国并网风电装机容量约达 7 亿千瓦。" },
+        { "en": "Of that, about 650 GW is onshore and just under 50 GW is offshore.", "zh": "其中陆上风电约 6.5 亿千瓦，海上风电略低于 5000 万千瓦。" },
+        { "en": "Wind and solar together now exceed 2,000 GW, close to half of China's total power capacity.", "zh": "风电和光伏合计已超过 20 亿千瓦，接近全国总装机的一半。" }
+      ],
+      "insight": [
+        { "en": "Growth is still strong, but analysts point to falling utilisation and price pressure, so grid absorption is becoming the key constraint rather than installation speed.", "zh": "增长依然强劲，但分析人士指出利用率下降、电价承压，因此电网消纳正取代装机速度，成为关键制约因素。" }
+      ],
+      "source": "ECNS / National Energy Administration",
+      "url": "http://www.ecns.cn/cns-wire/2026-10-27/detail-ihfmqavp9410708.shtml",
+      "published": "2026-10-27"
+    },
+    {
+      "region": "中国",
+      "country": "中国 / 埃及 China / Egypt",
+      "title": {
+        "en": "Mingyang and PowerChina sign 500 MW Egypt wind deal plus turbine factory",
+        "zh": "明阳与中国电建签下埃及 500 兆瓦风电项目及风机工厂"
+      },
+      "sentences": [
+        { "en": "AMEA Power signed a roughly US$650 million package for the 500 MW Amunet 2 wind farm at Ras Shukeir on Egypt's Red Sea coast.", "zh": "AMEA Power 签署了约 6.5 亿美元的合同包，用于埃及红海沿岸 Ras Shukeir 的 500 兆瓦 Amunet 2 风电场。" },
+        { "en": "PowerChina will build the project and Mingyang will supply the turbines.", "zh": "项目由中国电建承建，明阳负责供应风机。" },
+        { "en": "Mingyang and AMEA also agreed to build what Egypt calls its first wind turbine factory, in the Suez Canal Economic Zone.", "zh": "明阳与 AMEA 还同意在苏伊士运河经济区建设一座工厂，埃及称之为本国第一座风机工厂。" }
+      ],
+      "insight": [
+        { "en": "Chinese OEMs increasingly pair turbine sales with local factories abroad, which helps them win markets that favour local content.", "zh": "中国整机商越来越多地把卖风机和在海外建厂捆绑在一起，这有助于赢得重视本地化的市场。" }
+      ],
+      "source": "Black Ridge Research / Daily News Egypt",
+      "url": "https://www.blackridgeresearch.com/news-releases/amea-power-signs-contracts-for-usd-650-million-500-mw-amunet-2-wind-farm-in-egypt",
+      "published": "2026-11-19"
+    },
+    {
+      "region": "中国",
+      "country": "中国 China",
+      "title": {
+        "en": "BNEF: Chinese turbines 10–40% cheaper than foreign rivals",
+        "zh": "彭博新能源财经：中国风机比外国同行便宜 10–40%"
+      },
+      "sentences": [
+        { "en": "A BloombergNEF analysis finds Chinese onshore turbines are priced 10 to 40 percent below foreign competitors, depending on the region.", "zh": "彭博新能源财经（BNEF）的分析发现，中国陆上风机的价格比外国竞争对手低 10% 到 40%，具体取决于地区。" },
+        { "en": "The gap is widest in emerging markets such as Türkiye and Africa and narrowest in developed markets like Canada.", "zh": "价差在土耳其、非洲等新兴市场最大，在加拿大等成熟市场最小。" }
+      ],
+      "insight": [
+        { "en": "Expect more Chinese wins in emerging markets, while Europe and North America lean on trade and security rules to protect local suppliers.", "zh": "预计中国整机商会在新兴市场拿下更多订单，而欧洲和北美会更多借助贸易与安全规则来保护本土供应商。" }
+      ],
+      "source": "China Daily / BloombergNEF",
+      "url": "https://www.chinadaily.com.cn/a/202611/03/WS6ae93c71e4b06d4aa0566a61.html",
+      "published": "2026-11-03"
+    }
+  ]
+}
