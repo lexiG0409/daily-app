@@ -147,6 +147,12 @@ $('t-form').addEventListener('submit', e => {
   saveTodos();
 });
 
+// 点输入卡片的任何地方，都直接激活输入框（让 iPhone 弹出键盘）
+$('t-form').addEventListener('click', e => {
+  if (e.target.closest('button')) return;
+  $('t-text').focus();
+});
+
 $('t-clear').onclick = () => { todos = todos.filter(t => !t.done); saveTodos(); };
 
 
