@@ -1,0 +1,134 @@
+/* ================================
+   马卡龙配色（想换颜色，改这里就行）
+   ================================ */
+:root {
+  --bg: #FFF8F0;          /* 奶油底色 */
+  --text: #5B4B5A;        /* 文字：柔和的深紫灰 */
+  --text-light: #A89AA6;  /* 浅色文字 */
+  --card: #FFFFFF;
+
+  --mint: #BDEBD6;        /* 记账：薄荷绿 */
+  --mint-dark: #5FBF95;
+  --peach: #FFD3C2;       /* 运动：蜜桃粉 */
+  --peach-dark: #F2926F;
+  --lavender: #DCD3F7;    /* 待办：薰衣草紫 */
+  --lavender-dark: #9B86E0;
+
+  --radius: 24px;
+  --shadow: 0 6px 18px rgba(155, 134, 160, 0.15);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body { height: 100%; }
+
+body {
+  font-family: -apple-system, "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-tap-highlight-color: transparent;
+  /* 给 iPhone 刘海和底部横条留空间 */
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: calc(84px + env(safe-area-inset-bottom));
+}
+
+/* ---------- 顶部 ---------- */
+.top-bar {
+  padding: 20px 22px 8px;
+}
+.top-bar h1 {
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+.today {
+  margin-top: 4px;
+  font-size: 14px;
+  color: var(--text-light);
+}
+
+/* ---------- 页面 ---------- */
+main { padding: 12px 18px; }
+
+.page { display: none; animation: pop .25s ease; }
+.page.active { display: block; }
+
+@keyframes pop {
+  from { opacity: 0; transform: translateY(8px) scale(.98); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ---------- 卡片 ---------- */
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+
+.hello {
+  text-align: center;
+  padding: 40px 24px;
+}
+.hello.mint     { background: var(--mint); }
+.hello.peach    { background: var(--peach); }
+.hello.lavender { background: var(--lavender); }
+
+.mascot {
+  width: 140px;
+  height: 140px;
+  display: block;
+  margin: 0 auto 10px;
+  animation: bounce 2.4s ease-in-out infinite;
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
+}
+
+.hello h2 { font-size: 22px; margin-bottom: 8px; }
+.hello p  { font-size: 15px; opacity: .8; }
+
+.tag {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .7);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* ---------- 底部按钮栏 ---------- */
+.tab-bar {
+  position: fixed;
+  left: 12px; right: 12px;
+  bottom: calc(12px + env(safe-area-inset-bottom));
+  height: 68px;
+  display: flex;
+  background: var(--card);
+  border-radius: 999px;
+  box-shadow: var(--shadow);
+  padding: 6px;
+}
+
+.tab {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--text-light);
+  font-size: 12px;
+  font-weight: 600;
+  transition: background .2s, color .2s, transform .15s;
+}
+.tab:active { transform: scale(.94); }
+.tab-icon { font-size: 22px; }
+
+.tab.active[data-page="budget"]  { background: var(--mint);     color: var(--text); }
+.tab.active[data-page="fitness"] { background: var(--peach);    color: var(--text); }
+.tab.active[data-page="todo"]    { background: var(--lavender); color: var(--text); }

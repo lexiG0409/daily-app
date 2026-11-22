@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- 耳朵 -->
+  <path d="M44 82 L50 34 L90 62 Z" fill="#FFB0C0" stroke="#FFB0C0" stroke-width="12" stroke-linejoin="round"/>
+  <path d="M156 82 L150 34 L110 62 Z" fill="#FFB0C0" stroke="#FFB0C0" stroke-width="12" stroke-linejoin="round"/>
+  <!-- 头 -->
+  <ellipse cx="100" cy="116" rx="74" ry="62" fill="#FFCAD4"/>
+  <!-- 头顶小金币 -->
+  <circle cx="100" cy="46" r="17" fill="#FFD66B"/>
+  <circle cx="100" cy="46" r="11" fill="none" stroke="#F2B53A" stroke-width="3"/>
+  <text x="100" y="51.5" text-anchor="middle" font-size="15" font-weight="700" fill="#E09E1F" font-family="Arial, sans-serif">€</text>
+  <!-- 眼睛 -->
+  <circle cx="68" cy="104" r="8" fill="#4A3B3B"/><circle cx="71" cy="101" r="2.6" fill="#fff"/>
+  <circle cx="132" cy="104" r="8" fill="#4A3B3B"/><circle cx="135" cy="101" r="2.6" fill="#fff"/>
+  <!-- 鼻子 -->
+  <ellipse cx="100" cy="130" rx="28" ry="19" fill="#FF9FB4"/>
+  <ellipse cx="90" cy="130" rx="4.5" ry="7" fill="#D9627F"/>
+  <ellipse cx="110" cy="130" rx="4.5" ry="7" fill="#D9627F"/>
+  <!-- 嘴巴 -->
+  <path d="M92 156 Q100 163 108 156" fill="none" stroke="#4A3B3B" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- 腮红 -->
+  <ellipse cx="50" cy="132" rx="12" ry="7" fill="#FF8FA8" opacity=".6"/>
+  <ellipse cx="150" cy="132" rx="12" ry="7" fill="#FF8FA8" opacity=".6"/>
+</svg>

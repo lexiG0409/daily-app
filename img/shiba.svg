@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs><clipPath id="h"><ellipse cx="100" cy="114" rx="72" ry="64"/></clipPath></defs>
+  <!-- 耳朵 -->
+  <path d="M44 80 L54 26 L94 60 Z" fill="#F0A35E" stroke="#F0A35E" stroke-width="10" stroke-linejoin="round"/>
+  <path d="M156 80 L146 26 L106 60 Z" fill="#F0A35E" stroke="#F0A35E" stroke-width="10" stroke-linejoin="round"/>
+  <path d="M58 66 L61 42 L80 58 Z" fill="#FFF1DE" stroke="#FFF1DE" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M142 66 L139 42 L120 58 Z" fill="#FFF1DE" stroke="#FFF1DE" stroke-width="6" stroke-linejoin="round"/>
+  <!-- 头 -->
+  <ellipse cx="100" cy="114" rx="72" ry="64" fill="#F0A35E"/>
+  <!-- 白色脸颊 -->
+  <path d="M34 130 Q44 102 76 108 Q100 96 124 108 Q156 102 166 130 Q156 176 100 178 Q44 176 34 130Z" fill="#FFF1DE"/>
+  <!-- 运动发带 -->
+  <g clip-path="url(#h)">
+    <rect x="20" y="66" width="160" height="15" fill="#FF8FA3"/>
+    <rect x="20" y="72" width="160" height="3" fill="#FFFFFF" opacity=".7"/>
+  </g>
+  <!-- 眉毛小白点 -->
+  <ellipse cx="73" cy="91" rx="8" ry="5" fill="#FFF1DE"/>
+  <ellipse cx="127" cy="91" rx="8" ry="5" fill="#FFF1DE"/>
+  <!-- 眼睛 -->
+  <circle cx="74" cy="112" r="8" fill="#4A3B3B"/><circle cx="77" cy="109" r="2.6" fill="#fff"/>
+  <circle cx="126" cy="112" r="8" fill="#4A3B3B"/><circle cx="129" cy="109" r="2.6" fill="#fff"/>
+  <!-- 鼻子嘴巴 -->
+  <ellipse cx="100" cy="128" rx="9" ry="6.5" fill="#4A3B3B"/>
+  <path d="M88 139 Q94 147 100 139 Q106 147 112 139" fill="none" stroke="#4A3B3B" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- 腮红 -->
+  <ellipse cx="54" cy="136" rx="12" ry="7" fill="#FFB3BE" opacity=".85"/>
+  <ellipse cx="146" cy="136" rx="12" ry="7" fill="#FFB3BE" opacity=".85"/>
+  <!-- 汗珠 -->
+  <path d="M170 74 Q177 86 170 92 Q163 86 170 74Z" fill="#9FD8F2"/>
+</svg>

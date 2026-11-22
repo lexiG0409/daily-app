@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Daily</title>
+
+  <!-- 让它可以"添加到主屏幕"、全屏打开 -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Daily">
+  <link rel="apple-touch-icon" href="icons/icon-180.png">
+  <link rel="icon" type="image/png" href="icons/icon-192.png">
+  <meta name="theme-color" content="#FFF8F0">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- 顶部标题 -->
+  <header class="top-bar">
+    <h1 id="page-title">记账</h1>
+    <p id="today" class="today"></p>
+  </header>
+
+  <!-- 三个页面（一次只显示一个） -->
+  <main>
+    <section id="page-budget" class="page" data-title="记账">
+      <div class="card hello mint">
+        <img class="mascot" src="img/pig.svg" alt="小猪">
+        <h2>记账小猪</h2>
+        <p>记录每一笔花销，看看钱去哪儿了</p>
+        <span class="tag">即将上线</span>
+      </div>
+    </section>
+
+    <section id="page-fitness" class="page" data-title="运动">
+      <div class="card hello peach">
+        <img class="mascot" src="img/shiba.svg" alt="柴犬">
+        <h2>运动柴柴</h2>
+        <p>记录每次训练，一点点变强</p>
+        <span class="tag">即将上线</span>
+      </div>
+    </section>
+
+    <section id="page-todo" class="page" data-title="待办">
+      <div class="card hello lavender">
+        <img class="mascot" src="img/cat.svg" alt="小猫">
+        <h2>待办猫猫</h2>
+        <p>今天要做的事，做完就打勾</p>
+        <span class="tag">即将上线</span>
+      </div>
+    </section>
+  </main>
+
+  <!-- 底部三个按钮 -->
+  <nav class="tab-bar">
+    <a href="#budget" class="tab" data-page="budget">
+      <span class="tab-icon">💰</span><span>记账</span>
+    </a>
+    <a href="#fitness" class="tab" data-page="fitness">
+      <span class="tab-icon">🏃‍♀️</span><span>运动</span>
+    </a>
+    <a href="#todo" class="tab" data-page="todo">
+      <span class="tab-icon">✅</span><span>待办</span>
+    </a>
+  </nav>
+
+  <script src="app.js"></script>
+</body>
+</html>
