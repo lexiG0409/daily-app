@@ -377,20 +377,63 @@ $('b-next').onclick = () => {
 
 
 // ================================
-// 4. 运动柴柴（力量训练）
+// 4. 运动柴柴（力量训练 + 有氧）
 // ================================
-const PRESETS = ['深蹲', '硬拉', '卧推', '臀推', '划船', '肩推', '高位下拉', '引体向上',
-                 '腿举', '罗马尼亚硬拉', '弓步蹲', '二头弯举', '三头下压', '侧平举'];
 
-let lifts = store.get('lifts', []);   // 每条：{ id, date, name, sets: [{ w: 重量, r: 次数 }], createdAt }
-let fDay = todayStr();                // 正在看的那一天
-let fEditing = null;
+// 部位分组（想加新部位，在这里加一行）
+const PARTS = ['腿臀', '背', '胸', '肩', '手臂', '核心', '有氧', '其他'];
 
-const sameName = (a, b) => a.trim().toLowerCase() === b.trim().toLowerCase();
-const volumeOf = sets => sets.reduce((s, x) => s + x.w * x.r, 0);
-const maxWeight = sets => Math.max(0, ...sets.map(x => x.w));
+// 三种记录方式
+const TYPES = {
+  reps:   { label: '重量×次数', unit: '次数' },
+  time:   { label: '重量×秒数', unit: '秒数' },
+  cardio: { label: '有氧·分钟', unit: '分钟' }
+};
+
+// 第一次打开时的默认动作库（之后可在"管理我的动作库"里随便改）
+const DEFAULT_EXERCISES = [
+  ['深蹲', '腿臀'], ['弓步', '腿臀'], ['臀推', '腿臀'], ['腿举', '腿臀'], ['罗马尼亚硬拉', '腿臀'], ['硬拉', '腿臀'],
+  ['高位下拉', '背'], ['下背上拉', '背'], ['划船', '背'], ['引体向上', '背'],
+  ['卧推', '胸'], ['哑铃飞鸟', '胸'],
+  ['肩推', '肩'], ['哑铃肩外旋', '肩'], ['侧平举', '肩'],
+  ['哑铃颈后臂屈伸', '手臂'], ['理疗师手臂伸展', '手臂', 'time'], ['二头弯举', '手臂'], ['三头下压', '手臂'],
+  ['核心左右绕球', '核心'], ['平板支撑', '核心', 'time'],
+  ['椭圆机', '有氧', 'cardio'], ['跑步机', '有氧', 'cardio'], ['动感单车', '有氧', 'cardio']
+].map(([name, part, type]) => ({ id: uid(), name, part, type: type || 'reps' }));
+
+let lifts = store.get('lifts', []);   // 训练记录：{ id, date, name, type, sets:[{w,r}], minutes, createdAt }
+let exercises = store.get('exercises', null);
+if (!exercises) {
+  exercises = DEFAULT_EXERCISES;
+  // 以前练过、但不在默认库里的动作，也放进来
+  lifts.forEach(l => {
+    if (!exercises.some(e => sameName(e.name, l.name))) {
+      exercises.push({ id: uid(), name: l.name, part: '其他', type: l.type || 'reps' });
+    }
+  });
+  store.set('exercises', exercises);
+}
+
+let fDay = todayStr();     // 正在看的那一天
+let fEditing = null;       // 正在修改的训练记录
+let fType = 'reps';        // 当前记录方式
+let fPart = null;          // 当前选中的部位
+let libEditing = null;     // 动作库里正在修改的动作
+
+function sameName(a, b) { return a.trim().toLowerCase() === b.trim().toLowerCase(); }
+const findExercise = name => exercises.find(e => sameName(e.name, name));
+const typeOf = l => l.type || 'reps';
 const fmtKg = n => (Math.round(n * 10) / 10).toString();
-const setText = x => (x.w > 0 ? `${fmtKg(x.w)}kg` : '自重') + `×${x.r}`;
+// 只有"重量×次数"算进总训练量
+const volumeOf = l => typeOf(l) === 'reps' ? l.sets.reduce((s, x) => s + x.w * x.r, 0) : 0;
+const maxWeight = l => l.sets && l.sets.length ? Math.max(0, ...l.sets.map(x => x.w)) : 0;
+function setText(x, type) {
+  const w = x.w > 0 ? `${fmtKg(x.w)}kg` : '自重';
+  return type === 'time' ? `${w}×${x.r}秒` : `${w}×${x.r}`;
+}
+function liftSummary(l) {
+  return typeOf(l) === 'cardio' ? [`${l.minutes}分钟`] : l.sets.map(s => setText(s, typeOf(l)));
+}
 const order = x => x.date + '|' + x.createdAt;
 
 function saveLifts() {
@@ -398,53 +441,58 @@ function saveLifts() {
   store.set('lifts', lifts);
   renderFitness();
 }
+function saveExercises() { store.set('exercises', exercises); }
 
-// 这个动作在 x 之前的最大重量（用来判断是不是新纪录）
+// 这个动作在 x 之前的最大重量（判断新纪录，只看"重量×次数"）
 function previousBest(x) {
-  const before = lifts.filter(l => l.id !== x.id && sameName(l.name, x.name) && order(l) < order(x));
-  return before.length ? Math.max(...before.map(l => maxWeight(l.sets))) : null;
+  const before = lifts.filter(l => l.id !== x.id && sameName(l.name, x.name) && typeOf(l) === 'reps' && order(l) < order(x));
+  return before.length ? Math.max(...before.map(maxWeight)) : null;
 }
 
 function renderFitness() {
   $('f-day').textContent = dayLabel(fDay);
   $('f-next').style.visibility = fDay >= todayStr() ? 'hidden' : 'visible';
 
-  // 本周（周一到周日）训练了几天
   const d = parseDate(fDay);
   const monday = addDays(fDay, -((d.getDay() + 6) % 7));
   const sunday = addDays(monday, 6);
-  const weekDays = new Set(lifts.filter(l => l.date >= monday && l.date <= sunday).map(l => l.date));
-  $('f-week').textContent = weekDays.size;
+  $('f-week').textContent = new Set(lifts.filter(l => l.date >= monday && l.date <= sunday).map(l => l.date)).size;
 
   const dayItems = lifts.filter(l => l.date === fDay);
   $('f-count').textContent = dayItems.length;
-  $('f-volume').textContent = Math.round(dayItems.reduce((s, l) => s + volumeOf(l.sets), 0)).toLocaleString('en-US');
+  $('f-volume').textContent = Math.round(dayItems.reduce((s, l) => s + volumeOf(l), 0)).toLocaleString('en-US');
 
-  // 当天的动作
   const list = $('f-list');
   list.innerHTML = '';
   dayItems.forEach(l => {
+    const type = typeOf(l);
     const item = el('button', 'item');
-    item.appendChild(el('div', 'item-emoji', '🏋️‍♀️'));
-    item.lastChild.style.background = 'var(--peach)';
+    const icon = el('div', 'item-emoji', type === 'cardio' ? '🚴‍♀️' : type === 'time' ? '⏱️' : '🏋️‍♀️');
+    icon.style.background = 'var(--peach)';
+    item.appendChild(icon);
     const main = el('div', 'item-main');
     const title = el('div', 'item-title', l.name);
-    const best = previousBest(l);
-    if (best !== null && maxWeight(l.sets) > best) title.appendChild(el('span', 'pr-badge', '🏆 新纪录'));
+    if (type === 'reps') {
+      const best = previousBest(l);
+      if (best !== null && maxWeight(l) > best) title.appendChild(el('span', 'pr-badge', '🏆 新纪录'));
+    }
     main.appendChild(title);
     const mini = el('div', 'sets-mini');
-    l.sets.forEach(s => mini.appendChild(el('span', '', setText(s))));
+    liftSummary(l).forEach(t => mini.appendChild(el('span', '', t)));
     main.appendChild(mini);
     item.appendChild(main);
-    const right = el('div', 'item-right', `${l.sets.length}组`);
-    right.appendChild(el('small', '', `${Math.round(volumeOf(l.sets))}kg`));
-    item.appendChild(right);
+    if (type === 'cardio') {
+      item.appendChild(el('div', 'item-right', `${l.minutes}′`));
+    } else {
+      const right = el('div', 'item-right', `${l.sets.length}组`);
+      if (type === 'reps') right.appendChild(el('small', '', `${Math.round(volumeOf(l))}kg`));
+      item.appendChild(right);
+    }
     item.onclick = () => openLift(l);
     list.appendChild(item);
   });
   $('f-empty').style.display = dayItems.length ? 'none' : '';
 
-  // 最近训练（其他日子，点一下跳过去）
   const hist = $('f-history');
   hist.innerHTML = '';
   const dates = [...new Set(lifts.map(l => l.date))].filter(x => x !== fDay).sort().reverse().slice(0, 10);
@@ -463,6 +511,14 @@ function renderFitness() {
 }
 
 // ---- 加动作的弹出层 ----
+function setType(type) {
+  fType = type;
+  document.querySelectorAll('#f-type button').forEach(b => b.classList.toggle('on', b.dataset.type === type));
+  $('f-form').classList.toggle('is-cardio', type === 'cardio');
+  $('f-col2').textContent = TYPES[type].unit;
+}
+document.querySelectorAll('#f-type button').forEach(b => { b.onclick = () => setType(b.dataset.type); });
+
 function addSetRow(w = '', r = '') {
   const box = $('f-sets');
   const row = el('div', 'set-row');
@@ -484,43 +540,60 @@ function readSets() {
     return { w: toNumber(w.value), r: toNumber(r.value), empty: !w.value.trim() && !r.value.trim() };
   });
 }
-function setsUntouched() { return readSets().every(s => s.empty); }
+const setsUntouched = () => readSets().every(s => s.empty) && !$('f-min').value.trim();
 
-// 输入动作名后，显示"上次做了多少"和"最好成绩"
-function showLastTime(fillIfEmpty) {
+// 选中/输入动作后：自动切换记录方式，并显示"上次做了多少"
+function onNameChosen(fillIfEmpty) {
   const name = $('f-name').value.trim();
+  const ex = name ? findExercise(name) : null;
+  if (ex) {
+    if (!fEditing) setType(ex.type);
+    if (fPart !== ex.part) { fPart = ex.part; renderParts(); }
+  }
+  document.querySelectorAll('#f-quick .chip').forEach(c => c.classList.toggle('on', !!name && sameName(c.textContent, name)));
+
   const box = $('f-last');
-  document.querySelectorAll('#f-quick .chip').forEach(c => c.classList.toggle('on', name && sameName(c.textContent, name)));
   const others = lifts.filter(l => sameName(l.name, name) && (!fEditing || l.id !== fEditing.id));
   if (!name || !others.length) { box.classList.remove('show'); return; }
 
   const last = others[others.length - 1];
-  const best = Math.max(...others.map(l => maxWeight(l.sets)));
   box.innerHTML = '';
-  box.appendChild(el('div', '', `🐕 上次（${shortDay(last.date)}）：${last.sets.map(setText).join(' · ')}`));
-  box.appendChild(el('div', '', `🏆 最大重量：${fmtKg(best)}kg`));
+  box.appendChild(el('div', '', `🐕 上次（${shortDay(last.date)}）：${liftSummary(last).join(' · ')}`));
+  if (typeOf(last) !== 'cardio') {
+    const best = Math.max(...others.filter(l => typeOf(l) !== 'cardio').map(maxWeight));
+    box.appendChild(el('div', '', `🏆 最大重量：${fmtKg(best)}kg`));
+  }
   box.classList.add('show');
 
-  // 新加动作、还没填组数时：自动照上次填好，你只要改数字
-  if (fillIfEmpty && !fEditing && setsUntouched()) {
-    $('f-sets').innerHTML = '';
-    last.sets.forEach(s => addSetRow(fmtKg(s.w), s.r));
+  // 新加动作、还没填数字时：照上次填好，你只要改数字
+  if (fillIfEmpty && !fEditing && setsUntouched() && typeOf(last) === fType) {
+    if (fType === 'cardio') $('f-min').value = last.minutes;
+    else { $('f-sets').innerHTML = ''; last.sets.forEach(s => addSetRow(fmtKg(s.w), s.r)); }
   }
 }
-$('f-name').addEventListener('input', () => showLastTime(false));
-$('f-name').addEventListener('change', () => showLastTime(true));
+$('f-name').addEventListener('input', () => onNameChosen(false));
+$('f-name').addEventListener('change', () => onNameChosen(true));
 
+function renderParts() {
+  const box = $('f-parts');
+  box.innerHTML = '';
+  PARTS.filter(p => exercises.some(e => e.part === p)).forEach(p => {
+    const b = el('button', p === fPart ? 'on' : '', p); b.type = 'button';
+    b.onclick = () => { fPart = p; renderParts(); };
+    box.appendChild(b);
+  });
+  // 选中的部位如果在屏幕外，自动滑过去
+  const on = box.querySelector('.on');
+  if (on) box.scrollLeft = Math.max(0, on.offsetLeft - box.offsetLeft - 20);
+  renderQuick();
+}
 function renderQuick() {
-  // 常做的动作排前面，然后是预设动作
-  const count = {};
-  lifts.forEach(l => { count[l.name] = (count[l.name] || 0) + 1; });
-  const used = Object.keys(count).sort((a, b) => count[b] - count[a]);
-  const names = [...used, ...PRESETS.filter(p => !used.some(u => sameName(u, p)))].slice(0, 14);
   const box = $('f-quick');
   box.innerHTML = '';
-  names.forEach(n => {
-    const chip = el('button', 'chip', n); chip.type = 'button';
-    chip.onclick = () => { $('f-name').value = n; showLastTime(true); };
+  const name = $('f-name').value.trim();
+  exercises.filter(e => e.part === fPart).forEach(e => {
+    const chip = el('button', 'chip' + (name && sameName(e.name, name) ? ' on' : ''), e.name); chip.type = 'button';
+    chip.onclick = () => { $('f-name').value = e.name; onNameChosen(true); };
     box.appendChild(chip);
   });
 }
@@ -530,12 +603,17 @@ function openLift(l) {
   $('f-sheet-title').textContent = l ? '修改动作' : '加一个动作';
   $('f-name').value = l ? l.name : '';
   $('f-sets').innerHTML = '';
-  if (l) l.sets.forEach(s => addSetRow(fmtKg(s.w), s.r));
+  $('f-min').value = l && typeOf(l) === 'cardio' ? l.minutes : '';
+  if (l && typeOf(l) !== 'cardio') l.sets.forEach(s => addSetRow(fmtKg(s.w), s.r));
   else addSetRow();
+  setType(l ? typeOf(l) : 'reps');
+  // 默认显示：正在改的动作所在部位 / 最近练过的部位 / 第一个部位
+  const ref = l ? findExercise(l.name) : (lifts.length ? findExercise(lifts[lifts.length - 1].name) : null);
+  fPart = ref ? ref.part : (exercises[0] ? exercises[0].part : PARTS[0]);
   $('f-error').textContent = '';
   $('f-delete').classList.toggle('show', !!l);
-  renderQuick();
-  showLastTime(false);
+  renderParts();
+  onNameChosen(false);
   openSheet('f-sheet');
 }
 
@@ -550,25 +628,40 @@ $('f-addset').onclick = () => {
 $('f-form').addEventListener('submit', e => {
   e.preventDefault();
   const name = $('f-name').value.trim();
-  if (!name) { $('f-error').textContent = '请填写动作名称'; return; }
+  if (!name) { $('f-error').textContent = '请选择或填写一个动作'; return; }
 
-  const raw = readSets().filter(s => !s.empty);
-  if (!raw.length) { $('f-error').textContent = '至少填一组'; return; }
-  if (raw.some(s => !isFinite(s.r) || s.r <= 0 || !Number.isInteger(s.r))) {
-    $('f-error').textContent = '每组的次数要填一个整数，比如 10'; return;
+  const data = { name, type: fType };
+  if (fType === 'cardio') {
+    const min = toNumber($('f-min').value);
+    if (!isFinite(min) || min <= 0) { $('f-error').textContent = '请填写分钟数，比如 45'; return; }
+    data.minutes = Math.round(min);
+    data.sets = [];
+  } else {
+    const raw = readSets().filter(s => !s.empty);
+    if (!raw.length) { $('f-error').textContent = '至少填一组'; return; }
+    if (raw.some(s => !isFinite(s.r) || s.r <= 0 || !Number.isInteger(s.r))) {
+      $('f-error').textContent = `每组的${TYPES[fType].unit}要填一个整数，比如 ${fType === 'time' ? 30 : 10}`; return;
+    }
+    // 重量不填 = 自重
+    data.sets = raw.map(s => ({ w: isFinite(s.w) && s.w > 0 ? Math.round(s.w * 10) / 10 : 0, r: s.r }));
+    delete data.minutes;
   }
-  // 重量可以不填（例如自重的引体向上），按 0kg 算
-  const sets = raw.map(s => ({ w: isFinite(s.w) && s.w > 0 ? Math.round(s.w * 10) / 10 : 0, r: s.r }));
 
-  if (fEditing) Object.assign(fEditing, { name, sets });
-  else lifts.push({ id: uid(), date: fDay, name, sets, createdAt: String(Date.now()) });
+  // 新名字自动加进动作库（放在当前选中的部位）
+  if (!findExercise(name)) {
+    exercises.push({ id: uid(), name, part: fType === 'cardio' ? '有氧' : (fPart || '其他'), type: fType });
+    saveExercises();
+  }
+
+  if (fEditing) { Object.assign(fEditing, data); if (fType === 'cardio') fEditing.sets = []; else delete fEditing.minutes; }
+  else lifts.push({ id: uid(), date: fDay, createdAt: String(Date.now()), ...data });
   saveLifts();
   closeSheet('f-sheet');
 });
 
 $('f-delete').onclick = () => {
   if (!fEditing) return;
-  if (!confirm(`确定删除「${fEditing.name}」吗？`)) return;
+  if (!confirm(`确定删除「${fEditing.name}」这条记录吗？`)) return;
   lifts = lifts.filter(l => l.id !== fEditing.id);
   saveLifts();
   closeSheet('f-sheet');
@@ -576,6 +669,94 @@ $('f-delete').onclick = () => {
 
 $('f-prev').onclick = () => { fDay = addDays(fDay, -1); renderFitness(); };
 $('f-next').onclick = () => { fDay = addDays(fDay, 1); renderFitness(); };
+
+// ---- 我的动作库 ----
+PARTS.forEach(p => { const o = el('option', '', '部位：' + p); o.value = p; $('lib-part').appendChild(o); });
+
+function resetLibForm() {
+  libEditing = null;
+  $('lib-edit-title').textContent = '➕ 添加新动作';
+  $('lib-save').textContent = '添加';
+  $('lib-name').value = '';
+  $('lib-part').value = fPart || PARTS[0];
+  $('lib-type').value = 'reps';
+  $('lib-error').textContent = '';
+  $('lib-cancel').classList.remove('show');
+}
+
+function renderLibrary() {
+  const box = $('lib-list');
+  box.innerHTML = '';
+  PARTS.forEach(p => {
+    const items = exercises.filter(e => e.part === p);
+    if (!items.length) return;
+    box.appendChild(el('div', 'lib-group', `${p}（${items.length}）`));
+    items.forEach(e => {
+      const row = el('div', 'lib-item');
+      const nameBtn = el('button', 'lib-name', e.name); nameBtn.type = 'button';
+      nameBtn.appendChild(el('span', 'lib-type', TYPES[e.type].label));
+      nameBtn.onclick = () => {
+        libEditing = e;
+        $('lib-edit-title').textContent = `✏️ 修改「${e.name}」`;
+        $('lib-save').textContent = '保存修改';
+        $('lib-name').value = e.name;
+        $('lib-part').value = e.part;
+        $('lib-type').value = e.type;
+        $('lib-error').textContent = '';
+        $('lib-cancel').classList.add('show');
+        $('lib-sheet').querySelector('.sheet').scrollTo({ top: 0, behavior: 'smooth' });
+      };
+      const del = el('button', 'del-x', '✕'); del.type = 'button';
+      del.onclick = () => {
+        if (!confirm(`从动作库删除「${e.name}」？\n以前的训练记录会保留。`)) return;
+        exercises = exercises.filter(x => x.id !== e.id);
+        saveExercises();
+        if (libEditing === e) resetLibForm();
+        renderLibrary();
+      };
+      row.append(nameBtn, del);
+      box.appendChild(row);
+    });
+  });
+}
+
+$('f-manage').onclick = () => { resetLibForm(); renderLibrary(); openSheet('lib-sheet'); };
+$('lib-cancel').onclick = resetLibForm;
+
+$('lib-form').addEventListener('submit', e => {
+  e.preventDefault();
+  const name = $('lib-name').value.trim();
+  const part = $('lib-part').value;
+  const type = $('lib-type').value;
+  if (!name) { $('lib-error').textContent = '请填写动作名称'; return; }
+  const dup = findExercise(name);
+  if (dup && dup !== libEditing) { $('lib-error').textContent = '动作库里已经有这个名字了'; return; }
+
+  if (libEditing) {
+    const oldName = libEditing.name;
+    Object.assign(libEditing, { name, part, type });
+    // 改了名字：以前的训练记录也跟着改，这样"上次成绩"还能对上
+    if (!sameName(oldName, name)) {
+      lifts.forEach(l => { if (sameName(l.name, oldName)) l.name = name; });
+      store.set('lifts', lifts);
+    }
+  } else {
+    exercises.push({ id: uid(), name, part, type });
+  }
+  saveExercises();
+  resetLibForm();
+  renderLibrary();
+  renderFitness();
+});
+
+// 关掉动作库时，刷新加动作页面里的按钮
+$('lib-sheet').addEventListener('click', e => {
+  if (e.target.id === 'lib-sheet' || e.target.closest('[data-close]')) {
+    if (!PARTS.includes(fPart) || !exercises.some(x => x.part === fPart)) fPart = exercises[0] ? exercises[0].part : PARTS[0];
+    renderParts();
+    onNameChosen(false);
+  }
+});
 
 
 // ================================

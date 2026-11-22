@@ -147,20 +147,65 @@
         <button type="button" class="icon-btn close" data-close>✕</button>
       </div>
 
-      <label class="field-label" for="f-name">动作</label>
+      <label class="field-label" for="f-name">动作（点下面选，或直接打字）</label>
       <input id="f-name" type="text" placeholder="比如：深蹲" maxlength="40" autocomplete="off">
+      <div class="part-tabs" id="f-parts"></div>
       <div class="chips small" id="f-quick"></div>
+      <button type="button" class="link-btn manage-btn" id="f-manage">⚙️ 管理我的动作库</button>
+
+      <label class="field-label">记录方式</label>
+      <div class="seg" id="f-type">
+        <button type="button" data-type="reps">重量×次数</button>
+        <button type="button" data-type="time">重量×秒数</button>
+        <button type="button" data-type="cardio">有氧·分钟</button>
+      </div>
 
       <div class="last-time" id="f-last"></div>
 
-      <label class="field-label">每一组</label>
-      <div class="set-head"><span>组</span><span>重量 kg</span><span>次数</span><span></span></div>
-      <div id="f-sets"></div>
-      <button type="button" class="link-btn add-set" id="f-addset">＋ 再加一组（复制上一组）</button>
+      <div id="f-sets-wrap">
+        <label class="field-label">每一组</label>
+        <div class="set-head"><span>组</span><span>重量 kg</span><span id="f-col2">次数</span><span></span></div>
+        <div id="f-sets"></div>
+        <button type="button" class="link-btn add-set" id="f-addset">＋ 再加一组（复制上一组）</button>
+      </div>
+
+      <div id="f-cardio-wrap">
+        <label class="field-label" for="f-min">时长（分钟）</label>
+        <input id="f-min" type="text" inputmode="numeric" placeholder="比如：45" autocomplete="off">
+      </div>
 
       <p class="form-error" id="f-error"></p>
       <button type="submit" class="save-btn peach-btn">保存</button>
       <button type="button" class="delete-btn" id="f-delete">删除这个动作</button>
+    </form>
+  </div>
+
+  <!-- ============ 弹出层：我的动作库 ============ -->
+  <div class="sheet-bg" id="lib-sheet">
+    <form class="sheet" id="lib-form">
+      <div class="sheet-head">
+        <h2>我的动作库</h2>
+        <button type="button" class="icon-btn close" data-close>✕</button>
+      </div>
+
+      <div class="card lib-edit">
+        <div class="lib-edit-title" id="lib-edit-title">➕ 添加新动作</div>
+        <input id="lib-name" type="text" placeholder="动作名称，比如：哑铃飞鸟" maxlength="40" autocomplete="off">
+        <div class="lib-row">
+          <select id="lib-part"></select>
+          <select id="lib-type">
+            <option value="reps">重量×次数</option>
+            <option value="time">重量×秒数</option>
+            <option value="cardio">有氧·分钟</option>
+          </select>
+        </div>
+        <p class="form-error" id="lib-error"></p>
+        <button type="submit" class="save-btn peach-btn" id="lib-save">添加</button>
+        <button type="button" class="link-btn lib-cancel" id="lib-cancel">取消修改</button>
+      </div>
+
+      <p class="lib-tip">点一个动作可以改名、换部位；点 ✕ 从动作库删除（以前的训练记录不会被删）。</p>
+      <div id="lib-list"></div>
     </form>
   </div>
 

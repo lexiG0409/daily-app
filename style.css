@@ -364,3 +364,66 @@ main { padding: 10px 16px; }
   display: none;
 }
 .delete-btn.show { display: block; }
+
+/* ---------- 动作库：部位标签 / 记录方式 ---------- */
+.part-tabs {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  margin-top: 10px;
+  padding-bottom: 2px;
+  -webkit-overflow-scrolling: touch;
+}
+.part-tabs button {
+  flex: none;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-light);
+  background: var(--line);
+}
+.part-tabs button.on { background: var(--peach-dark); color: #fff; }
+.manage-btn { color: var(--peach-dark); margin-top: 6px; }
+
+.seg {
+  display: flex;
+  background: var(--line);
+  border-radius: 14px;
+  padding: 4px;
+  gap: 4px;
+}
+.seg button {
+  flex: 1;
+  padding: 9px 4px;
+  border-radius: 11px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-light);
+}
+.seg button.on { background: #fff; color: var(--text); box-shadow: 0 2px 6px rgba(155,134,160,.2); }
+
+#f-cardio-wrap { display: none; }
+.is-cardio #f-cardio-wrap { display: block; }
+.is-cardio #f-sets-wrap { display: none; }
+
+/* 动作库管理 */
+.lib-edit { display: flex; flex-direction: column; gap: 8px; padding: 14px; }
+.lib-edit-title { font-weight: 800; font-size: 15px; }
+.lib-row { display: flex; gap: 8px; }
+.lib-edit .form-error { margin: 0; min-height: 0; }
+.lib-edit .save-btn { margin-top: 0; padding: 12px; }
+.lib-cancel { display: none; color: var(--text-light); }
+.lib-cancel.show { display: block; }
+.lib-tip { font-size: 12px; color: var(--text-light); margin: 12px 4px; line-height: 1.6; }
+.lib-group { font-size: 13px; font-weight: 800; color: var(--peach-dark); margin: 14px 4px 6px; }
+.lib-item {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 14px;
+  padding: 4px 6px 4px 14px;
+  margin-bottom: 6px;
+}
+.lib-item .lib-name { flex: 1; text-align: left; padding: 8px 0; font-size: 15px; }
+.lib-item .lib-type { font-size: 11px; color: var(--text-light); margin-left: 6px; }
