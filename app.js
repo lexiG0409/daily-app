@@ -397,7 +397,7 @@ const DEFAULT_EXERCISES = [
   ['卧推', '胸'], ['哑铃飞鸟', '胸'],
   ['肩推', '肩'], ['哑铃肩外旋', '肩'], ['仰卧哑铃支撑', '肩', 'time'], ['侧平举', '肩'],
   ['哑铃颈后臂屈伸', '手臂'], ['二头弯举', '手臂'], ['三头下压', '手臂'],
-  ['核心左右绕球', '核心'], ['平板支撑', '核心', 'time'],
+  ['俄罗斯转体', '核心'], ['平板支撑', '核心', 'time'],
   ['椭圆机', '有氧', 'cardio'], ['跑步机', '有氧', 'cardio'], ['动感单车', '有氧', 'cardio']
 ].map(([name, part, type]) => ({ id: uid(), name, part, type: type || 'reps' }));
 
@@ -414,15 +414,23 @@ if (!exercises) {
   store.set('exercises', exercises);
 }
 
-// 一次性更新：把手机里已存的"理疗师手臂伸展"改名为"仰卧哑铃支撑"，放到"肩"
-if (!store.get('mig.supineHold', false)) {
-  const ex = exercises.find(e => e.name === '理疗师手臂伸展');
-  if (ex && !exercises.some(e => e.name === '仰卧哑铃支撑')) Object.assign(ex, { name: '仰卧哑铃支撑', part: '肩' });
-  lifts.forEach(l => { if (l.name === '理疗师手臂伸展') l.name = '仰卧哑铃支撑'; });
-  store.set('exercises', exercises);
-  store.set('lifts', lifts);
-  store.set('mig.supineHold', true);
-}
+// 一次性改名：手机里已经存的旧名字，自动换成新名字（以前的训练记录也一起改）
+// 以后想再改名，在下面加一行：[旧名字, 新名字, 新部位]
+const RENAMES = [
+  ['理疗师手臂伸展', '仰卧哑铃支撑', '肩'],
+  ['核心左右绕球', '俄罗斯转体', '核心']
+];
+const doneRenames = store.get('mig.renames', store.get('mig.supineHold', false) ? ['理疗师手臂伸展'] : []);
+RENAMES.forEach(([oldName, newName, part]) => {
+  if (doneRenames.includes(oldName)) return;
+  const ex = exercises.find(e => e.name === oldName);
+  if (ex && !exercises.some(e => e.name === newName)) Object.assign(ex, { name: newName, part });
+  lifts.forEach(l => { if (l.name === oldName) l.name = newName; });
+  doneRenames.push(oldName);
+});
+store.set('exercises', exercises);
+store.set('lifts', lifts);
+store.set('mig.renames', doneRenames);
 
 let fDay = todayStr();     // 正在看的那一天
 let fEditing = null;       // 正在修改的训练记录
