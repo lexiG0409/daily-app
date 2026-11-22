@@ -819,7 +819,7 @@ $('lib-sheet').addEventListener('click', e => {
 });
 
 
-const APP_VERSION = 'v10';
+const APP_VERSION = 'v12';
 
 // ================================
 // 启动

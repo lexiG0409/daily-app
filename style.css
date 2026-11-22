@@ -1,23 +1,35 @@
 /* ================================
-   马卡龙配色（想换颜色，改这里就行）
+   配色：早报蓝 · 待办绿 · 运动粉 · 记账紫（想换颜色，改这里就行）
    ================================ */
 :root {
-  --bg: #FFF8F0;          /* 奶油底色 */
-  --text: #5B4B5A;        /* 文字：柔和的深紫灰 */
-  --text-light: #A89AA6;  /* 浅色文字 */
+  --bg: #F7F7F3;          /* 底色：柔和的灰白 */
+  --text: #4E4A57;        /* 文字 */
+  --text-light: #A09DA8;  /* 浅色文字 */
   --card: #FFFFFF;
-  --line: #F1E8E4;
+  --line: #ECECE6;
 
-  --mint: #BDEBD6;        /* 记账：薄荷绿 */
-  --mint-dark: #4FAE85;
-  --peach: #FFD3C2;       /* 运动：蜜桃粉 */
-  --peach-dark: #E8825D;
-  --lavender: #DCD3F7;    /* 待办：薰衣草紫 */
-  --lavender-dark: #8C76D6;
-  --danger: #E57C8D;
+  /* 四个板块各一种颜色（浅色用于卡片，深色用于按钮）*/
+  --blue: #D5E1F0;        /* 早报：马卡龙蓝 */
+  --blue-dark: #96B3DE;
+  --blue-text: #6A8DC5;
+
+  --lavender: #D2E7E2;    /* 待办：马卡龙绿（变量名沿用 lavender） */
+  --lavender-dark: #8DBFB4;
+  --lavender-text: #629A8D;
+
+  --peach: #EDD6DE;       /* 运动：马卡龙粉（变量名沿用 peach） */
+  --peach-dark: #DDA3B2;
+  --peach-text: #C2798F;
+  --peach-soft: #F5E4EA;
+
+  --mint: #D6D6E6;        /* 记账：薰衣草紫（变量名沿用 mint） */
+  --mint-dark: #9B98CE;
+  --mint-text: #7A77BE;
+
+  --danger: #D8828F;
 
   --radius: 24px;
-  --shadow: 0 6px 18px rgba(155, 134, 160, 0.15);
+  --shadow: 0 6px 18px rgba(120, 118, 140, 0.12);
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -48,7 +60,7 @@ input[type="text"], input[type="date"], select {
   -webkit-appearance: none;
   appearance: none;
 }
-input:focus, select:focus { border-color: var(--lavender); }
+input:focus, select:focus { border-color: var(--mint); }
 
 /* ---------- 顶部 ---------- */
 .top-bar {
@@ -182,7 +194,7 @@ main { padding: 10px 16px; }
 }
 .pr-badge {
   font-size: 11px;
-  background: #FFE59A;
+  background: #F0E3C8;
   padding: 2px 7px;
   border-radius: 999px;
   margin-left: 6px;
@@ -213,7 +225,7 @@ main { padding: 10px 16px; }
   color: var(--text-light);
   margin: 4px 6px 10px;
 }
-.link-btn { color: var(--lavender-dark); font-size: 13px; font-weight: 600; padding: 6px 0; }
+.link-btn { color: var(--lavender-text); font-size: 13px; font-weight: 600; padding: 6px 0; }
 
 .todo { cursor: default; }
 .check {
@@ -312,7 +324,7 @@ main { padding: 10px 16px; }
 .amount-row { display: flex; gap: 8px; }
 .amount-row select { width: 110px; flex: none; font-weight: 700; }
 .amount-row input { font-size: 26px; font-weight: 800; padding: 8px 14px; }
-.rate-hint { font-size: 13px; color: var(--mint-dark); margin: 6px 4px 0; min-height: 18px; }
+.rate-hint { font-size: 13px; color: var(--mint-text); margin: 6px 4px 0; min-height: 18px; }
 
 .chips { display: flex; flex-wrap: wrap; gap: 8px; }
 .chip {
@@ -329,7 +341,7 @@ main { padding: 10px 16px; }
 
 .last-time {
   font-size: 13px;
-  background: #FFF1DE;
+  background: var(--peach-soft);
   border-radius: 14px;
   padding: 10px 12px;
   margin-top: 12px;
@@ -346,10 +358,10 @@ main { padding: 10px 16px; }
 }
 .set-head { font-size: 12px; color: var(--text-light); margin: 0 2px 4px; }
 .set-row { margin-bottom: 8px; }
-.set-row .no { text-align: center; font-weight: 700; color: var(--peach-dark); }
+.set-row .no { text-align: center; font-weight: 700; color: var(--peach-text); }
 .set-row input { text-align: center; padding: 10px 6px; }
 
-.add-set { margin-top: 2px; color: var(--peach-dark); }
+.add-set { margin-top: 2px; color: var(--peach-text); }
 
 .form-error { color: var(--danger); font-size: 13px; min-height: 18px; margin-top: 10px; }
 .save-btn {
@@ -391,7 +403,7 @@ main { padding: 10px 16px; }
   background: var(--line);
 }
 .part-tabs button.on { background: var(--peach-dark); color: #fff; }
-.manage-btn { color: var(--peach-dark); margin-top: 6px; }
+.manage-btn { color: var(--peach-text); margin-top: 6px; }
 
 .seg {
   display: flex;
@@ -423,7 +435,7 @@ main { padding: 10px 16px; }
 .lib-cancel { display: none; color: var(--text-light); }
 .lib-cancel.show { display: block; }
 .lib-tip { font-size: 12px; color: var(--text-light); margin: 12px 4px; line-height: 1.6; }
-.lib-group { font-size: 13px; font-weight: 800; color: var(--peach-dark); margin: 14px 4px 6px; }
+.lib-group { font-size: 13px; font-weight: 800; color: var(--peach-text); margin: 14px 4px 6px; }
 .lib-item {
   display: flex;
   align-items: center;
@@ -444,7 +456,7 @@ main { padding: 10px 16px; }
 }
 .part-tag {
   font-size: 11px; font-weight: 700;
-  color: var(--peach-dark);
+  color: var(--peach-text);
   border: 1.5px solid var(--peach);
   padding: 1px 7px; border-radius: 999px;
   margin-left: 6px; vertical-align: middle;
@@ -452,7 +464,7 @@ main { padding: 10px 16px; }
 .hist-parts .part-tag { margin: 4px 4px 0 0; display: inline-block; }
 
 /* 打卡类型 */
-.session-tip { display: none; margin-top: 14px; font-size: 14px; background: #F3F9EE; border-radius: 14px; padding: 12px; }
+.session-tip { display: none; margin-top: 14px; font-size: 14px; background: var(--peach-soft); border-radius: 14px; padding: 12px; }
 .is-session .session-tip { display: block; }
 .is-session #f-sets-wrap { display: none; }
 .seg button { font-size: 12px; }
