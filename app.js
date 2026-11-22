@@ -138,19 +138,21 @@ function renderTodos() {
   $('t-empty').style.display = todos.length ? 'none' : '';
 }
 
+// 点右下角 ＋：弹出输入框（和记账一样）
+$('t-add').onclick = () => {
+  $('t-text').value = '';
+  $('t-error').textContent = '';
+  openSheet('t-sheet');
+  setTimeout(() => $('t-text').focus(), 300);
+};
+
 $('t-form').addEventListener('submit', e => {
   e.preventDefault();
   const text = $('t-text').value.trim();
-  if (!text) return;
+  if (!text) { $('t-error').textContent = '请写一下要做什么'; return; }
   todos.unshift({ id: uid(), text, done: false, createdAt: Date.now() });
-  $('t-text').value = '';
   saveTodos();
-});
-
-// 点输入卡片的任何地方，都直接激活输入框（让 iPhone 弹出键盘）
-$('t-form').addEventListener('click', e => {
-  if (e.target.closest('button')) return;
-  $('t-text').focus();
+  closeSheet('t-sheet');
 });
 
 $('t-clear').onclick = () => { todos = todos.filter(t => !t.done); saveTodos(); };
@@ -817,7 +819,7 @@ $('lib-sheet').addEventListener('click', e => {
 });
 
 
-const APP_VERSION = 'v9';
+const APP_VERSION = 'v10';
 
 // ================================
 // 启动

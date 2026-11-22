@@ -80,11 +80,6 @@
 
     <!-- ================= 待办 ================= -->
     <section id="page-todo" class="page" data-title="待办" data-mascot="img/cat.svg">
-      <form class="card todo-input" id="t-form">
-        <input id="t-text" type="text" placeholder="要做什么？比如：买牛奶" autocomplete="off" maxlength="100" enterkeyhint="done">
-        <button type="submit" class="add-btn lavender-btn">添加</button>
-      </form>
-
       <div class="todo-meta">
         <span id="t-left"></span>
         <button id="t-clear" class="link-btn">清除已完成</button>
@@ -93,8 +88,10 @@
       <div id="t-list" class="list"></div>
       <div id="t-empty" class="empty">
         <img src="img/cat.svg" alt="">
-        <p>没有待办，喵～<br>今天可以好好休息</p>
+        <p>没有待办，喵～<br>点右下角 ＋ 加一件事</p>
       </div>
+
+      <button class="fab lavender-btn" id="t-add" aria-label="加待办">＋</button>
     </section>
     <p class="app-version" id="app-version"></p>
   </main>
@@ -111,6 +108,19 @@
       <span class="tab-icon">✅</span><span>待办</span>
     </a>
   </nav>
+
+  <!-- ============ 弹出层：加待办 ============ -->
+  <div class="sheet-bg" id="t-sheet">
+    <form class="sheet" id="t-form">
+      <div class="sheet-head">
+        <h2>加一件待办</h2>
+        <button type="button" class="icon-btn close" data-close>✕</button>
+      </div>
+      <input id="t-text" type="text" placeholder="要做什么？比如：买牛奶" autocomplete="off" maxlength="100" enterkeyhint="done">
+      <p class="form-error" id="t-error"></p>
+      <button type="submit" class="save-btn lavender-btn">添加</button>
+    </form>
+  </div>
 
   <!-- ============ 弹出层：记一笔 ============ -->
   <div class="sheet-bg" id="b-sheet">
