@@ -233,13 +233,15 @@ main { padding: 10px 16px; }
   -webkit-touch-callout: none;          /* 长按时不弹出“拷贝”菜单 */
   position: relative;
 }
-.list.sorting .todo { transition: transform .18s ease; }
+.todo.pressing { transform: scale(.97); transition: transform .22s ease; }
+.list.sorting .todo { transition: transform .12s ease-out; will-change: transform; }
 .list.sorting .todo:active { transform: none; }
 .todo.dragging {
   transition: none !important;
   z-index: 5;
   box-shadow: 0 10px 24px rgba(0,0,0,.16);
 }
+.todo.dropping { z-index: 5; transition: transform .12s ease-out !important; }
 .check {
   width: 28px; height: 28px;
   flex: none;

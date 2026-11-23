@@ -213,11 +213,16 @@ function enableDrag(row) {
 function pressStart(row, y) {
   cancelPress();
   drag = { row, startY: y, y, active: false };
-  drag.timer = setTimeout(() => beginDrag(), 350);
+  row.classList.add('pressing');           // 一按下就有反馈，不用干等
+  drag.timer = setTimeout(() => beginDrag(), 220);
 }
 
 function cancelPress() {
-  if (drag && !drag.active) { clearTimeout(drag.timer); drag = null; }
+  if (drag && !drag.active) {
+    clearTimeout(drag.timer);
+    drag.row.classList.remove('pressing');
+    drag = null;
+  }
 }
 
 function beginDrag() {
@@ -225,9 +230,10 @@ function beginDrag() {
   const done = row.classList.contains('done');
   const group = [...$('t-list').querySelectorAll('.todo:not(.todo-new)')]
     .filter(r => r.classList.contains('done') === done);
-  if (group.length < 2) { drag = null; return; }
+  if (group.length < 2) { row.classList.remove('pressing'); drag = null; return; }
 
   drag.active = true;
+  row.classList.remove('pressing');
   drag.group = group;
   drag.index = group.indexOf(row);
   drag.newIndex = drag.index;
@@ -242,7 +248,7 @@ function beginDrag() {
 function moveDrag(y) {
   drag.y = y;
   const dy = y - drag.startY + (window.scrollY - drag.startScroll);
-  drag.row.style.transform = `translateY(${dy}px) scale(1.03)`;
+  drag.row.style.transform = `translate3d(0,${dy}px,0) scale(1.03)`;
 
   const center = drag.mids[drag.index] + dy;
   let newIndex = drag.index;
@@ -251,7 +257,8 @@ function moveDrag(y) {
     let shift = 0;
     if (j > drag.index && drag.mids[j] < center) { shift = -drag.step; newIndex++; }
     if (j < drag.index && drag.mids[j] > center) { shift = drag.step; newIndex--; }
-    r.style.transform = shift ? `translateY(${shift}px)` : '';
+    const tf = shift ? `translate3d(0,${shift}px,0)` : '';
+    if (r.style.transform !== tf) r.style.transform = tf; // 没变就不动它，省力
   });
   drag.newIndex = newIndex;
 }
@@ -275,17 +282,29 @@ function onMove(y, e) {
   }
   if (e.cancelable) e.preventDefault(); // 拖动时别让页面跟着滚
   if (!drag.scrolling) { drag.scrolling = true; requestAnimationFrame(autoScroll); }
-  moveDrag(y);
+  // 每一帧只画一次（手指事件可能比屏幕刷新还快）
+  drag.y = y;
+  if (!drag.frame) drag.frame = requestAnimationFrame(() => { if (drag) { drag.frame = 0; moveDrag(drag.y); } });
 }
 
 function endDrag(e) {
   if (!drag) return;
   if (!drag.active) { cancelPress(); return; }
   if (e && e.cancelable) e.preventDefault();
-  const { group, index, newIndex } = drag;
+  moveDrag(drag.y);
+  const { group, index, newIndex, row, step } = drag;
   drag = null;
   suppressClick = true;
   setTimeout(() => { suppressClick = false; }, 400);
+
+  // 松手：这一行顺滑地落进空位，然后再更新列表
+  row.classList.remove('dragging');
+  row.classList.add('dropping');
+  row.style.transform = `translate3d(0,${(newIndex - index) * step}px,0)`;
+  setTimeout(() => finishDrop(group, index, newIndex), 120);
+}
+
+function finishDrop(group, index, newIndex) {
   $('t-list').classList.remove('sorting');
 
   const ids = group.map(r => r.dataset.id);
@@ -1113,7 +1132,7 @@ $('n-prev').onclick = () => loadBriefing(nPos + 1);
 $('n-next').onclick = () => loadBriefing(nPos - 1);
 
 
-const APP_VERSION = 'v16';
+const APP_VERSION = 'v17';
 
 // ================================
 // 启动
