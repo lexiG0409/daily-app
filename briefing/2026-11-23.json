@@ -31,7 +31,27 @@
       ],
       "source": "The Daily Caller",
       "url": "https://dailycaller.com/2026/11/21/pentagon-wind-projects-backlog-staff-dale-marks-tom-vinson-american-clean-power/",
-      "published": "2026-11-21"
+      "published": "2026-11-21",
+      "oem": [
+        {
+          "en": "For a turbine OEM, this backlog mostly shows up as order timing risk: US projects may sign turbine contracts but delay notice-to-proceed until the defence review clears, so book-to-bill and factory loading in the US become harder to plan.",
+          "zh": "对整机商来说，这一积压主要体现为订单时间风险：美国项目可能签了风机合同，却要等国防审查通过才下达开工通知（NTP），美国市场的订单出货比和工厂排产因此更难规划。"
+        }
+      ],
+      "watch": [
+        {
+          "en": "Check the defence-review status of every US project in your pipeline before committing factory slots or logistics.",
+          "zh": "在锁定工厂产能或物流之前，先核实管线中每个美国项目的国防审查进度。"
+        },
+        {
+          "en": "In US contracts, look at delay, suspension and price-escalation clauses that protect you if NTP slips past tax-credit deadlines.",
+          "zh": "美国合同中要重点看延期、暂停和价格调整条款，以防NTP推迟到税收抵免截止日之后时自身受损。"
+        },
+        {
+          "en": "Track the 17 and 24 December court filings as the next signal on review timing.",
+          "zh": "关注12月17日和24日的法庭文件，作为审查时间表的下一个信号。"
+        }
+      ]
     },
     {
       "region": "德国",
@@ -62,7 +82,23 @@
       ],
       "source": "IWR",
       "url": "https://www.iwr.de/news/nordex-und-enercon-schliessen-langfristige-rahmenvertraege-mit-vattenfall-zusammenarbeit-bis-2029-news40194",
-      "published": "2026-11-18"
+      "published": "2026-11-18",
+      "oem": [
+        {
+          "en": "From an OEM view, a framework without disclosed volumes is a preferred-supplier position rather than firm orders; the value comes later, when individual projects are called off at prices set under the framework.",
+          "zh": "从整机商角度看，未披露规模的框架协议是“优选供应商”地位，而非确定订单；真正的价值在之后单个项目按框架条件下单（call-off）时才体现。"
+        }
+      ],
+      "watch": [
+        {
+          "en": "Utilities are consolidating suppliers through frameworks; an OEM not on a buyer's list may be shut out of that buyer's German tenders until 2029–2031.",
+          "zh": "大型业主正通过框架协议收拢供应商；不在名单上的整机商，可能在2029–2031年前都难以进入该业主的德国项目招标。"
+        },
+        {
+          "en": "When negotiating similar frameworks, watch price-indexation formulas and service (O&M) terms, since multi-year fixed terms carry cost-inflation risk.",
+          "zh": "谈判类似框架时，要注意价格指数化公式和运维服务（O&M）条款，多年固定条件存在成本上涨风险。"
+        }
+      ]
     },
     {
       "region": "中国",
@@ -93,7 +129,23 @@
       ],
       "source": "Rüzgar Enerjisi",
       "url": "https://ruzgarenerjisi.com.tr/cop31-turkiye-ile-cin-arasinda-7-000-mw-gunes-ve-ruzgar-icin-yaklasik-15-milyar-dolarlik-mutabakat-turbin-ekipmani-turkiyede-uretilecek/",
-      "published": "2026-11-13"
+      "published": "2026-11-13",
+      "oem": [
+        {
+          "en": "For Chinese OEMs this could open Türkiye's local-content route; for European OEMs it signals a likely new low-cost competitor in a market they lead, but an MoU has no binding volumes yet.",
+          "zh": "对中国整机商而言，这可能打开土耳其的本地化（local content）通道；对欧洲整机商而言，这意味着在其主导的市场中可能出现新的低价竞争者，但谅解备忘录（MoU）目前没有约束性规模。"
+        }
+      ],
+      "watch": [
+        {
+          "en": "Watch for follow-up news naming specific Chinese OEMs, factory sites or YEKA participation; that would mark the shift from MoU to real competition.",
+          "zh": "关注后续是否点名具体中国整机商、工厂选址或参与YEKA招标，这将标志着从备忘录走向实际竞争。"
+        },
+        {
+          "en": "Turkish customers may use this news to push for lower prices in ongoing turbine negotiations.",
+          "zh": "土耳其客户可能借此消息在正在进行的风机谈判中压价。"
+        }
+      ]
     },
     {
       "region": "土耳其",
@@ -124,7 +176,27 @@
       ],
       "source": "Enerdata",
       "url": "https://www.enerdata.net/publications/daily-energy-news/turkiye-allocates-15-gw-wind-capacity-yeka-res-2026-auction.html",
-      "published": "2026-11-04"
+      "published": "2026-11-04",
+      "oem": [
+        {
+          "en": "For OEMs, these seven sites (1.5 GW) are concrete sales leads; because bids sat at the floor tariff and developers also paid fees, winners will likely push hard on turbine price and yield.",
+          "zh": "对整机商来说，这7个场址（1.5吉瓦）是具体的销售线索；由于报价都在底价且开发商还缴纳了贡献费，中标方很可能在风机价格和发电量上压得很紧。"
+        }
+      ],
+      "watch": [
+        {
+          "en": "Start contacting the named winners (Metgün, Egesa, Fe Girişim, Ecogreen, Poyraz) early; turbine selection often happens soon after award.",
+          "zh": "尽早接触已公布的中标方（Metgün、Egesa、Fe Girişim、Ecogreen、Poyraz），风机选型往往在授标后不久就开始。"
+        },
+        {
+          "en": "Check YEKA local-content requirements and whether your supply chain in Türkiye can meet them.",
+          "zh": "核实YEKA的本地化要求，以及自身在土耳其的供应链能否满足。"
+        },
+        {
+          "en": "The 72-month merchant period means project revenue depends on market prices first, so customers may ask for performance guarantees and flexible payment terms.",
+          "zh": "72个月的市场化售电期意味着项目前期收入取决于市场电价，客户可能会要求发电性能担保和更灵活的付款条件。"
+        }
+      ]
     },
     {
       "region": "土耳其",
@@ -155,7 +227,23 @@
       ],
       "source": "Turkish Minute",
       "url": "https://www.turkishminute.com/2026/11/11/turkey-saudi-arabia-sign-pact-for-3000-mw-of-wind-power-projects/",
-      "published": "2026-11-11"
+      "published": "2026-11-11",
+      "oem": [
+        {
+          "en": "For OEMs, ACWA Power is a large international buyer that runs competitive, price-driven procurement; the 3 GW is a long-range lead, not a near-term order.",
+          "zh": "对整机商来说，ACWA Power是一家大型国际买家，采购以竞争和价格为导向；这3吉瓦属于远期线索，而非近期订单。"
+        }
+      ],
+      "watch": [
+        {
+          "en": "Map ACWA's past turbine suppliers and procurement style to judge where you can compete.",
+          "zh": "梳理ACWA过往的风机供应商和采购方式，判断自身的竞争切入点。"
+        },
+        {
+          "en": "Selling power to state-owned EÜAŞ changes the offtake risk profile; follow how the tariff and sites are defined before investing sales effort.",
+          "zh": "电力出售给国有的EÜAŞ会改变购电风险结构；在投入销售资源前，先跟进电价和场址如何确定。"
+        }
+      ]
     },
     {
       "region": "德国",
@@ -186,7 +274,23 @@
       ],
       "source": "IREI",
       "url": "https://irei.com/news/qualitas-energys-german-renewables-business-commissions-39-9mw-dalkendorf-wind-farm/",
-      "published": "2026-11-20"
+      "published": "2026-11-20",
+      "oem": [
+        {
+          "en": "For OEMs this is a reference project: seven Nordex N149 5.7 MW units now in operation, and Navaris holds 304.5 MW of fresh BNetzA awards that still need turbines.",
+          "zh": "对整机商来说，这是一个参考项目：7台Nordex N149 5.7兆瓦机组已投运；而Navaris还持有304.5兆瓦新近中标的BNetzA项目，仍需采购风机。"
+        }
+      ],
+      "watch": [
+        {
+          "en": "Navaris's 304.5 MW of new awards are an active sales opportunity; find out whether turbines are already chosen.",
+          "zh": "Navaris新中标的304.5兆瓦是现行的销售机会，需要摸清是否已完成风机选型。"
+        },
+        {
+          "en": "Competitors' commissioned references strengthen their position with the same customer; prepare a clear comparison on yield and LCOE.",
+          "zh": "竞争对手的投运业绩会巩固其在同一客户处的地位；要准备好发电量和度电成本（LCOE）方面的清晰对比。"
+        }
+      ]
     },
     {
       "region": "欧洲",
@@ -213,7 +317,23 @@
       ],
       "source": "Renewable Energy Magazine",
       "url": "https://www.renewableenergymagazine.com/wind/econergya-s-french-subsidiary-escofi-wins-102-20261105",
-      "published": "2026-11-05"
+      "published": "2026-11-05",
+      "oem": [
+        {
+          "en": "For OEMs, 63 winning projects in one French round means many separate, mostly small turbine procurements, with developers under tariff pressure from a very competitive auction.",
+          "zh": "对整机商来说，法国一轮招标就有63个中标项目，意味着会有很多分散、以中小规模为主的风机采购，而开发商在激烈竞价后面临电价压力。"
+        }
+      ],
+      "watch": [
+        {
+          "en": "Small French sites often have height, noise and radar limits; check that your turbine portfolio fits these constraints.",
+          "zh": "法国小型场址常有高度、噪音和雷达限制，要确认自身机型组合能满足这些约束。"
+        },
+        {
+          "en": "Expect tight price negotiations; offers that bundle long-term service may help win deals without cutting the turbine price as much.",
+          "zh": "预计价格谈判会很紧；捆绑长期运维服务的方案，可能在不过多降低风机价格的情况下帮助拿单。"
+        }
+      ]
     },
     {
       "region": "德国",
@@ -240,7 +360,23 @@
       ],
       "source": "Renewable Energy Magazine",
       "url": "https://www.renewableenergymagazine.com/wind/exus-expands-its-german-presence-by-acquiring-20261118",
-      "published": "2026-11-18"
+      "published": "2026-11-18",
+      "oem": [
+        {
+          "en": "For OEMs, 23 turbines from 2007–2010 are both a repowering lead (fewer, larger new turbines) and, until then, a service and life-extension opportunity.",
+          "zh": "对整机商来说，这23台2007–2010年投运的风机既是“以大代小”（repowering）的线索，在改造之前也是运维和延寿服务的机会。"
+        }
+      ],
+      "watch": [
+        {
+          "en": "Repowering permits take time; engage Exus early on turbine options for each site.",
+          "zh": "改造许可需要时间，应尽早就各场址的机型方案与Exus沟通。"
+        },
+        {
+          "en": "Check whether the current service contracts on these turbines change with the new owner; ownership changes are a window for service bids.",
+          "zh": "核实这些风机现有运维合同是否随业主变更而调整，业主更换往往是争取运维合同的窗口。"
+        }
+      ]
     },
     {
       "region": "欧洲",
@@ -267,7 +403,23 @@
       ],
       "source": "Renewable Energy Magazine",
       "url": "https://www.renewableenergymagazine.com/panorama/norwaya-s-a-green-batterya--needs-20261117",
-      "published": "2026-11-17"
+      "published": "2026-11-17",
+      "oem": [
+        {
+          "en": "For OEMs, Norway is close to zero new demand today (about 1 MW connected in 2025), so it is a market to monitor rather than invest sales effort in.",
+          "zh": "对整机商来说，挪威目前几乎没有新增需求（2025年新并网约1兆瓦），属于需要观察、而非投入销售资源的市场。"
+        }
+      ],
+      "watch": [
+        {
+          "en": "Watch for policy signals that would reopen onshore permitting, such as changes to local benefit sharing or licensing.",
+          "zh": "关注可能重启陆上许可的政策信号，例如地方收益分享或审批规则的调整。"
+        },
+        {
+          "en": "This analysis comes from one consultancy forecast; treat the demand and investment numbers as estimates.",
+          "zh": "这一分析来自单个咨询机构的预测，需求和投资数据应视为估计值。"
+        }
+      ]
     },
     {
       "region": "美国",
@@ -294,7 +446,23 @@
       ],
       "source": "Big Island Now",
       "url": "https://bigislandnow.com/2026/11/19/hawi-renewable-development-completes-repowering/",
-      "published": "2026-11-19"
+      "published": "2026-11-19",
+      "oem": [
+        {
+          "en": "For OEMs, this kind of repowering (refurbishing turbines and upgrading electrical systems) is mainly a service and parts opportunity rather than a new-turbine order.",
+          "zh": "对整机商来说，这类改造（翻新风机、升级电气系统）主要是运维服务和零部件的机会，而非新机订单。"
+        }
+      ],
+      "watch": [
+        {
+          "en": "While US new-build is held up, the US service and refurbishment business can help keep revenue steady.",
+          "zh": "在美国新建项目受阻期间，美国的运维和翻新业务有助于稳定收入。"
+        },
+        {
+          "en": "Island grids like Hawaii's need specific grid-code compliance; check technical requirements before bidding.",
+          "zh": "夏威夷这类海岛电网有特定的并网规范要求，投标前要核实技术条件。"
+        }
+      ]
     }
   ]
 }

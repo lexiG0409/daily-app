@@ -530,6 +530,13 @@ main { padding: 10px 16px; }
 .pair .zh { font-size: 14px; line-height: 1.55; color: #7A7684; margin-top: 1px; }
 .insight { margin-top: 12px; background: #EEF3FA; border-radius: 14px; padding: 10px 12px; display: flex; flex-direction: column; gap: 6px; }
 .insight-label { font-size: 12px; font-weight: 800; color: var(--blue-text); }
+.insight + .insight { margin-top: 8px; }
+.take-oem { background: #FCEEE3; }
+.take-oem .insight-label { color: #C07A45; }
+.take-watch { background: #FBF4DA; }
+.take-watch .insight-label { color: #A3802F; }
+.pair.bullet { position: relative; padding-left: 14px; }
+.pair.bullet::before { content: '•'; position: absolute; left: 2px; top: 0; font-weight: 800; color: #A3802F; }
 .news-src { display: inline-block; margin-top: 10px; font-size: 12px; color: var(--blue-text); text-decoration: none; font-weight: 600; }
 
 /* 问 Claude 小聊天框 */

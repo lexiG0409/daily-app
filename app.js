@@ -1095,18 +1095,24 @@ function renderBriefing() {
     });
     card.appendChild(body);
 
-    // 行业解读
-    if (it.insight) {
-      const ins = el('div', 'insight');
-      ins.appendChild(el('div', 'insight-label', '💡 行业解读 Industry take'));
-      (Array.isArray(it.insight) ? it.insight : [it.insight]).forEach(p => {
-        const pair = el('div', 'pair');
-        pair.appendChild(el('p', 'en', p.en));
-        pair.appendChild(el('p', 'zh', p.zh));
-        ins.appendChild(pair);
+    // 三个小框：行业解读 / 整机商视角 / 业务注意
+    const takeBox = (data, cls, label, bullets) => {
+      if (!data) return;
+      const list = (Array.isArray(data) ? data : [data]).filter(p => p && (p.en || p.zh));
+      if (!list.length) return;
+      const box = el('div', 'insight ' + cls);
+      box.appendChild(el('div', 'insight-label', label));
+      list.forEach(p => {
+        const pair = el('div', bullets ? 'pair bullet' : 'pair');
+        pair.appendChild(el('p', 'en', p.en || ''));
+        pair.appendChild(el('p', 'zh', p.zh || ''));
+        box.appendChild(pair);
       });
-      card.appendChild(ins);
-    }
+      card.appendChild(box);
+    };
+    takeBox(it.insight, 'take-industry', '💡 行业解读 Industry take', false);
+    takeBox(it.oem, 'take-oem', '🏭 整机商视角 OEM view', false);
+    takeBox(it.watch, 'take-watch', '⚠️ 业务注意 Business watch-outs', true);
 
     // 来源链接
     if (it.url) {
