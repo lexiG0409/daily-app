@@ -138,22 +138,50 @@ function renderTodos() {
   $('t-empty').style.display = todos.length ? 'none' : '';
 }
 
-// 点右下角 ＋：弹出输入框（和记账一样）
-$('t-add').onclick = () => {
-  $('t-text').value = '';
-  $('t-error').textContent = '';
-  openSheet('t-sheet');
-  setTimeout(() => $('t-text').focus(), 300);
-};
+// 点右下角 ＋：列表最上面直接出现一行空白待办，光标就在里面
+// 回车 = 保存并自动开下一行；点别处 = 保存（空的就不要了）
+function startNewTodo() {
+  const old = document.querySelector('.todo-new');
+  if (old) { old.querySelector('input').focus(); return; }
 
-$('t-form').addEventListener('submit', e => {
-  e.preventDefault();
-  const text = $('t-text').value.trim();
-  if (!text) { $('t-error').textContent = '请写一下要做什么'; return; }
-  todos.unshift({ id: uid(), text, done: false, createdAt: Date.now() });
-  saveTodos();
-  closeSheet('t-sheet');
-});
+  const row = el('div', 'item todo todo-new');
+  const check = el('span', 'check');
+  const input = document.createElement('input');
+  input.type = 'text';
+  input.className = 'todo-new-input';
+  input.maxLength = 100;
+  input.autocomplete = 'off';
+  input.enterKeyHint = 'next';
+  input.placeholder = '要做什么？';
+  row.append(check, input);
+
+  $('t-list').prepend(row);
+  $('t-empty').style.display = 'none';
+  input.focus(); // 必须在点击里立刻 focus，iPhone 才会弹出键盘
+
+  let finished = false;
+  const finish = (again) => {
+    if (finished) return;
+    finished = true;
+    const text = input.value.trim();
+    if (text) {
+      todos.unshift({ id: uid(), text, done: false, createdAt: Date.now() });
+      saveTodos();          // 会重画列表，这一行会被换成正式的待办
+    } else {
+      row.remove();
+      renderTodos();
+    }
+    if (again && text) startNewTodo();
+  };
+
+  input.addEventListener('keydown', e => {
+    if (e.key === 'Enter' && !e.isComposing) { e.preventDefault(); finish(true); }
+    if (e.key === 'Escape') { input.value = ''; input.blur(); }
+  });
+  input.addEventListener('blur', () => finish(false));
+}
+
+$('t-add').onclick = startNewTodo;
 
 $('t-clear').onclick = () => { todos = todos.filter(t => !t.done); saveTodos(); };
 
@@ -919,7 +947,7 @@ $('n-prev').onclick = () => loadBriefing(nPos + 1);
 $('n-next').onclick = () => loadBriefing(nPos - 1);
 
 
-const APP_VERSION = 'v14';
+const APP_VERSION = 'v15';
 
 // ================================
 // 启动
