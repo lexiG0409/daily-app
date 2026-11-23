@@ -826,7 +826,8 @@ let nIndex = [];          // 所有期数的日期列表（新的在前）
 let nPos = 0;             // 正在看第几期
 let nRegion = '全部';
 let nData = null;
-const REGIONS = ['全部', '欧洲', '美国', '中国'];
+const REGIONS = ['全部', '德国', '土耳其', '欧洲', '美国', '中国'];
+const REGION_CLASS = { '德国': 'de', '土耳其': 'tr', '欧洲': 'eu', '美国': 'us', '中国': 'cn' };
 
 async function loadJSON(path) {
   const res = await fetch(path, { cache: 'no-cache' });
@@ -858,7 +859,8 @@ function renderBriefing() {
   filter.innerHTML = '';
   REGIONS.forEach(r => {
     const count = nData ? (r === '全部' ? nData.items.length : nData.items.filter(i => i.region === r).length) : 0;
-    const b = el('button', r === nRegion ? 'on' : '', `${r} ${count}`);
+    if (r !== '全部' && nData && count === 0 && r !== nRegion) return; // 这期没有的地区不显示
+    const b = el('button', r === nRegion ? 'on' : '', `${r === '欧洲' ? '欧洲其他' : r} ${count}`);
     b.onclick = () => { nRegion = r; renderBriefing(); };
     filter.appendChild(b);
   });
@@ -869,7 +871,7 @@ function renderBriefing() {
   items.forEach((it, n) => {
     const card = el('article', 'news');
     const head = el('div', 'news-head');
-    head.appendChild(el('span', 'region-tag region-' + ({ '欧洲': 'eu', '美国': 'us', '中国': 'cn' }[it.region] || 'x'), it.region));
+    head.appendChild(el('span', 'region-tag region-' + (REGION_CLASS[it.region] || 'x'), it.region === '欧洲' ? '欧洲其他' : it.region));
     if (it.country) head.appendChild(el('span', 'news-country', it.country));
     card.appendChild(head);
 
@@ -917,7 +919,7 @@ $('n-prev').onclick = () => loadBriefing(nPos + 1);
 $('n-next').onclick = () => loadBriefing(nPos - 1);
 
 
-const APP_VERSION = 'v13';
+const APP_VERSION = 'v14';
 
 // ================================
 // 启动

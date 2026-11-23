@@ -476,7 +476,7 @@ main { padding: 10px 16px; }
 .blue-btn { background: var(--blue-dark); color: #fff; }
 .tab.active[data-page="briefing"] { background: var(--blue); color: var(--text); }
 .brief-sub { text-align: center; font-size: 13px; opacity: .8; margin: 2px 0 12px; }
-.region-filter { display: flex; gap: 6px; justify-content: center; }
+.region-filter { display: flex; gap: 6px; justify-content: center; flex-wrap: wrap; }
 .region-filter button {
   padding: 6px 12px; border-radius: 999px; font-size: 13px; font-weight: 700;
   background: rgba(255,255,255,.6); color: var(--text-light);
@@ -492,6 +492,8 @@ main { padding: 10px 16px; }
 .region-eu { background: var(--blue); color: var(--blue-text); }
 .region-us { background: var(--peach); color: var(--peach-text); }
 .region-cn { background: var(--lavender); color: var(--lavender-text); }
+.region-de { background: #F1E6C8; color: #A3802F; }
+.region-tr { background: #F3DCD3; color: #B0644A; }
 .region-x  { background: var(--line); }
 .news-country { font-size: 12px; color: var(--text-light); }
 .news-title-en { font-size: 16px; line-height: 1.35; }
