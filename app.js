@@ -936,11 +936,51 @@ function renderBriefing() {
       a.href = it.url; a.target = '_blank'; a.rel = 'noopener';
       card.appendChild(a);
     }
+
+    // 问 Claude：打字 → 点发送 → 打开 Claude，新闻内容已自动带上
+    card.appendChild(askClaudeBox(it));
     list.appendChild(card);
   });
 
   $('n-empty').style.display = items.length ? 'none' : '';
   $('n-empty-text').innerHTML = nData ? '这个地区今天没有大新闻' : '早报还没到～<br>工作日早上 6 点前更新';
+}
+
+// 把一条新闻 + 你的问题拼成一段话，交给 Claude
+function claudePrompt(it, question) {
+  const lines = [
+    '我在看今天的风电早报，下面是一条新闻：',
+    '',
+    `标题：${it.title.en}（${it.title.zh}）`,
+    ...it.sentences.map(p => p.en),
+  ];
+  if (it.url) lines.push(`来源：${it.url}`);
+  lines.push('', question ? `我的问题：${question}` : '我的问题：', '', '请用中文回答，专业名词附上英文。');
+  return lines.join('\n');
+}
+
+function askClaudeBox(it) {
+  const box = el('div', 'ask-claude');
+  const input = el('textarea', 'ask-input');
+  input.rows = 1;
+  input.placeholder = '有疑问？在这里打字…';
+  input.oninput = () => { input.style.height = 'auto'; input.style.height = input.scrollHeight + 'px'; };
+  const btn = el('button', 'ask-btn', '问 Claude');
+  const tip = el('div', 'ask-tip', '');
+  btn.onclick = () => {
+    const text = claudePrompt(it, input.value.trim());
+    // 同时复制一份：万一 Claude 没自动填好，长按输入框“粘贴”即可
+    try { navigator.clipboard && navigator.clipboard.writeText(text); } catch (e) {}
+    window.open('https://claude.ai/new?q=' + encodeURIComponent(text), '_blank', 'noopener');
+    tip.textContent = '已打开 Claude（内容也已复制，没自动填好就长按粘贴）';
+    input.value = ''; input.style.height = 'auto';
+  };
+  const row = el('div', 'ask-row');
+  row.appendChild(input);
+  row.appendChild(btn);
+  box.appendChild(row);
+  box.appendChild(tip);
+  return box;
 }
 
 $('n-prev').onclick = () => loadBriefing(nPos + 1);
