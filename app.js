@@ -129,7 +129,7 @@ function renderTodos() {
 
     const text = el('button', 'todo-text');
     text.appendChild(el('div', 'item-title', t.text));
-    text.onclick = () => { t.done = !t.done; saveTodos(); };
+    text.onclick = () => editTodo(row, t); // 点文字 = 原地改字；打勾请点左边圆圈
 
     const del = el('button', 'del-x', '✕');
     del.setAttribute('aria-label', '删除');
@@ -141,7 +141,7 @@ function renderTodos() {
 
   const left = todos.filter(t => !t.done).length;
   const doneCount = todos.length - left;
-  $('t-left').textContent = todos.length ? `还有 ${left} 件没做` + (todos.length > 1 ? ' · 长按可拖动排序' : '') : '';
+  $('t-left').textContent = todos.length ? `还有 ${left} 件没做` + ' · 点文字可修改' + (todos.length > 1 ? ' · 长按可拖动排序' : '') : '';
   $('t-clear').style.display = doneCount ? '' : 'none';
   $('t-empty').style.display = todos.length ? 'none' : '';
 }
@@ -193,6 +193,39 @@ function startNewTodo() {
 
 $('t-add').onclick = startNewTodo;
 
+// 点一条待办的文字：文字变成可以打字的样子，光标在最后
+// 回车 / 点别处 = 保存；改成空的 = 保留原来的字（删除请点 ✕）
+function editTodo(row, t) {
+  if (row.classList.contains('editing')) return;
+  row.classList.add('editing');
+  const text = row.querySelector('.todo-text');
+  const input = document.createElement('input');
+  input.type = 'text';
+  input.className = 'todo-new-input';
+  input.maxLength = 100;
+  input.autocomplete = 'off';
+  input.enterKeyHint = 'done';
+  input.value = t.text;
+  text.replaceWith(input);
+  input.focus(); // 必须在点击里立刻 focus，iPhone 才会弹出键盘
+  const end = input.value.length;
+  input.setSelectionRange(end, end);
+
+  let finished = false;
+  const finish = (keep) => {
+    if (finished) return;
+    finished = true;
+    const v = input.value.trim();
+    if (keep && v && v !== t.text) { t.text = v; saveTodos(); }
+    else renderTodos();
+  };
+  input.addEventListener('keydown', e => {
+    if (e.key === 'Enter' && !e.isComposing) { e.preventDefault(); finish(true); }
+    if (e.key === 'Escape') finish(false);
+  });
+  input.addEventListener('blur', () => finish(true));
+}
+
 // ---- 长按拖动排序 ----
 // 手指按住一行不动约 0.35 秒 → 这行“浮起来”，上下拖到想要的位置再松手。
 // 没做完的只能在没做完的里面换位置，已完成的也一样。
@@ -201,11 +234,11 @@ let suppressClick = false; // 刚拖完，别把松手当成“打勾”
 
 function enableDrag(row) {
   row.addEventListener('touchstart', e => {
-    if (e.touches.length !== 1 || e.target.closest('.del-x')) return;
+    if (e.touches.length !== 1 || e.target.closest('.del-x, input')) return;
     pressStart(row, e.touches[0].clientY);
   }, { passive: true });
   row.addEventListener('mousedown', e => {
-    if (e.button !== 0 || e.target.closest('.del-x')) return;
+    if (e.button !== 0 || e.target.closest('.del-x, input')) return;
     pressStart(row, e.clientY);
   });
 }
