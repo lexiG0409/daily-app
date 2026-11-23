@@ -103,6 +103,12 @@ $('today').textContent = (() => {
 // 2. 待办猫猫
 // ================================
 let todos = store.get('todos', []);
+// 一次性整理：以前新的排在最前面，现在改成按加入时间排，最新的在最后
+if (!store.get('todosOrderV2', false)) {
+  todos.sort((a, b) => (a.createdAt || 0) - (b.createdAt || 0));
+  store.set('todos', todos);
+  store.set('todosOrderV2', true);
+}
 
 function saveTodos() { store.set('todos', todos); renderTodos(); }
 
@@ -114,6 +120,8 @@ function renderTodos() {
 
   sorted.forEach(t => {
     const row = el('div', 'item todo' + (t.done ? ' done' : ''));
+    row.dataset.id = t.id;
+    enableDrag(row);
 
     const check = el('button', 'check', t.done ? '✓' : '');
     check.setAttribute('aria-label', t.done ? '标为未完成' : '标为完成');
@@ -133,12 +141,12 @@ function renderTodos() {
 
   const left = todos.filter(t => !t.done).length;
   const doneCount = todos.length - left;
-  $('t-left').textContent = todos.length ? `还有 ${left} 件没做` : '';
+  $('t-left').textContent = todos.length ? `还有 ${left} 件没做` + (todos.length > 1 ? ' · 长按可拖动排序' : '') : '';
   $('t-clear').style.display = doneCount ? '' : 'none';
   $('t-empty').style.display = todos.length ? 'none' : '';
 }
 
-// 点右下角 ＋：列表最上面直接出现一行空白待办，光标就在里面
+// 点右下角 ＋：列表（没做完的那部分）最下面直接出现一行空白待办，光标就在里面
 // 回车 = 保存并自动开下一行；点别处 = 保存（空的就不要了）
 function startNewTodo() {
   const old = document.querySelector('.todo-new');
@@ -155,9 +163,11 @@ function startNewTodo() {
   input.placeholder = '要做什么？';
   row.append(check, input);
 
-  $('t-list').prepend(row);
+  // 放在“没做完”的最后一行，已完成的上面
+  $('t-list').insertBefore(row, $('t-list').querySelector('.todo.done'));
   $('t-empty').style.display = 'none';
   input.focus(); // 必须在点击里立刻 focus，iPhone 才会弹出键盘
+  row.scrollIntoView({ block: 'nearest' });
 
   let finished = false;
   const finish = (again) => {
@@ -165,7 +175,7 @@ function startNewTodo() {
     finished = true;
     const text = input.value.trim();
     if (text) {
-      todos.unshift({ id: uid(), text, done: false, createdAt: Date.now() });
+      todos.push({ id: uid(), text, done: false, createdAt: Date.now() });
       saveTodos();          // 会重画列表，这一行会被换成正式的待办
     } else {
       row.remove();
@@ -182,6 +192,122 @@ function startNewTodo() {
 }
 
 $('t-add').onclick = startNewTodo;
+
+// ---- 长按拖动排序 ----
+// 手指按住一行不动约 0.35 秒 → 这行“浮起来”，上下拖到想要的位置再松手。
+// 没做完的只能在没做完的里面换位置，已完成的也一样。
+let drag = null;          // 正在拖的那一行的信息
+let suppressClick = false; // 刚拖完，别把松手当成“打勾”
+
+function enableDrag(row) {
+  row.addEventListener('touchstart', e => {
+    if (e.touches.length !== 1 || e.target.closest('.del-x')) return;
+    pressStart(row, e.touches[0].clientY);
+  }, { passive: true });
+  row.addEventListener('mousedown', e => {
+    if (e.button !== 0 || e.target.closest('.del-x')) return;
+    pressStart(row, e.clientY);
+  });
+}
+
+function pressStart(row, y) {
+  cancelPress();
+  drag = { row, startY: y, y, active: false };
+  drag.timer = setTimeout(() => beginDrag(), 350);
+}
+
+function cancelPress() {
+  if (drag && !drag.active) { clearTimeout(drag.timer); drag = null; }
+}
+
+function beginDrag() {
+  const { row } = drag;
+  const done = row.classList.contains('done');
+  const group = [...$('t-list').querySelectorAll('.todo:not(.todo-new)')]
+    .filter(r => r.classList.contains('done') === done);
+  if (group.length < 2) { drag = null; return; }
+
+  drag.active = true;
+  drag.group = group;
+  drag.index = group.indexOf(row);
+  drag.newIndex = drag.index;
+  drag.startScroll = window.scrollY;
+  drag.mids = group.map(r => { const b = r.getBoundingClientRect(); return b.top + b.height / 2 + window.scrollY; });
+  drag.step = group[1].getBoundingClientRect().top - group[0].getBoundingClientRect().top;
+  row.classList.add('dragging');
+  $('t-list').classList.add('sorting');
+  if (navigator.vibrate) navigator.vibrate(15);
+}
+
+function moveDrag(y) {
+  drag.y = y;
+  const dy = y - drag.startY + (window.scrollY - drag.startScroll);
+  drag.row.style.transform = `translateY(${dy}px) scale(1.03)`;
+
+  const center = drag.mids[drag.index] + dy;
+  let newIndex = drag.index;
+  drag.group.forEach((r, j) => {
+    if (j === drag.index) return;
+    let shift = 0;
+    if (j > drag.index && drag.mids[j] < center) { shift = -drag.step; newIndex++; }
+    if (j < drag.index && drag.mids[j] > center) { shift = drag.step; newIndex--; }
+    r.style.transform = shift ? `translateY(${shift}px)` : '';
+  });
+  drag.newIndex = newIndex;
+}
+
+// 拖到屏幕上下边缘时，页面自己慢慢滚
+function autoScroll() {
+  if (!drag || !drag.active) return;
+  const edge = 90, h = window.innerHeight;
+  let v = 0;
+  if (drag.y < edge) v = -Math.ceil((edge - drag.y) / 8);
+  else if (drag.y > h - edge - 80) v = Math.ceil((drag.y - (h - edge - 80)) / 8);
+  if (v) { window.scrollBy(0, v); moveDrag(drag.y); }
+  requestAnimationFrame(autoScroll);
+}
+
+function onMove(y, e) {
+  if (!drag) return;
+  if (!drag.active) {
+    if (Math.abs(y - drag.startY) > 8) cancelPress(); // 手指动了 = 想滚动页面，不是长按
+    return;
+  }
+  if (e.cancelable) e.preventDefault(); // 拖动时别让页面跟着滚
+  if (!drag.scrolling) { drag.scrolling = true; requestAnimationFrame(autoScroll); }
+  moveDrag(y);
+}
+
+function endDrag(e) {
+  if (!drag) return;
+  if (!drag.active) { cancelPress(); return; }
+  if (e && e.cancelable) e.preventDefault();
+  const { group, index, newIndex } = drag;
+  drag = null;
+  suppressClick = true;
+  setTimeout(() => { suppressClick = false; }, 400);
+  $('t-list').classList.remove('sorting');
+
+  const ids = group.map(r => r.dataset.id);
+  const [moved] = ids.splice(index, 1);
+  ids.splice(newIndex, 0, moved);
+  const byId = Object.fromEntries(todos.map(t => [t.id, t]));
+  const groupDone = byId[moved].done;
+  const others = todos.filter(t => t.done !== groupDone);
+  const reordered = ids.map(id => byId[id]);
+  todos = groupDone ? [...others, ...reordered] : [...reordered, ...others];
+  saveTodos();
+}
+
+document.addEventListener('touchmove', e => onMove(e.touches[0].clientY, e), { passive: false });
+document.addEventListener('mousemove', e => onMove(e.clientY, e));
+document.addEventListener('touchend', endDrag, { passive: false });
+document.addEventListener('touchcancel', endDrag);
+document.addEventListener('mouseup', endDrag);
+document.addEventListener('contextmenu', e => { if (drag && e.target.closest('.todo')) e.preventDefault(); });
+$('t-list').addEventListener('click', e => {
+  if (suppressClick) { e.stopPropagation(); e.preventDefault(); }
+}, true);
 
 $('t-clear').onclick = () => { todos = todos.filter(t => !t.done); saveTodos(); };
 
@@ -987,7 +1113,7 @@ $('n-prev').onclick = () => loadBriefing(nPos + 1);
 $('n-next').onclick = () => loadBriefing(nPos - 1);
 
 
-const APP_VERSION = 'v15';
+const APP_VERSION = 'v16';
 
 // ================================
 // 启动

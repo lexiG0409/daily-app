@@ -227,7 +227,19 @@ main { padding: 10px 16px; }
 }
 .link-btn { color: var(--lavender-text); font-size: 13px; font-weight: 600; padding: 6px 0; }
 
-.todo { cursor: default; }
+.todo {
+  cursor: default;
+  -webkit-user-select: none; user-select: none;
+  -webkit-touch-callout: none;          /* 长按时不弹出“拷贝”菜单 */
+  position: relative;
+}
+.list.sorting .todo { transition: transform .18s ease; }
+.list.sorting .todo:active { transform: none; }
+.todo.dragging {
+  transition: none !important;
+  z-index: 5;
+  box-shadow: 0 10px 24px rgba(0,0,0,.16);
+}
 .check {
   width: 28px; height: 28px;
   flex: none;
