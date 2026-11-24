@@ -1053,7 +1053,7 @@ async function loadBriefing(pos) {
   } catch (e) {
     nData = null;
   }
-  renderBriefing();
+  if (nMode === 'wind') renderBriefing();
 }
 
 function renderBriefing() {
@@ -1074,7 +1074,14 @@ function renderBriefing() {
   const list = $('n-list');
   list.innerHTML = '';
   const items = nData ? nData.items.filter(i => nRegion === '全部' || i.region === nRegion) : [];
-  items.forEach((it, n) => {
+  items.forEach(it => list.appendChild(newsCard(it)));
+
+  $('n-empty').style.display = items.length ? 'none' : '';
+  $('n-empty-text').innerHTML = nData ? '这个地区今天没有大新闻' : '早报还没到～<br>工作日早上 6 点前更新';
+}
+
+// 一条新闻卡片（风电新闻和电价新闻共用）
+function newsCard(it) {
     const card = el('article', 'news');
     const head = el('div', 'news-head');
     head.appendChild(el('span', 'region-tag region-' + (REGION_CLASS[it.region] || 'x'), it.region === '欧洲' ? '欧洲其他' : it.region));
@@ -1123,17 +1130,13 @@ function renderBriefing() {
 
     // 问 Claude：打字 → 点发送 → 打开 Claude，新闻内容已自动带上
     card.appendChild(askClaudeBox(it));
-    list.appendChild(card);
-  });
-
-  $('n-empty').style.display = items.length ? 'none' : '';
-  $('n-empty-text').innerHTML = nData ? '这个地区今天没有大新闻' : '早报还没到～<br>工作日早上 6 点前更新';
+    return card;
 }
 
 // 把一条新闻 + 你的问题拼成一段话，交给 Claude
 function claudePrompt(it, question) {
   const lines = [
-    '我在看今天的风电早报，下面是一条新闻：',
+    '我在看早报里的一条新闻：',
     '',
     `标题：${it.title.en}（${it.title.zh}）`,
     ...it.sentences.map(p => p.en),
@@ -1167,11 +1170,224 @@ function askClaudeBox(it) {
   return box;
 }
 
-$('n-prev').onclick = () => loadBriefing(nPos + 1);
-$('n-next').onclick = () => loadBriefing(nPos - 1);
+// 早报里的两个模式：风电新闻 / 电价（左右箭头在两个模式下分别翻对应的期数）
+let nMode = 'wind';
+$('n-prev').onclick = () => nMode === 'price' ? loadPrices(pPos + 1) : loadBriefing(nPos + 1);
+$('n-next').onclick = () => nMode === 'price' ? loadPrices(pPos - 1) : loadBriefing(nPos - 1);
+document.querySelectorAll('#n-mode button').forEach(b => {
+  b.onclick = () => setBriefMode(b.dataset.mode);
+});
+
+function setBriefMode(mode) {
+  nMode = mode;
+  document.querySelectorAll('#n-mode button').forEach(b => b.classList.toggle('on', b.dataset.mode === mode));
+  const isPrice = mode === 'price';
+  $('n-filter').style.display = isPrice ? 'none' : '';
+  $('n-list').style.display = isPrice ? 'none' : '';
+  $('p-wrap').style.display = isPrice ? '' : 'none';
+  $('n-sub').textContent = isPrice ? '⚡ 电价周报 Power prices · 每周一更新' : '🌬️ 陆上风电 Onshore Wind · 欧洲 · 美国 · 中国';
+  if (isPrice) {
+    $('n-empty').style.display = 'none';
+    if (pData) renderPrices(); else loadPrices(0);
+  } else {
+    renderBriefing();
+  }
+}
 
 
-const APP_VERSION = 'v17';
+// ================================
+// 6. 电价板块（Claude 每周一更新，放在 prices/ 文件夹）
+// ================================
+let pIndex = [];
+let pPos = 0;
+let pData = null;
+let pLessons = null;
+let pType = 'household';
+let pUnit = 'ct';
+let pCountry = 'DE';
+let pOpen = '';           // 展开说明的那一行
+try {
+  pType = localStorage.getItem('p-type') || pType;
+  pUnit = localStorage.getItem('p-unit') || pUnit;
+  pCountry = localStorage.getItem('p-country') || pCountry;
+} catch (e) {}
+const P_TYPES = ['wholesale', 'household', 'industrial', 'auction'];
+const P_COLOR = { wholesale: 'w', household: 'h', industrial: 'i', auction: 'a' };
+
+async function loadPrices(pos) {
+  try {
+    if (!pIndex.length) {
+      const idx = await loadJSON('prices/index.json');
+      pIndex = (idx.dates || []).slice().sort().reverse();
+    }
+    if (!pIndex.length) throw new Error('empty');
+    pPos = Math.max(0, Math.min(pos, pIndex.length - 1));
+    pData = await loadJSON(`prices/${pIndex[pPos]}.json`);
+  } catch (e) {
+    pData = null;
+  }
+  if (!pLessons) {
+    try { pLessons = (await loadJSON('prices/lessons.json')).lessons || []; } catch (e) { pLessons = []; }
+  }
+  if (nMode === 'price') renderPrices();
+}
+
+function pSave(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+
+// 数字显示：数据统一按 €/MWh 存，显示时按开关换算
+function pFmt(v) {
+  if (pUnit === 'ct') return (v / 10).toFixed(1);
+  return v >= 100 ? String(Math.round(v)) : v.toFixed(1);
+}
+function pUnitLabel() { return pUnit === 'ct' ? 'ct/kWh' : '€/MWh'; }
+function pYuan(v) {
+  const r = pData && pData.fx && pData.fx.CNY;
+  return r ? `≈${(v / 1000 * r).toFixed(2)}元/度` : '';
+}
+function pTop(it) { return it.value != null ? it.value : (it.high != null ? it.high : -1); }
+
+// 画一行横条：国家（或电价类型）· 条 · 数字；点一下展开来源说明
+function pRow(label, it, max, color, key) {
+  const row = el('div', 'p-row');
+  const main = el('div', 'p-row-main');
+  main.appendChild(el('div', 'p-label', label));
+  const track = el('div', 'p-track');
+  const valBox = el('div', 'p-val');
+  if (it && it.value != null) {
+    const fill = el('div', 'p-fill c-' + color);
+    fill.style.width = Math.max(2, it.value / max * 100) + '%';
+    track.appendChild(fill);
+    valBox.appendChild(el('div', 'p-num', pFmt(it.value)));
+    valBox.appendChild(el('div', 'p-cny', pYuan(it.value)));
+  } else if (it && it.low != null) {
+    const fill = el('div', 'p-fill range c-' + color);
+    fill.style.marginLeft = (it.low / max * 100) + '%';
+    fill.style.width = Math.max(2, (it.high - it.low) / max * 100) + '%';
+    track.appendChild(fill);
+    valBox.appendChild(el('div', 'p-num', `${pFmt(it.low)}–${pFmt(it.high)}`));
+    valBox.appendChild(el('div', 'p-cny', '各地不同'));
+  } else {
+    track.classList.add('p-empty');
+    track.appendChild(el('span', 'p-none', '暂无可比数据'));
+    valBox.appendChild(el('div', 'p-num muted', '—'));
+  }
+  main.appendChild(track);
+  main.appendChild(valBox);
+  row.appendChild(main);
+
+  if (it) {
+    const det = el('div', 'p-detail');
+    const bits = [];
+    if (it.period && it.period !== '—') bits.push(it.period);
+    if (it.orig) bits.push('原始数据 ' + it.orig);
+    if (bits.length) det.appendChild(el('div', '', bits.join(' · ')));
+    if (it.note) det.appendChild(el('div', '', it.note));
+    if (it.url) {
+      const a = el('a', 'news-src', '🔗 ' + (it.source || '来源'));
+      a.href = it.url; a.target = '_blank'; a.rel = 'noopener';
+      det.appendChild(a);
+    }
+    det.style.display = pOpen === key ? '' : 'none';
+    row.appendChild(det);
+    main.onclick = () => { pOpen = pOpen === key ? '' : key; renderPrices(); };
+  }
+  return row;
+}
+
+function renderPrices() {
+  $('n-prev').style.visibility = pPos < pIndex.length - 1 ? 'visible' : 'hidden';
+  $('n-next').style.visibility = pPos > 0 ? 'visible' : 'hidden';
+  $('n-date').textContent = pData ? '电价周报 · ' + dayLabel(pData.date) : '电价周报';
+  if (!pData) {
+    $('p-wrap').style.display = 'none';
+    $('n-empty').style.display = '';
+    $('n-empty-text').innerHTML = '电价周报还没到～<br>每周一早上更新';
+    return;
+  }
+  $('p-wrap').style.display = '';
+  $('n-empty').style.display = 'none';
+  const S = pData.series;
+  const C = {};
+  pData.countries.forEach(c => C[c.code] = c);
+  if (!S[pType]) pType = 'household';
+  if (!C[pCountry]) pCountry = pData.countries[0].code;
+
+  // 单位开关
+  document.querySelectorAll('#p-unit button').forEach(b => {
+    b.classList.toggle('on', b.dataset.unit === pUnit);
+    b.onclick = () => { pUnit = b.dataset.unit; pSave('p-unit', pUnit); renderPrices(); };
+  });
+
+  // 电价类型
+  const types = $('p-types');
+  types.innerHTML = '';
+  P_TYPES.forEach(t => {
+    if (!S[t]) return;
+    const b = el('button', (t === pType ? 'on ' : '') + 'c-' + P_COLOR[t], S[t].zh);
+    b.onclick = () => { pType = t; pOpen = ''; pSave('p-type', t); renderPrices(); };
+    types.appendChild(b);
+  });
+  const s = S[pType];
+  $('p-what').textContent = `${s.en}｜${s.what}（单位 ${pUnitLabel()}）`;
+
+  // 各国对比
+  const bars = $('p-bars');
+  bars.innerHTML = '';
+  const items = s.items.slice().sort((a, b) => pTop(b) - pTop(a));
+  const max = Math.max(...items.map(pTop), 1);
+  items.forEach(it => {
+    const c = C[it.code] || { flag: '', zh: it.code };
+    bars.appendChild(pRow(`${c.flag} ${c.zh}`, it, max, P_COLOR[pType], 'c-' + it.code));
+  });
+
+  // 一个国家的四种电价
+  const cs = $('p-countries');
+  cs.innerHTML = '';
+  pData.countries.forEach(c => {
+    const b = el('button', c.code === pCountry ? 'on' : '', `${c.flag} ${c.zh}`);
+    b.onclick = () => { pCountry = c.code; pOpen = ''; pSave('p-country', c.code); renderPrices(); };
+    cs.appendChild(b);
+  });
+  const stack = $('p-stack');
+  stack.innerHTML = '';
+  const rows = P_TYPES.filter(t => S[t]).map(t => [t, S[t].items.find(i => i.code === pCountry)]);
+  const smax = Math.max(...rows.map(r => r[1] ? pTop(r[1]) : 0), 1);
+  ['auction', 'wholesale', 'industrial', 'household'].forEach(t => {
+    const r = rows.find(x => x[0] === t);
+    if (r) stack.appendChild(pRow(t === 'auction' ? '风电中标' : S[t].zh, r[1], smax, P_COLOR[t], 's-' + t));
+  });
+
+  // 小课堂
+  const ls = $('p-lessons');
+  ls.innerHTML = '';
+  (pLessons || []).forEach(l => {
+    const d = document.createElement('details');
+    d.className = 'p-lesson';
+    const sum = document.createElement('summary');
+    sum.appendChild(el('span', 'p-l-icon', l.icon || '📘'));
+    const t = el('span', 'p-l-title', l.title);
+    t.appendChild(el('span', 'p-l-en', l.en || ''));
+    sum.appendChild(t);
+    d.appendChild(sum);
+    const ul = el('ul', 'p-l-points');
+    (l.points || []).forEach(p => ul.appendChild(el('li', '', p)));
+    d.appendChild(ul);
+    if (l.example) d.appendChild(el('div', 'p-l-example', '🌰 举个例子：' + l.example));
+    ls.appendChild(d);
+  });
+
+  // 电价新闻
+  const nl = $('p-news');
+  nl.innerHTML = '';
+  (pData.news || []).forEach(it => nl.appendChild(newsCard(it)));
+  if (!(pData.news || []).length) nl.appendChild(el('div', 'p-what', '这周没有大的电价新闻'));
+
+  const fx = pData.fx;
+  $('p-foot').textContent = fx ? `汇率：1 欧元 = ${fx.USD} 美元 = ${fx.CNY} 元 = ${fx.TRY} 里拉（${fx.date}，${fx.source}）` : '';
+}
+
+
+const APP_VERSION = 'v18';
 
 // ================================
 // 启动

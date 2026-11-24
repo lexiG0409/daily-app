@@ -555,3 +555,58 @@ main { padding: 10px 16px; }
 .ask-btn:active { transform: scale(.96); }
 .ask-tip { font-size: 12px; color: var(--text-light); margin-top: 6px; }
 .ask-tip:empty { display: none; }
+
+/* ---------- 早报：风电 / 电价 切换 ---------- */
+.brief-mode { display: flex; gap: 6px; background: rgba(255,255,255,.55); border-radius: 999px; padding: 4px; margin: 0 auto 10px; width: max-content; }
+.brief-mode button { padding: 7px 16px; border-radius: 999px; font-size: 14px; font-weight: 800; color: var(--text-light); background: transparent; }
+.brief-mode button.on { background: var(--blue-text); color: #fff; }
+
+/* ---------- 电价 ---------- */
+#p-wrap { display: flex; flex-direction: column; gap: 14px; }
+.p-card { background: var(--card); border-radius: 20px; padding: 16px; box-shadow: var(--shadow); }
+.p-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.p-title { font-size: 16px; font-weight: 800; }
+.p-unit { display: flex; background: var(--bg); border-radius: 999px; padding: 3px; }
+.p-unit button { padding: 4px 10px; border-radius: 999px; font-size: 12px; font-weight: 800; color: var(--text-light); background: transparent; }
+.p-unit button.on { background: var(--blue-text); color: #fff; }
+.p-types, .p-countries { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0 6px; }
+.p-types button, .p-countries button { padding: 6px 12px; border-radius: 999px; font-size: 13px; font-weight: 700; background: var(--bg); color: var(--text-light); }
+.p-countries button.on { background: var(--blue-text); color: #fff; }
+.p-types button.on.c-w { background: #6A8DC5; color: #fff; }
+.p-types button.on.c-h { background: #C2798F; color: #fff; }
+.p-types button.on.c-i { background: #7A77BE; color: #fff; }
+.p-types button.on.c-a { background: #629A8D; color: #fff; }
+.p-what { font-size: 13px; line-height: 1.5; color: #7A7684; margin: 4px 0 10px; }
+.p-bars { display: flex; flex-direction: column; gap: 4px; }
+.p-row-main { display: flex; align-items: center; gap: 8px; padding: 6px 2px; cursor: pointer; border-radius: 10px; }
+.p-row-main:active { background: var(--bg); }
+.p-label { width: 92px; flex-shrink: 0; font-size: 13px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.p-track { flex: 1; height: 16px; background: var(--bg); border-radius: 999px; position: relative; overflow: hidden; display: flex; align-items: center; }
+.p-track.p-empty { background: repeating-linear-gradient(45deg, var(--bg), var(--bg) 6px, #F1F1EC 6px, #F1F1EC 12px); }
+.p-none { font-size: 11px; color: var(--text-light); padding-left: 8px; }
+.p-fill { height: 100%; border-radius: 999px; }
+.p-fill.c-w { background: #96B3DE; }
+.p-fill.c-h { background: #DDA3B2; }
+.p-fill.c-i { background: #9B98CE; }
+.p-fill.c-a { background: #8DBFB4; }
+.p-fill.range { opacity: .75; background-image: repeating-linear-gradient(90deg, rgba(255,255,255,.35) 0 4px, transparent 4px 8px); }
+.p-val { width: 76px; flex-shrink: 0; text-align: right; }
+.p-num { font-size: 14px; font-weight: 800; }
+.p-num.muted { color: var(--text-light); }
+.p-cny { font-size: 10px; color: var(--text-light); }
+.p-detail { font-size: 12px; line-height: 1.5; color: #7A7684; background: var(--bg); border-radius: 12px; padding: 8px 10px; margin: 2px 0 6px; display: flex; flex-direction: column; gap: 4px; }
+.p-detail .news-src { margin-top: 2px; }
+.p-tip { font-size: 11px; color: var(--text-light); text-align: center; margin-top: 10px; }
+.p-lesson { border-top: 1px solid var(--line); padding: 10px 0; }
+.p-lesson:first-of-type { border-top: none; }
+.p-lesson summary { list-style: none; display: flex; align-items: center; gap: 10px; cursor: pointer; }
+.p-lesson summary::-webkit-details-marker { display: none; }
+.p-lesson summary::after { content: '›'; margin-left: auto; font-size: 20px; color: var(--text-light); transition: transform .2s; }
+.p-lesson[open] summary::after { transform: rotate(90deg); }
+.p-l-icon { font-size: 22px; }
+.p-l-title { font-size: 14px; font-weight: 800; display: flex; flex-direction: column; }
+.p-l-en { font-size: 11px; font-weight: 600; color: var(--text-light); }
+.p-l-points { margin: 8px 0 0; padding-left: 20px; font-size: 13px; line-height: 1.6; display: flex; flex-direction: column; gap: 4px; }
+.p-l-example { margin-top: 8px; background: #FBF4DA; border-radius: 12px; padding: 8px 10px; font-size: 13px; line-height: 1.55; }
+.p-section-title { font-size: 16px; font-weight: 800; margin: 6px 4px -4px; }
+.p-foot { font-size: 11px; color: var(--text-light); text-align: center; margin: 4px 8px 0; line-height: 1.5; }

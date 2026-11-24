@@ -31,13 +31,50 @@
     <!-- ================= 早报 ================= -->
     <section id="page-briefing" class="page" data-title="早报" data-mascot="img/bear.svg">
       <div class="card summary blue">
+        <div class="brief-mode" id="n-mode">
+          <button data-mode="wind" class="on">🌬️ 风电新闻</button>
+          <button data-mode="price">⚡ 电价</button>
+        </div>
         <div class="month-switch">
           <button class="icon-btn" id="n-prev" aria-label="前一期">‹</button>
           <span id="n-date">风电早报</span>
           <button class="icon-btn" id="n-next" aria-label="后一期">›</button>
         </div>
-        <div class="brief-sub">🌬️ 陆上风电 Onshore Wind · 欧洲 · 美国 · 中国</div>
+        <div class="brief-sub" id="n-sub">🌬️ 陆上风电 Onshore Wind · 欧洲 · 美国 · 中国</div>
         <div class="region-filter" id="n-filter"></div>
+      </div>
+
+      <!-- 电价：对比图 + 小课堂 + 新闻 -->
+      <div id="p-wrap" style="display:none">
+        <div class="card p-card">
+          <div class="p-head">
+            <div class="p-title">📊 各国电价对比</div>
+            <div class="p-unit" id="p-unit">
+              <button data-unit="ct" class="on">ct/kWh</button>
+              <button data-unit="mwh">€/MWh</button>
+            </div>
+          </div>
+          <div class="p-types" id="p-types"></div>
+          <div class="p-what" id="p-what"></div>
+          <div class="p-bars" id="p-bars"></div>
+          <div class="p-tip">点一行可看来源和说明 · 小字是换算成人民币的约数</div>
+        </div>
+
+        <div class="card p-card">
+          <div class="p-title">🔍 一个国家的四种电价</div>
+          <div class="p-what">同一个国家，从“发电卖出去”到“家里电费单”，价格是怎么一层层变高的。</div>
+          <div class="p-countries" id="p-countries"></div>
+          <div class="p-bars" id="p-stack"></div>
+        </div>
+
+        <div class="card p-card">
+          <div class="p-title">📚 电价小课堂</div>
+          <div id="p-lessons"></div>
+        </div>
+
+        <div class="p-section-title">📰 本周电价新闻</div>
+        <div id="p-news" class="list"></div>
+        <div class="p-foot" id="p-foot"></div>
       </div>
 
       <div id="n-list" class="list"></div>

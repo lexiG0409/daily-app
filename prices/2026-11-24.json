@@ -1,0 +1,607 @@
+{
+  "date": "2026-11-24",
+  "generatedAt": "2026-11-24T10:30:00+01:00",
+  "units_note": "所有价格换算为 €/MWh 存储；1 €/MWh = 0.1 ct/kWh。",
+  "fx": {
+    "date": "2026-11-11",
+    "USD": 1.1127,
+    "CNY": 7.4225,
+    "TRY": 55.8897,
+    "PLN": 4.4038,
+    "source": "ECB euro reference rates (via Banca d'Italia)",
+    "url": "https://www.bancaditalia.it/compiti/operazioni-cambi/cambio/cambi_rif_20261111"
+  },
+  "countries": [
+    {
+      "code": "DE",
+      "flag": "🇩🇪",
+      "zh": "德国",
+      "en": "Germany"
+    },
+    {
+      "code": "TR",
+      "flag": "🇹🇷",
+      "zh": "土耳其",
+      "en": "Türkiye"
+    },
+    {
+      "code": "FR",
+      "flag": "🇫🇷",
+      "zh": "法国",
+      "en": "France"
+    },
+    {
+      "code": "ES",
+      "flag": "🇪🇸",
+      "zh": "西班牙",
+      "en": "Spain"
+    },
+    {
+      "code": "PL",
+      "flag": "🇵🇱",
+      "zh": "波兰",
+      "en": "Poland"
+    },
+    {
+      "code": "SE",
+      "flag": "🇸🇪",
+      "zh": "瑞典",
+      "en": "Sweden"
+    },
+    {
+      "code": "US",
+      "flag": "🇺🇸",
+      "zh": "美国",
+      "en": "United States"
+    },
+    {
+      "code": "CN",
+      "flag": "🇨🇳",
+      "zh": "中国",
+      "en": "China"
+    }
+  ],
+  "series": {
+    "wholesale": {
+      "zh": "批发电价",
+      "en": "Wholesale (day-ahead)",
+      "what": "电力交易所「日前市场」的平均成交价，好比菜市场的进货价，每天都在变。",
+      "items": [
+        {
+          "code": "DE",
+          "value": 169.5,
+          "period": "2026年10月均价",
+          "source": "Ember via GMK Center",
+          "url": "https://gmk.center/en/infographic/electricity-prices-in-europe-continued-to-rise-significantly-in-october/",
+          "orig": "169.5 €/MWh"
+        },
+        {
+          "code": "FR",
+          "value": 165.9,
+          "period": "2026年10月均价",
+          "source": "Ember via GMK Center",
+          "url": "https://gmk.center/en/infographic/electricity-prices-in-europe-continued-to-rise-significantly-in-october/",
+          "orig": "165.9 €/MWh"
+        },
+        {
+          "code": "ES",
+          "value": 166.6,
+          "period": "2026年10月均价",
+          "source": "Ember via GMK Center",
+          "url": "https://gmk.center/en/infographic/electricity-prices-in-europe-continued-to-rise-significantly-in-october/",
+          "orig": "166.6 €/MWh"
+        },
+        {
+          "code": "PL",
+          "value": 169.3,
+          "period": "2026年10月均价",
+          "source": "Ember via GMK Center",
+          "url": "https://gmk.center/en/infographic/electricity-prices-in-europe-continued-to-rise-significantly-in-october/",
+          "orig": "169.3 €/MWh"
+        },
+        {
+          "code": "SE",
+          "value": 75.7,
+          "period": "2026年10月均价",
+          "source": "Ember via GMK Center",
+          "url": "https://gmk.center/en/infographic/electricity-prices-in-europe-continued-to-rise-significantly-in-october/",
+          "orig": "75.7 €/MWh",
+          "note": "瑞典分 4 个价区，这里是全国口径；北部水电多，价格更低。"
+        },
+        {
+          "code": "TR",
+          "value": 55.0,
+          "period": "2026年10月 PTF 加权均价",
+          "source": "Türkinform",
+          "url": "https://turkinform.com.tr/elektrige-zam-gelecek-mi-fitchin-2027-beklentisi-aciklandi",
+          "orig": "61.24 $/MWh",
+          "note": "土耳其日前市场价格（PTF），原文以美元计。"
+        },
+        {
+          "code": "US",
+          "value": 46.7,
+          "period": "2026 全年（EIA 预测）",
+          "source": "Energy Central（引 EIA）",
+          "url": "https://www.energycentral.com/energy-biz/post/october-2026-power-market-check-demand-is-rising-but-the-signals-are-xhp9qyR20iPUIwh",
+          "orig": "约 52 $/MWh",
+          "note": "EIA 跟踪的 11 个交易中心平均，是预测值；各地差很多，例如 PJM 2026 年负荷加权均价 75.03 $/MWh。"
+        },
+        {
+          "code": "CN",
+          "value": 49.8,
+          "period": "广东 2026年4月 月度合约均价",
+          "source": "Caixin Global",
+          "url": "https://www.caixinglobal.com/2026-04-23/analysis-chinas-power-reform-exposes-businesses-to-wilder-price-swings-102437062.html",
+          "orig": "0.37 元/kWh",
+          "note": "中国没有全国统一批发价，这里用广东作参考；各省差别大。"
+        }
+      ]
+    },
+    "household": {
+      "zh": "居民电价",
+      "en": "Household (incl. taxes)",
+      "what": "家里电费单上一度电的价格，含电网费和税，好比超市零售价。",
+      "items": [
+        {
+          "code": "DE",
+          "value": 362,
+          "period": "2026年上半年",
+          "source": "Eurostat（经 Euronews）",
+          "url": "https://www.euronews.com/2026/11/12/eu-household-electricity-and-gas-prices-fell-in-the-first-half-of-2026-who-pays-the-most",
+          "orig": "36.2 ct/kWh"
+        },
+        {
+          "code": "FR",
+          "value": 249,
+          "period": "2026年上半年",
+          "source": "Eurostat（经 Euronews）",
+          "url": "https://www.euronews.com/2026/11/12/eu-household-electricity-and-gas-prices-fell-in-the-first-half-of-2026-who-pays-the-most",
+          "orig": "24.9 ct/kWh"
+        },
+        {
+          "code": "ES",
+          "value": 251,
+          "period": "2026年上半年",
+          "source": "Eurostat（经 Euronews）",
+          "url": "https://www.euronews.com/2026/11/12/eu-household-electricity-and-gas-prices-fell-in-the-first-half-of-2026-who-pays-the-most",
+          "orig": "25.1 ct/kWh"
+        },
+        {
+          "code": "PL",
+          "value": 300,
+          "period": "2026年上半年",
+          "source": "Eurostat（经 euenergyprices.eu）",
+          "url": "https://euenergyprices.eu/en/electricity",
+          "orig": "30.0 ct/kWh"
+        },
+        {
+          "code": "SE",
+          "value": 306,
+          "period": "2026年上半年",
+          "source": "Eurostat（经 Euronews）",
+          "url": "https://www.euronews.com/2026/11/12/eu-household-electricity-and-gas-prices-fell-in-the-first-half-of-2026-who-pays-the-most",
+          "orig": "30.6 ct/kWh"
+        },
+        {
+          "code": "TR",
+          "value": 66,
+          "period": "2026年上半年",
+          "source": "Eurostat（经 Euronews）",
+          "url": "https://www.euronews.com/2026/11/12/eu-household-electricity-and-gas-prices-fell-in-the-first-half-of-2026-who-pays-the-most",
+          "orig": "6.6 ct/kWh",
+          "note": "欧洲 38 国里最便宜；政府对用电量较低的家庭有补贴。"
+        },
+        {
+          "code": "US",
+          "value": 155.5,
+          "period": "2025 全年平均",
+          "source": "EIA",
+          "url": "https://www.eia.gov/energyexplained/electricity/prices-and-factors-affecting-prices.php",
+          "orig": "17.30 美分/kWh"
+        },
+        {
+          "code": "CN",
+          "value": 71.7,
+          "period": "2026年3月",
+          "source": "GlobalPetrolPrices",
+          "url": "https://www.globalpetrolprices.com/China/",
+          "orig": "0.532 元/kWh",
+          "note": "居民电价由政府定价，不跟随现货价格波动。"
+        }
+      ]
+    },
+    "industrial": {
+      "zh": "工业电价",
+      "en": "Industrial / business",
+      "what": "工厂和企业用电的价格，影响制造业成本。不同来源口径不同（有的含税、有的不含），看大小关系即可。",
+      "items": [
+        {
+          "code": "DE",
+          "value": 248,
+          "period": "2025年6月",
+          "source": "GlobalPetrolPrices",
+          "url": "https://www.globalpetrolprices.com/Germany/electricity_prices/",
+          "orig": "0.248 €/kWh",
+          "note": "含全部税费，按年用电 100 万度的企业计算。"
+        },
+        {
+          "code": "FR",
+          "value": 149,
+          "period": "最新一期",
+          "source": "GlobalPetrolPrices",
+          "url": "https://www.globalpetrolprices.com/France/electricity_prices/",
+          "orig": "0.149 €/kWh",
+          "note": "含税，按年用电 100 万度的企业计算。"
+        },
+        {
+          "code": "ES",
+          "value": 130,
+          "period": "2026年上半年",
+          "source": "Eurostat",
+          "url": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20261104-1",
+          "orig": "约 0.13 €/kWh",
+          "note": "年用电 500–2000 MWh 的企业，不含增值税；Eurostat 只给到两位小数。"
+        },
+        {
+          "code": "PL",
+          "value": 159.9,
+          "period": "2025年9月",
+          "source": "GlobalPetrolPrices",
+          "url": "https://www.globalpetrolprices.com/Poland/",
+          "orig": "0.704 PLN/kWh",
+          "note": "含税，按年用电 100 万度的企业计算。"
+        },
+        {
+          "code": "SE",
+          "value": 117.7,
+          "period": "2026年上半年",
+          "source": "Eurostat",
+          "url": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Electricity_price_statistics",
+          "orig": "0.1177 €/kWh",
+          "note": "年用电 500–2000 MWh 的企业，不含增值税。"
+        },
+        {
+          "code": "TR",
+          "value": 85.3,
+          "period": "2026年3月",
+          "source": "GlobalPetrolPrices",
+          "url": "https://www.globalpetrolprices.com/Turkey/electricity_prices/",
+          "orig": "4.770 TRY/kWh",
+          "note": "按今天汇率换算；里拉贬值时，欧元价格会显得更低。"
+        },
+        {
+          "code": "US",
+          "value": 77.5,
+          "period": "2025 全年平均",
+          "source": "EIA",
+          "url": "https://www.eia.gov/energyexplained/electricity/prices-and-factors-affecting-prices.php",
+          "orig": "8.62 美分/kWh"
+        },
+        {
+          "code": "CN",
+          "value": 106.6,
+          "period": "2026年3月",
+          "source": "GlobalPetrolPrices",
+          "url": "https://www.globalpetrolprices.com/China/",
+          "orig": "0.791 元/kWh",
+          "note": "企业电价；各省、各电压等级差别很大。"
+        }
+      ]
+    },
+    "auction": {
+      "zh": "风电中标/合同价",
+      "en": "Wind auction & PPA",
+      "what": "陆上风电场能卖电的“保障价”：政府招标中标价，或与企业签的长期购电合同（PPA）价。",
+      "items": [
+        {
+          "code": "DE",
+          "value": 47.9,
+          "period": "2026年8月轮 加权平均",
+          "source": "Bundesnetzagentur",
+          "url": "https://www.bundesnetzagentur.de/SharedDocs/Pressemitteilungen/DE/2026/20260917_Wind.html",
+          "orig": "4.79 ct/kWh",
+          "note": "EEG 陆上风电招标，比上一轮 5.06 ct 又降了。"
+        },
+        {
+          "code": "FR",
+          "value": 77.28,
+          "period": "2026年 PPE2 第11期",
+          "source": "法国生态转型部",
+          "url": "https://www.ecologie.gouv.fr/sites/default/files/documents/Synthe%CC%80se%20PPE2%20-%20Eolien%20P11-apr%C3%A8s%20recours.pdf",
+          "orig": "77.28 €/MWh",
+          "note": "此前几期约 86–87 €/MWh，这一期因竞争和改造（repowering）项目多而明显下降。"
+        },
+        {
+          "code": "ES",
+          "value": null,
+          "period": "—",
+          "source": "",
+          "url": "",
+          "note": "近期没有找到可比的陆上风电招标结果；西班牙项目主要靠企业购电合同（PPA）。"
+        },
+        {
+          "code": "PL",
+          "value": null,
+          "period": "—",
+          "source": "",
+          "url": "",
+          "note": "近几轮陆上风电拍卖中标项目很少，价格不具代表性。"
+        },
+        {
+          "code": "SE",
+          "value": null,
+          "period": "—",
+          "source": "",
+          "url": "",
+          "note": "瑞典没有政府风电招标，项目靠市场电价和企业购电合同（PPA）。"
+        },
+        {
+          "code": "TR",
+          "value": 35.0,
+          "period": "YEKA RES-2026",
+          "source": "Enerdata",
+          "url": "https://www.enerdata.net/publications/daily-energy-news/turkiye-allocates-15-gw-wind-capacity-yeka-res-2026-auction.html",
+          "orig": "3.50 欧分/kWh",
+          "note": "报价都在底价，竞争转向额外缴纳的贡献费。"
+        },
+        {
+          "code": "US",
+          "value": 61.4,
+          "period": "2026年三季度 LevelTen P25",
+          "source": "Mercom（引 LevelTen）",
+          "url": "https://mercomindia.com/solar-ppa-prices-rise-6-yoy-in-north-america-fall-4-in-europe",
+          "orig": "68.27 $/MWh",
+          "note": "北美风电 PPA 报价的低位（第 25 百分位）。"
+        },
+        {
+          "code": "CN",
+          "value": null,
+          "period": "2027 批次 机制电价",
+          "source": "北极星（经虎嗅）",
+          "url": "https://m.huxiu.com/article/4905816.html",
+          "orig": "0.230–0.377 元/kWh",
+          "note": "各省差别大：新疆 0.230、甘肃 0.244、黑龙江 0.2845、广西 0.359、江西 0.377 元/kWh。",
+          "low": 31.0,
+          "high": 50.8
+        }
+      ]
+    }
+  },
+  "news": [
+    {
+      "region": "中国",
+      "country": "中国 China",
+      "title": {
+        "en": "China's 2027 wind 'mechanism prices' mostly rise",
+        "zh": "中国2027批次风电机制电价多数上涨"
+      },
+      "sentences": [
+        {
+          "en": "By 11 November, seven provinces had published wind results for the 2027 batch of China's mechanism-price auctions, according to an industry tally.",
+          "zh": "据行业统计，截至11月11日，已有7个省份公布2027批次风电机制电价竞价结果。"
+        },
+        {
+          "en": "Gansu cleared at 0.244 yuan/kWh (up 24.9%) and Heilongjiang at 0.2845 (up 24.7%), while Jiangxi (0.377) and Guangxi (0.359) ended close to their caps.",
+          "zh": "甘肃出清价0.244元/千瓦时（涨24.9%），黑龙江0.2845元（涨24.7%），江西（0.377元）和广西（0.359元）接近上限。"
+        },
+        {
+          "en": "Liaoning was the only decline (-9.1%) after the province cut its cap from 0.33 to 0.30 yuan/kWh.",
+          "zh": "辽宁是唯一下降的省份（-9.1%），原因是当地把上限从0.33元下调至0.30元。"
+        }
+      ],
+      "insight": [
+        {
+          "en": "The article links the rise to few wind bidders in several provinces and to developers moving away from bidding at the floor; in some provinces, higher prices came with smaller protected volumes.",
+          "zh": "文章认为，上涨原因是多个省份风电参与者少，以及开发商不再一味压到底价；但部分省份价格上涨的同时，可获保障的电量变小了。"
+        }
+      ],
+      "oem": [
+        {
+          "en": "Higher mechanism prices can ease some price pressure on Chinese wind turbines, but smaller protected volumes mean more output must be sold at market prices.",
+          "zh": "机制电价上涨可能缓解一部分风机压价压力，但保障电量缩小意味着更多电量要按市场价出售。"
+        }
+      ],
+      "watch": [
+        {
+          "en": "When modelling Chinese projects, check both the mechanism price and the share of output it covers.",
+          "zh": "测算中国项目收益时，既要看机制电价，也要看它覆盖多少比例的发电量。"
+        },
+        {
+          "en": "Follow the provinces that have started but not finished bidding, such as Hebei, Zhejiang and Shanxi.",
+          "zh": "关注已启动但尚未出结果的省份，例如河北、浙江、山西。"
+        }
+      ],
+      "source": "Huxiu（转北极星太阳能光伏网）",
+      "url": "https://m.huxiu.com/article/4905816.html",
+      "published": "2026-11-16"
+    },
+    {
+      "region": "德国",
+      "country": "德国 Germany",
+      "title": {
+        "en": "German day-ahead power above €350/MWh on still days in November",
+        "zh": "德国日前电价11月无风日一度超过350欧元/兆瓦时"
+      },
+      "sentences": [
+        {
+          "en": "German day-ahead prices averaged €351.48/MWh on 10 November, compared with only €13.12/MWh on a windy day in October.",
+          "zh": "德国日前电价在11月10日日均达到351.48欧元/兆瓦时，而10月一个大风天仅为13.12欧元/兆瓦时。"
+        },
+        {
+          "en": "Weekly averages eased from €256.59/MWh (2–8 Nov) to €197.66/MWh (16–22 Nov).",
+          "zh": "周均价从256.59欧元/兆瓦时（11月2–8日）回落至197.66欧元/兆瓦时（11月16–22日）。"
+        },
+        {
+          "en": "The 2027 baseload future stood at about €146/MWh on 20 November, while 2028 traded about €44 lower.",
+          "zh": "11月20日，2027年基荷期货约为146欧元/兆瓦时，2028年合约低约44欧元。"
+        }
+      ],
+      "insight": [
+        {
+          "en": "Gas plants set the price in many hours, so spot prices jump when wind is weak and collapse when wind is strong.",
+          "zh": "很多时段由燃气电厂决定电价，所以风小时现货价格飙升，风大时价格暴跌。"
+        }
+      ],
+      "oem": [
+        {
+          "en": "High prices in low-wind hours and very low prices in windy hours show why wind output timing matters for revenue, which raises interest in storage and hybrid projects.",
+          "zh": "无风时高价、大风时极低价，说明风电的“发电时段”直接影响收入，这会提升市场对储能和风储混合项目的兴趣。"
+        }
+      ],
+      "watch": [
+        {
+          "en": "Customers may ask more about capture prices and curtailment; prepare yield profiles by hour, not only annual totals.",
+          "zh": "客户可能更关注“实际捕获电价”和弃风，要准备按小时的发电曲线，而不只是年发电量。"
+        },
+        {
+          "en": "The page names 7 December, when final grid fees are due, as the next date to watch.",
+          "zh": "该页面提到12月7日公布最终电网费，可作为下一个关注日期。"
+        }
+      ],
+      "source": "Tacto",
+      "url": "https://www.tacto.ai/en/energy/electricity-price",
+      "published": "2026-11-20"
+    },
+    {
+      "region": "欧洲",
+      "country": "波兰 Poland",
+      "title": {
+        "en": "Polish spot power hits highest level since December 2022",
+        "zh": "波兰现货电价升至2022年12月以来最高"
+      },
+      "sentences": [
+        {
+          "en": "Poland's day-ahead price averaged about 745 PLN/MWh in October, up about 12.5% on September and the highest since December 2022, according to Forum Energii.",
+          "zh": "据Forum Energii，波兰10月日前电价均价约745兹罗提/兆瓦时，环比上涨约12.5%，为2022年12月以来最高。"
+        },
+        {
+          "en": "Gas on the Polish exchange averaged 409 PLN/MWh, up 18.7% month on month.",
+          "zh": "波兰交易所天然气均价为409兹罗提/兆瓦时，环比上涨18.7%。"
+        },
+        {
+          "en": "The think tank links the rise to higher fuel costs from the Middle East conflict and limited gas availability.",
+          "zh": "该智库认为，上涨与中东冲突推高燃料成本以及天然气供应紧张有关。"
+        }
+      ],
+      "insight": [
+        {
+          "en": "When gas is expensive, electricity from wind becomes more valuable in a coal- and gas-heavy system like Poland's.",
+          "zh": "在波兰这样依赖煤电和气电的系统里，天然气一贵，风电发出的电就更值钱。"
+        }
+      ],
+      "oem": [
+        {
+          "en": "Higher power prices can make Polish corporate PPAs for onshore wind more attractive, which may support turbine demand if permitting allows.",
+          "zh": "电价走高可能让波兰陆上风电的企业购电合同（PPA）更有吸引力，如果审批跟得上，有望带动风机需求。"
+        }
+      ],
+      "watch": [
+        {
+          "en": "Track whether Polish buyers sign more onshore wind PPAs in the coming months.",
+          "zh": "跟踪未来几个月波兰买家是否签更多陆上风电PPA。"
+        },
+        {
+          "en": "Note that delivered prices were lower than spot (600 PLN/MWh) because many buyers had hedged with futures.",
+          "zh": "注意实际交付电价（600兹罗提/兆瓦时）低于现货价，因为很多买家用期货做了对冲。"
+        }
+      ],
+      "source": "Forum Energii",
+      "url": "https://www.forum-energii.eu/en/monthly-magazine-1",
+      "published": "2026-11-09"
+    },
+    {
+      "region": "土耳其",
+      "country": "土耳其 Türkiye",
+      "title": {
+        "en": "Fitch sees Turkish generation price rising to $60/MWh in 2027",
+        "zh": "惠誉预计土耳其2027年发电价格升至60美元/兆瓦时"
+      },
+      "sentences": [
+        {
+          "en": "Fitch expects Türkiye's electricity generation price to rise from about $50/MWh in 2026 to $60/MWh in 2027, a 20% increase.",
+          "zh": "惠誉预计土耳其发电价格将从2026年约50美元/兆瓦时升至2027年60美元/兆瓦时，涨幅20%。"
+        },
+        {
+          "en": "The weighted average market clearing price (PTF) was $61.24/MWh in October 2026, up 5.2% on September.",
+          "zh": "2026年10月土耳其市场清算价（PTF）加权平均为61.24美元/兆瓦时，环比上涨5.2%。"
+        },
+        {
+          "en": "The report gives no forecast for consumer tariffs.",
+          "zh": "该报告没有给出居民和企业终端电价的预测。"
+        }
+      ],
+      "insight": [
+        {
+          "en": "A higher expected market price supports the merchant period that YEKA winners face before their fixed tariff starts.",
+          "zh": "市场电价预期上升，有利于YEKA中标项目在固定电价生效前的市场化售电期收入。"
+        }
+      ],
+      "oem": [
+        {
+          "en": "Better merchant revenue outlook can make Turkish developers more willing to move from award to turbine orders.",
+          "zh": "市场化收入预期改善，可能让土耳其开发商更愿意从中标推进到风机下单。"
+        }
+      ],
+      "watch": [
+        {
+          "en": "Price offers in TRY or USD carry currency risk; agree the currency and indexation clearly in contracts.",
+          "zh": "以里拉或美元报价都有汇率风险，合同中要写清币种和调价机制。"
+        },
+        {
+          "en": "Track the monthly PTF average as a signal of how attractive the merchant period is for YEKA winners.",
+          "zh": "跟踪每月PTF均价，作为判断YEKA中标项目市场化售电期收益的信号。"
+        }
+      ],
+      "source": "Türkinform",
+      "url": "https://turkinform.com.tr/elektrige-zam-gelecek-mi-fitchin-2027-beklentisi-aciklandi",
+      "published": "2026-11-19"
+    },
+    {
+      "region": "土耳其",
+      "country": "土耳其 Türkiye",
+      "title": {
+        "en": "Türkiye lowers subsidised household power limit to 3,000 kWh for 2027",
+        "zh": "土耳其2027年把居民补贴电量上限降至3000千瓦时"
+      },
+      "sentences": [
+        {
+          "en": "Regulator EPDK set the 2027 limit for the supported household tariff at 3,000 kWh a year, down from 4,000 kWh in 2026 and 5,000 kWh in 2025.",
+          "zh": "监管机构EPDK将2027年居民补贴电价的年用电上限定为3000千瓦时，2026年为4000千瓦时，2025年为5000千瓦时。"
+        },
+        {
+          "en": "About 6.5 million households, roughly 14.7% of residential subscribers, will move to a high-consumption tariff.",
+          "zh": "约650万户、约占居民用户14.7%的家庭将转为高用电量电价。"
+        },
+        {
+          "en": "EPDK said it made no change to the national tariff itself.",
+          "zh": "EPDK表示，全国电价本身没有调整。"
+        }
+      ],
+      "insight": [
+        {
+          "en": "Türkiye is gradually shifting more households toward cost-reflective prices while keeping support for low users.",
+          "zh": "土耳其正逐步让更多家庭支付更接近成本的电价，同时保留对低用电家庭的补贴。"
+        }
+      ],
+      "oem": [
+        {
+          "en": "Less subsidy pressure on the state budget can support a more market-based power sector, which helps long-term investor confidence in Turkish wind.",
+          "zh": "补贴压力减轻有助于电力行业更加市场化，从长期看有利于投资者对土耳其风电的信心。"
+        }
+      ],
+      "watch": [
+        {
+          "en": "This affects households only; industrial and commercial limits stay at 15,000 kWh, so customer power costs are unchanged by this step.",
+          "zh": "这次只影响居民；工业和商业用户的15000千瓦时上限不变，因此对企业客户电费没有直接影响。"
+        },
+        {
+          "en": "Watch for the next EPDK tariff decision, which could change retail prices.",
+          "zh": "关注EPDK下一次电价调整决定，它可能改变终端电价。"
+        }
+      ],
+      "source": "Bloomberg HT",
+      "url": "https://www.bloomberght.com/epdk-son-kaynak-tedarik-tarifesinde-limiti-dusurdu-3792931",
+      "published": "2026-10-30"
+    }
+  ]
+}
