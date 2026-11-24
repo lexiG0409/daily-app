@@ -1,0 +1,750 @@
+{
+  "date": "2026-11-24",
+  "generatedAt": "2026-11-24T07:30:00+01:00",
+  "items": [
+    {
+      "region": "美国",
+      "country": "美国 United States",
+      "title": {
+        "en": "Senate passes permitting overhaul that could unblock stalled wind projects",
+        "zh": "美国参议院通过许可审批改革法案，或为停滞的风电项目解围"
+      },
+      "sentences": [
+        {
+          "en": "The US Senate passed a sweeping federal permitting bill by 62 votes to 33 on November 19, and it now moves to the House, where a vote is expected after Thanksgiving.",
+          "zh": "美国参议院于11月19日以62票对33票通过一项大范围的联邦许可审批改革法案，法案将提交众议院，预计感恩节后表决。"
+        },
+        {
+          "en": "According to Roll Call, the bill covers wind and solar farms, transmission lines, mining and oil drilling, and gives developers a legal remedy if an administration discriminates against an energy source or reopens permits on ideological grounds.",
+          "zh": "据Roll Call报道，法案涵盖风电和光伏电站、输电线路、采矿及石油钻探，并在政府歧视某类能源或出于意识形态重新审查许可时，为开发商提供法律救济途径。"
+        },
+        {
+          "en": "Democrats who backed it say they received assurances that stalled wind and solar projects would advance, while an amendment to limit tariffs on clean-energy parts such as turbines was not taken up.",
+          "zh": "投赞成票的民主党人表示已获得停滞风光项目将获推进的保证，而一项限制对风机等清洁能源部件征收关税的修正案未被审议。"
+        }
+      ],
+      "insight": [
+        {
+          "en": "If enacted, the bill would give onshore developers a legal tool against the current case-by-case federal reviews of wind projects, which have been a key source of schedule risk.",
+          "zh": "若法案最终生效，陆上风电开发商将获得应对当前联邦对风电项目逐一审查的法律工具，而这类审查一直是工期风险的主要来源。"
+        }
+      ],
+      "oem": [
+        {
+          "en": "For OEMs, clearer federal timelines would turn part of the delayed US pipeline back into firm orders, but tariff exposure on imported components remains unresolved.",
+          "zh": "对整机商而言，联邦审批时限更明确将使部分延迟的美国项目重新转化为确定订单，但进口部件的关税风险仍未解决。"
+        }
+      ],
+      "watch": [
+        {
+          "en": "Track the House vote after Thanksgiving and any changes to the Senate text before it reaches the President.",
+          "zh": "跟踪感恩节后的众议院表决，以及法案提交总统前对参议院文本的任何修改。"
+        },
+        {
+          "en": "Ask US customers with projects stuck in federal review which ones could move first, and update order-timing assumptions in the pipeline.",
+          "zh": "询问有项目卡在联邦审查中的美国客户，哪些项目可能最先推进，并据此更新销售管线中的订单时间假设。"
+        },
+        {
+          "en": "Keep tariff pass-through and change-in-law clauses in US turbine contracts, since the tariff amendment was not addressed.",
+          "zh": "由于关税修正案未获处理，美国风机合同中应保留关税转嫁和法律变更条款。"
+        }
+      ],
+      "source": "Roll Call",
+      "url": "https://www.rollcall.com/2026/11/19/sweeping-permitting-overhaul-passes-senate-on-to-house",
+      "published": "2026-11-19"
+    },
+    {
+      "region": "土耳其",
+      "country": "土耳其 Türkiye",
+      "title": {
+        "en": "Enerjisa Üretim completes its 1 GW YEKA-2 wind programme",
+        "zh": "Enerjisa Üretim完成1吉瓦YEKA-2风电项目群建设"
+      },
+      "sentences": [
+        {
+          "en": "Enerjisa Üretim said it has completed 1,000 MW of wind capacity across 12 plants in Aydın, Balıkesir, Çanakkale and Muğla under the YEKA-2 programme, which started in 2019.",
+          "zh": "Enerjisa Üretim宣布，其YEKA-2项目下分布在艾登、巴勒克埃西尔、恰纳卡莱和穆拉的12座风电场共1,000兆瓦已全部建成，该项目始于2019年。"
+        },
+        {
+          "en": "The build-out was backed by about $1.4 billion of international financing from development finance institutions and banks.",
+          "zh": "项目建设获得了来自开发性金融机构和银行约14亿美元的国际融资。"
+        },
+        {
+          "en": "The plants are expected to generate about 3.8 billion kWh a year, according to the reports.",
+          "zh": "据报道，这些风电场预计年发电量约38亿千瓦时。"
+        }
+      ],
+      "insight": [
+        {
+          "en": "Completing a gigawatt-scale YEKA portfolio shows that Türkiye's auction model can deliver at scale, which supports investor confidence in the next YEKA rounds.",
+          "zh": "吉瓦级YEKA项目群的全面建成表明土耳其的招标模式能够实现规模化落地，有助于增强投资者对后续YEKA招标的信心。"
+        }
+      ],
+      "oem": [
+        {
+          "en": "With construction finished, the commercial focus for this fleet shifts from turbine supply to long-term service and performance.",
+          "zh": "随着建设完成，该批机组的商业重点将从设备供货转向长期运维和发电性能。"
+        }
+      ],
+      "watch": [
+        {
+          "en": "Check when warranty periods on the YEKA-2 turbines expire and whether Enerjisa plans to tender full-scope service contracts.",
+          "zh": "核实YEKA-2机组质保期的到期时间，以及Enerjisa是否计划招标全范围运维合同。"
+        },
+        {
+          "en": "Keep close contact with Enerjisa's project team on its YEKA RES-2024 projects, which are the next build wave.",
+          "zh": "与Enerjisa项目团队就其YEKA RES-2024项目保持密切沟通，这是其下一轮建设高峰。"
+        }
+      ],
+      "source": "Enerji Bülteni",
+      "url": "https://www.enerjibulteni.com/2026/11/19/enerjisa-uretim-1-000-mwlik-yeka-2-yatirimlarini-tamamladi/",
+      "published": "2026-11-19"
+    },
+    {
+      "region": "中国",
+      "country": "中国 China",
+      "title": {
+        "en": "China awards 129 GW of turbine orders in Q1–Q3; onshore price near 1,592 yuan/kW",
+        "zh": "前三季度中国风机中标129吉瓦，陆上均价约1592元/千瓦"
+      },
+      "sentences": [
+        {
+          "en": "Wind turbine bid awards in China reached 129 GW in the first three quarters of 2026, up 10% year on year, according to data cited by 21 Jingji from Beijixing.",
+          "zh": "据21财经援引北极星数据，2026年前三季度中国风机中标量达129吉瓦，同比增长10%。"
+        },
+        {
+          "en": "The average domestic onshore bid price excluding towers was about 1,592 yuan/kW for January–September, with sub-10 MW models slightly higher than a year earlier.",
+          "zh": "1-9月国内陆上风机（不含塔筒）平均中标价约1592元/千瓦，10兆瓦以下机型价格同比小幅上涨。"
+        },
+        {
+          "en": "Six Chinese OEMs won 26 GW of overseas orders in the same period, up 36.35%, while Goldwind, Sany Renewable and Mingyang have been buying back shares.",
+          "zh": "同期六家中国整机商斩获海外订单26吉瓦，同比增长36.35%；金风科技、三一重能和明阳智能等企业则在实施股份回购。"
+        }
+      ],
+      "insight": [
+        {
+          "en": "Stable-to-firmer prices alongside rising volumes suggest the price war in Chinese onshore turbines has eased, which improves margins across the supply chain.",
+          "zh": "在中标量上升的同时价格企稳回升，表明中国陆上风机价格战有所缓和，有利于改善全产业链利润率。"
+        }
+      ],
+      "oem": [
+        {
+          "en": "Fast-growing overseas orders mean Chinese OEMs will compete harder in export markets, adding price pressure for Western OEMs in emerging regions.",
+          "zh": "海外订单快速增长意味着中国整机商将在出口市场加大竞争，给西方整机商在新兴市场带来更大价格压力。"
+        }
+      ],
+      "watch": [
+        {
+          "en": "Use the 1,592 yuan/kW benchmark when reviewing bid prices in upcoming central SOE tenders.",
+          "zh": "在评估即将开标的央企招标报价时，以1592元/千瓦作为参考基准。"
+        },
+        {
+          "en": "Watch for the full-year tender statistics in January to see whether price recovery holds into 2027 delivery.",
+          "zh": "关注1月发布的全年招标数据，判断价格回升能否延续至2027年交付。"
+        }
+      ],
+      "source": "21财经 (via 北极星)",
+      "url": "https://m.21jingji.com/article/20261119/herald/1e16b84ae2afcd4c0c0bae379c1fb6ac.html",
+      "published": "2026-11-19"
+    },
+    {
+      "region": "中国",
+      "country": "埃及 Egypt",
+      "title": {
+        "en": "Mingyang to supply 45 turbines for Egypt's 500 MW Amunet II wind farm",
+        "zh": "明阳智能将为埃及500兆瓦Amunet II风电场供应45台风机"
+      },
+      "sentences": [
+        {
+          "en": "Mingyang signed a deal on November 18 to supply 45 MySE11-210 turbines for AMEA Power's 500 MW Amunet II onshore wind project in Ras Shukeir, Egypt.",
+          "zh": "明阳智能于11月18日签约，为AMEA Power位于埃及拉斯舒凯尔的500兆瓦Amunet II陆上风电项目供应45台MySE11-210风机。"
+        },
+        {
+          "en": "The $650 million project has IFC debt financing, PowerChina Huadong as EPC contractor and a long-term PPA with state grid company EETC.",
+          "zh": "该项目投资6.5亿美元，由国际金融公司（IFC）提供债务融资，中国电建华东院担任EPC总包，并与埃及国家电网公司EETC签订长期购电协议。"
+        },
+        {
+          "en": "Mingyang will also provide 25 years of O&M, and the sources give commercial operation in September 2028 or grid connection in November 2028.",
+          "zh": "明阳还将提供25年运维服务；据来源，项目将于2028年9月商运或2028年11月并网。"
+        }
+      ],
+      "insight": [
+        {
+          "en": "The deal shows Chinese OEMs winning multilateral-financed projects in North Africa with 11 MW-class onshore turbines, a market Western OEMs have long served.",
+          "zh": "该订单表明中国整机商正以11兆瓦级陆上机型赢得北非多边金融支持的项目，而这一市场长期由西方整机商服务。"
+        }
+      ],
+      "oem": [
+        {
+          "en": "Bundling a 25-year O&M contract with supply locks in long-term service revenue and makes the offer harder for competitors to match on lifetime cost.",
+          "zh": "将25年运维合同与设备供货捆绑锁定了长期服务收入，也使竞争对手难以在全生命周期成本上匹敌。"
+        }
+      ],
+      "watch": [
+        {
+          "en": "Map other AMEA Power projects in Egypt and the wider region where turbine supply is still open.",
+          "zh": "梳理AMEA Power在埃及及周边地区尚未确定风机供应的其他项目。"
+        },
+        {
+          "en": "Check IFC-financed tender requirements on turbine certification and track record, since Chinese large-rotor models are now accepted there.",
+          "zh": "研究IFC融资项目对风机认证和业绩的要求，因为中国大叶轮机型已在此类项目中获得认可。"
+        }
+      ],
+      "source": "Renewable Energy Magazine",
+      "url": "https://www.renewableenergymagazine.com/wind/amea-power-advances-development-of-650-million-20261120",
+      "published": "2026-11-20"
+    },
+    {
+      "region": "德国",
+      "country": "德国 Germany",
+      "title": {
+        "en": "Court upholds permit for 18-turbine Reinhardswald wind farm",
+        "zh": "法院维持18台机组Reinhardswald风电场的许可"
+      },
+      "sentences": [
+        {
+          "en": "The Hesse administrative court in Kassel dismissed the main lawsuit by the municipality of Wesertal against the Reinhardswald wind farm, which had cited fire safety and drinking-water protection.",
+          "zh": "黑森州卡塞尔行政法院驳回了韦泽塔尔市针对Reinhardswald风电场的主诉讼，该市曾以消防安全和饮用水保护为由提起诉讼。"
+        },
+        {
+          "en": "Fourteen of the 18 turbines are already on the grid and all are expected to run by the end of November, according to dpa.",
+          "zh": "据德新社报道，18台风机中已有14台并网，全部机组预计11月底前投运。"
+        },
+        {
+          "en": "Three further lawsuits and an urgent procedure by an environmental group are still pending.",
+          "zh": "另有三起诉讼及一项环保组织提起的紧急程序仍在审理中。"
+        }
+      ],
+      "insight": [
+        {
+          "en": "The ruling supports the legal footing for forest sites in Germany, which are a growing share of new onshore permits but often face local opposition.",
+          "zh": "该判决巩固了德国林地风电项目的法律基础；林地在新增陆上许可中占比上升，但常遭当地反对。"
+        }
+      ],
+      "oem": [
+        {
+          "en": "Court wins on permits reduce the risk that signed turbine orders are delayed or cancelled after delivery planning has started.",
+          "zh": "许可诉讼胜诉降低了已签订单在交付排产后被推迟或取消的风险。"
+        }
+      ],
+      "watch": [
+        {
+          "en": "For forest projects in the pipeline, ask customers about pending legal challenges before fixing delivery slots.",
+          "zh": "对于管线中的林地项目，在锁定交付档期前向客户了解是否存在未决法律诉讼。"
+        },
+        {
+          "en": "Review suspension and delay clauses in contracts for sites with open lawsuits, and track the remaining Reinhardswald cases.",
+          "zh": "审查存在未决诉讼项目合同中的暂停和延期条款，并跟踪Reinhardswald剩余案件的进展。"
+        }
+      ],
+      "source": "dpa-AFX via ARIVA.DE",
+      "url": "https://www.ariva.de/news/vgh-kassel-bestaetigt-genehmigung-fuer-windpark-reinhardswald-12215460",
+      "published": "2026-11-20"
+    },
+    {
+      "region": "土耳其",
+      "country": "土耳其 Türkiye",
+      "title": {
+        "en": "KfW-led financing backs 910 MW of Turkish onshore wind using Nordex turbines",
+        "zh": "KfW牵头融资支持土耳其910兆瓦陆上风电，采用Nordex风机"
+      },
+      "sentences": [
+        {
+          "en": "KfW IPEX-Bank and partners are financing 910 MW of Turkish wind projects that use 131 Nordex turbines, part of about €2 billion in agreements KfW signed on November 16.",
+          "zh": "KfW IPEX银行及合作方正为土耳其910兆瓦风电项目提供融资，这些项目采用131台Nordex风机，属于KfW于11月16日签署的约20亿欧元协议的一部分。"
+        },
+        {
+          "en": "Enerjisa's 410 MW Edirne and 340 MW Balkaya YEKA RES-2024 projects receive a package of up to $617 million with 108 Nordex turbines, including Euler Hermes-covered loans.",
+          "zh": "Enerjisa的YEKA RES-2024项目——410兆瓦埃迪尔内和340兆瓦巴尔卡亚——获得最高6.17亿美元融资包（含Euler Hermes担保贷款），共采用108台Nordex风机。"
+        },
+        {
+          "en": "Efor Holding's 160 MW Yellice project in Sivas gets a €90 million loan for 23 Nordex turbines, and Ziraat Bank signed a letter of intent for up to €500 million for wind projects using German turbines.",
+          "zh": "Efor控股位于锡瓦斯的160兆瓦Yellice项目获得9000万欧元贷款，用于23台Nordex风机；Ziraat银行签署意向书，为采用德国风机的风电项目提供最高5亿欧元资金。"
+        }
+      ],
+      "insight": [
+        {
+          "en": "Export-credit backed finance tied to German turbines gives European OEMs a financing edge in Türkiye, just as Chinese OEMs push into the market.",
+          "zh": "与德国风机挂钩的出口信贷融资，为欧洲整机商在土耳其提供了融资优势，而此时中国整机商正大举进入该市场。"
+        }
+      ],
+      "oem": [
+        {
+          "en": "With financing closed, the Nordex orders for these projects look firm, which supports European OEM factory loading for Türkiye deliveries.",
+          "zh": "融资落定后，这些项目的Nordex订单基本确定，为欧洲整机商面向土耳其交付的工厂负荷提供支撑。"
+        }
+      ],
+      "watch": [
+        {
+          "en": "Ask Turkish developers whether Ziraat's €500 million line is open to their projects and what turbine-origin rules apply.",
+          "zh": "询问土耳其开发商Ziraat银行5亿欧元额度是否适用于其项目，以及对风机原产地有何要求。"
+        },
+        {
+          "en": "Prepare ECA-compatible offers (German content, Euler Hermes documentation) for upcoming YEKA project bids.",
+          "zh": "为即将到来的YEKA项目投标准备符合出口信贷要求的报价方案（德国成分、Euler Hermes文件）。"
+        }
+      ],
+      "source": "REGlobal",
+      "url": "https://reglobal.org/kfw-ipex-bank-backs-910-mw-wind-projects-in-turkiye/",
+      "published": "2026-11-16"
+    },
+    {
+      "region": "德国",
+      "country": "德国 Germany",
+      "title": {
+        "en": "Vestas books about 62 MW of V172 and V162 orders in Germany and Austria",
+        "zh": "Vestas在德国和奥地利获得约62兆瓦V172及V162订单"
+      },
+      "sentences": [
+        {
+          "en": "Vestas won orders for three V172-7.2 MW turbines at Waizenbach in Bavaria and three V172-7.2 MW units at Ankum Menkenheide in Lower Saxony, each 21.6 MW.",
+          "zh": "Vestas获得巴伐利亚州Waizenbach项目3台V172-7.2兆瓦风机和下萨克森州Ankum Menkenheide项目3台V172-7.2兆瓦风机订单，各为21.6兆瓦。"
+        },
+        {
+          "en": "In Austria, the Hoflein repowering project will replace five old turbines with three V162-6.2 MW units, totalling 18.6 MW.",
+          "zh": "在奥地利，Hoflein以大代小项目将用3台V162-6.2兆瓦风机替换5台旧机组，总计18.6兆瓦。"
+        },
+        {
+          "en": "The German orders include 20- and 25-year AOM 5000 service deals, with deliveries from Q4 2027 and commissioning from 2028.",
+          "zh": "德国订单包含20年和25年的AOM 5000运维协议，2027年四季度起交付，2028年起投运。"
+        }
+      ],
+      "insight": [
+        {
+          "en": "A steady flow of small German orders for 2028 delivery shows the auction pipeline is converting into turbine demand well beyond 2027.",
+          "zh": "持续不断的2028年交付的德国小型订单表明，招标项目储备正转化为2027年以后的风机需求。"
+        }
+      ],
+      "oem": [
+        {
+          "en": "Long service terms of 20–25 years attached to small orders show OEMs are competing on lifetime service value, not just turbine price.",
+          "zh": "小型订单附带20-25年长期运维，说明整机商的竞争已从风机价格延伸到全生命周期服务价值。"
+        }
+      ],
+      "watch": [
+        {
+          "en": "Check 2028 delivery slot availability for 7 MW-class turbines, as German customers are now booking that far ahead.",
+          "zh": "核查2028年7兆瓦级机组的交付档期，因为德国客户已提前预订到该时点。"
+        },
+        {
+          "en": "Target Austrian repowering projects, where small multi-turbine replacements are coming to market.",
+          "zh": "重点跟进奥地利以大代小项目，此类小规模多机组替换项目正陆续进入市场。"
+        }
+      ],
+      "source": "GreenTechLead",
+      "url": "https://greentechlead.com/wind/vestas-secures-63-mw-wind-turbine-orders-in-germany-and-austria-for-waizenbach-ankum-menkenheide-and-hoflein-projects-56686",
+      "published": "2026-11-19"
+    },
+    {
+      "region": "中国",
+      "country": "阿根廷 Argentina",
+      "title": {
+        "en": "Goldwind completes 336 MW expansion of Argentina's largest wind farm",
+        "zh": "金风科技完成阿根廷最大风电场336兆瓦扩建"
+      },
+      "sentences": [
+        {
+          "en": "Goldwind said 56 of its GW165-6.0MW turbines have added 336 MW at aluminium producer ALUAR's wind farm in Chubut, raising its capacity from 246 MW to 582 MW.",
+          "zh": "金风科技表示，其56台GW165-6.0MW风机为铝业公司ALUAR位于丘布特省的风电场新增336兆瓦，装机由246兆瓦增至582兆瓦。"
+        },
+        {
+          "en": "The company says the project was delivered four months ahead of plan, with towers made locally and trucked more than 1,400 km.",
+          "zh": "公司称该项目较计划提前四个月交付，塔筒在当地制造并经1400多公里陆运抵达现场。"
+        },
+        {
+          "en": "Wind's share of ALUAR's power supply rises from 12% to 33%, according to Goldwind.",
+          "zh": "据金风介绍，风电在ALUAR用电中的占比由12%提升至33%。"
+        }
+      ],
+      "insight": [
+        {
+          "en": "Industrial buyers powering their own plants with wind are becoming an important customer group in Latin America, separate from utility auctions.",
+          "zh": "以风电为自身工厂供电的工业用户，正成为拉美地区区别于公用事业招标的重要客户群体。"
+        }
+      ],
+      "oem": [
+        {
+          "en": "Local tower production and early delivery strengthen Goldwind's reference in Argentina and raise the bar on local content for rivals.",
+          "zh": "本地化塔筒生产和提前交付增强了金风在阿根廷的业绩背书，也提高了竞争对手在本地化方面的门槛。"
+        }
+      ],
+      "watch": [
+        {
+          "en": "Identify other energy-intensive industrial users in Argentina and Chile considering captive wind projects.",
+          "zh": "梳理阿根廷和智利其他正在考虑自建风电项目的高耗能工业用户。"
+        },
+        {
+          "en": "Assess local tower supply options in Patagonia before bidding, since long overland logistics are a key cost factor.",
+          "zh": "投标前评估巴塔哥尼亚地区的本地塔筒供应方案，长距离陆运是关键成本因素。"
+        }
+      ],
+      "source": "同花顺 (Goldwind official account)",
+      "url": "https://news.10jqka.com.cn/20261119/c682015002.shtml",
+      "published": "2026-11-19"
+    },
+    {
+      "region": "欧洲",
+      "country": "西班牙 Spain",
+      "title": {
+        "en": "Iberdrola repowers two Albacete wind farms, cutting 139 turbines to 22",
+        "zh": "Iberdrola完成阿尔瓦塞特两座风电场以大代小，139台风机减至22台"
+      },
+      "sentences": [
+        {
+          "en": "Iberdrola has finished repowering its Isabela and Molar del Molinar wind farms in Albacete, replacing 139 old turbines with 22 new ones for a combined 97.5 MW.",
+          "zh": "Iberdrola已完成阿尔瓦塞特省Isabela和Molar del Molinar两座风电场的以大代小改造，以22台新风机替换139台旧机组，总装机97.5兆瓦。"
+        },
+        {
+          "en": "Molar del Molinar's 75 units of 660 kW were replaced with 11 Vestas 4.5 MW turbines, while the OEM for Isabela's 11 new machines was not named.",
+          "zh": "Molar del Molinar的75台660千瓦机组被11台Vestas 4.5兆瓦风机取代，Isabela项目11台新机组的供应商未披露。"
+        },
+        {
+          "en": "Output is expected to rise by about 30%, according to the report.",
+          "zh": "据报道，改造后发电量预计提升约30%。"
+        }
+      ],
+      "insight": [
+        {
+          "en": "Spain has a large fleet of early-2000s wind farms, and this project shows repowering can raise output with far fewer turbines on the same sites.",
+          "zh": "西班牙拥有大量2000年代初建成的风电场，该项目表明以大代小可以在原址用少得多的机组提升发电量。"
+        }
+      ],
+      "oem": [
+        {
+          "en": "Repowering creates a steady market for 4–5 MW onshore platforms that fit existing grid connections, an area where incumbent OEMs with local service fleets have an advantage.",
+          "zh": "以大代小为适配现有并网容量的4-5兆瓦陆上平台创造了稳定市场，拥有本地运维团队的现有整机商在此具有优势。"
+        }
+      ],
+      "watch": [
+        {
+          "en": "List Spanish wind farms older than 20 years in customers' portfolios and propose repowering studies.",
+          "zh": "梳理客户资产组合中运行超过20年的西班牙风电场，主动提出以大代小可行性研究。"
+        },
+        {
+          "en": "Check whether decommissioning and recycling of old turbines can be offered as part of the scope, since it is a growing customer need.",
+          "zh": "评估能否将旧机组拆除与回收纳入供货范围，这是日益增长的客户需求。"
+        }
+      ],
+      "source": "CatalunyaPress",
+      "url": "https://www.catalunyapress.es/articulo/economia/2026-11-20/6102413-iberdrola-cambia-139-aerogeneradores-22-albacete-generara-30",
+      "published": "2026-11-20"
+    },
+    {
+      "region": "土耳其",
+      "country": "土耳其 Türkiye",
+      "title": {
+        "en": "First seven Goldwind turbines connected at Entek's Büyükkışla wind-plus-storage plant",
+        "zh": "Entek Büyükkışla风储电站首批7台金风风机并网"
+      },
+      "sentences": [
+        {
+          "en": "Seven of the 14 Goldwind 7.5 MW turbines at Entek Elektrik's Büyükkışla project in Ankara province are now on the grid after first-stage acceptance by the Energy Ministry.",
+          "zh": "Entek Elektrik位于安卡拉省Büyükkışla项目的14台金风7.5兆瓦风机中，已有7台在能源部首阶段验收后并网。"
+        },
+        {
+          "en": "The full plant is 99.9 MWe with 121 MWh of storage, and Entek is part of Koç Group.",
+          "zh": "电站总装机99.9兆瓦（电气），配套121兆瓦时储能，Entek隶属科奇集团。"
+        },
+        {
+          "en": "Goldwind says it is the first time it has used Turkish-made towers in its projects in Türkiye.",
+          "zh": "金风表示，这是其首次在土耳其项目中使用土耳其本地制造的塔筒。"
+        }
+      ],
+      "insight": [
+        {
+          "en": "Wind-plus-storage hybrids are becoming a standard configuration in Türkiye, which changes how projects are designed and contracted.",
+          "zh": "风储一体化正成为土耳其的标准配置，改变了项目的设计和合同方式。"
+        }
+      ],
+      "oem": [
+        {
+          "en": "Using local towers helps Chinese OEMs meet Türkiye's local-content expectations and shows they are building a domestic supply chain there.",
+          "zh": "采用本地塔筒有助于中国整机商满足土耳其的本地化要求，表明其正在当地构建供应链。"
+        }
+      ],
+      "watch": [
+        {
+          "en": "Benchmark local tower suppliers in Türkiye, since Chinese competitors now use them too.",
+          "zh": "对土耳其本地塔筒供应商进行对标评估，因为中国竞争对手现在也在使用。"
+        },
+        {
+          "en": "Prepare hybrid offers with storage integration for upcoming Turkish tenders.",
+          "zh": "为即将到来的土耳其项目招标准备含储能集成的风储方案。"
+        }
+      ],
+      "source": "Yeşil Haber",
+      "url": "https://yesilhaber.net/buyukkisla-res-ilk-yedi-turbin/",
+      "published": "2026-11-22"
+    },
+    {
+      "region": "德国",
+      "country": "德国 Germany",
+      "title": {
+        "en": "PNE receives permits for 72 MW of German wind projects",
+        "zh": "PNE获得德国72兆瓦风电项目许可"
+      },
+      "sentences": [
+        {
+          "en": "PNE has received federal immission-control permits for three wind projects totalling 72 MW in Lower Saxony and Brandenburg.",
+          "zh": "PNE在下萨克森州和勃兰登堡州的三个风电项目获得联邦排放控制法（BImSchG）许可，总计72兆瓦。"
+        },
+        {
+          "en": "The projects are Altenoythe, Calau with two Vestas V172-7.2 MW turbines, and an extension of the existing Zinndorf wind farm.",
+          "zh": "三个项目分别为Altenoythe、采用2台Vestas V172-7.2兆瓦风机的Calau，以及现有Zinndorf风电场的扩建。"
+        }
+      ],
+      "insight": [
+        {
+          "en": "Fresh permits feed directly into the next EEG onshore auctions, keeping German project supply high.",
+          "zh": "新获许可的项目将直接进入下一轮EEG陆上招标，使德国项目供给保持高位。"
+        }
+      ],
+      "oem": [
+        {
+          "en": "Permitted projects with a turbine model already named in the permit are hard for competing OEMs to win, so early engagement before permitting matters.",
+          "zh": "许可中已指定机型的项目，其他整机商很难再争取，因此需要在许可申请前尽早介入。"
+        }
+      ],
+      "watch": [
+        {
+          "en": "Ask PNE which turbine models are permitted for Altenoythe and Zinndorf and when they plan to bid in EEG auctions.",
+          "zh": "向PNE了解Altenoythe和Zinndorf项目许可的机型，以及计划参加哪一轮EEG招标。"
+        },
+        {
+          "en": "Track whether PNE plans to sell or build these projects, since that decides who the turbine buyer is.",
+          "zh": "跟踪PNE是计划出售还是自建这些项目，这决定了风机采购方是谁。"
+        }
+      ],
+      "source": "Windmesse",
+      "url": "https://w3.windmesse.de/windenergie/news/49919-pne-windenergie-windparks-genehmigungen-deutschland",
+      "published": "2026-11-19"
+    },
+    {
+      "region": "美国",
+      "country": "美国 United States",
+      "title": {
+        "en": "Pattern Energy's 800 MW Palomas Wind wins county permit in New Mexico",
+        "zh": "Pattern Energy新墨西哥州800兆瓦Palomas风电项目获县级许可"
+      },
+      "sentences": [
+        {
+          "en": "San Miguel County commissioners unanimously approved a conditional use permit for Pattern Energy's roughly 800 MW Palomas Wind project, after Torrance County had also approved it.",
+          "zh": "圣米格尔县委员会一致批准Pattern Energy约800兆瓦Palomas风电项目的有条件使用许可，此前托伦斯县也已批准。"
+        },
+        {
+          "en": "The power is contracted to utility PNM, and construction is planned from early 2028 to late 2029.",
+          "zh": "项目电力已与公用事业公司PNM签约，计划于2028年初至2029年底建设。"
+        },
+        {
+          "en": "The Santa Fe New Mexican report gives inconsistent turbine counts of about 125 and about 175.",
+          "zh": "《圣菲新墨西哥人报》报道中给出的风机数量不一致，分别约为125台和175台。"
+        }
+      ],
+      "insight": [
+        {
+          "en": "Local approvals continue to move large US onshore projects forward even while federal reviews remain uncertain.",
+          "zh": "即便联邦审查仍存在不确定性，地方审批仍在推动美国大型陆上项目前进。"
+        }
+      ],
+      "oem": [
+        {
+          "en": "An 800 MW project with a 2028 construction start is a major turbine procurement opportunity whose timing will likely depend on federal tax-credit rules.",
+          "zh": "这个2028年开工的800兆瓦项目是一笔重要的风机采购机会，其时间可能取决于联邦税收抵免规则。"
+        }
+      ],
+      "watch": [
+        {
+          "en": "Check with Pattern whether turbine selection for Palomas is open and when procurement is planned.",
+          "zh": "向Pattern确认Palomas项目的风机选型是否仍开放，以及采购计划时间。"
+        },
+        {
+          "en": "Track New Mexico state approvals expected before year-end as the next milestone.",
+          "zh": "跟踪预计年底前完成的新墨西哥州州级审批，这是下一个关键节点。"
+        }
+      ],
+      "source": "Santa Fe New Mexican via Yahoo News",
+      "url": "https://www.yahoo.com/news/us/articles/san-miguel-county-approves-800-045900617.html",
+      "published": "2026-11-14"
+    },
+    {
+      "region": "德国",
+      "country": "德国 Germany",
+      "title": {
+        "en": "Wind surge cuts German fossil generation after early-November lull",
+        "zh": "11月初风电低谷后强风回归，德国化石能源发电大幅下降"
+      },
+      "sentences": [
+        {
+          "en": "German daily wind generation rose from under 100 GWh to more than 1,100 GWh during the first three weeks of November, based on Bundesnetzagentur data cited by Reuters.",
+          "zh": "据路透社援引联邦网络局数据，11月前三周德国风电日发电量从不足100吉瓦时升至超过1,100吉瓦时。"
+        },
+        {
+          "en": "Gas-fired output fell from over 417 GWh on November 10 to 106 GWh on November 15, and wind supplied almost two-thirds of generation on November 18.",
+          "zh": "燃气发电从11月10日的逾417吉瓦时降至11月15日的106吉瓦时，11月18日风电几乎占全部发电量的三分之二。"
+        },
+        {
+          "en": "The figures cover both onshore and offshore wind.",
+          "zh": "上述数据包括陆上和海上风电。"
+        }
+      ],
+      "insight": [
+        {
+          "en": "The sharp swings highlight the value of storage, flexible demand and grid capacity alongside new onshore wind.",
+          "zh": "剧烈波动凸显了储能、灵活负荷和电网容量与新增陆上风电配套的价值。"
+        }
+      ],
+      "oem": [
+        {
+          "en": "High wind weeks are also peak periods for turbine availability; OEMs whose fleets perform well in these weeks strengthen their service track record.",
+          "zh": "大风周也是检验机组可利用率的高峰期，机队表现良好的整机商可借此增强运维业绩背书。"
+        }
+      ],
+      "watch": [
+        {
+          "en": "Review fleet availability data for November to address any downtime claims under availability guarantees.",
+          "zh": "复核11月机队可利用率数据，提前应对可利用率保证条款下的停机索赔。"
+        },
+        {
+          "en": "Use the volatility to promote hybrid wind-plus-storage offers to German customers.",
+          "zh": "借助这一波动性，向德国客户推广风储混合方案。"
+        }
+      ],
+      "source": "Reuters via Business Day",
+      "url": "https://www.businessday.co.za/news/science-and-environment/2026-11-23-the-wind-has-finally-shown-up-in-germany-and-fossil-fuels-feel-it/",
+      "published": "2026-11-23"
+    },
+    {
+      "region": "欧洲",
+      "country": "立陶宛 Lithuania",
+      "title": {
+        "en": "Enercon installs first E-175 EP5 turbine in Lithuania",
+        "zh": "Enercon在立陶宛安装首台E-175 EP5风机"
+      },
+      "sentences": [
+        {
+          "en": "Enercon has installed its first E-175 EP5 turbine in Lithuania at a 42.9 MW onshore wind project in the Panevėžys and Kupiškis area.",
+          "zh": "Enercon在立陶宛帕内韦日斯和库皮什基斯地区一个42.9兆瓦陆上风电项目上安装了其在该国的首台E-175 EP5风机。"
+        },
+        {
+          "en": "The project has entered turbine erection, but the turbine count and commissioning date were not given.",
+          "zh": "项目已进入风机吊装阶段，但未披露风机数量和投运日期。"
+        }
+      ],
+      "insight": [
+        {
+          "en": "A first installation of a new large-rotor platform in Lithuania suggests the Baltic onshore market is moving to the latest turbine classes.",
+          "zh": "新型大叶轮平台在立陶宛首次安装，表明波罗的海陆上市场正转向最新一代机型。"
+        }
+      ],
+      "oem": [
+        {
+          "en": "Getting the newest platform into a new market gives Enercon a reference site for further Baltic orders.",
+          "zh": "将最新平台引入新市场，为Enercon争取更多波罗的海订单提供了示范项目。"
+        }
+      ],
+      "watch": [
+        {
+          "en": "Track Lithuanian and Latvian projects at the permitting stage where turbine choice is still open.",
+          "zh": "跟踪立陶宛和拉脱维亚处于许可阶段、风机选型仍开放的项目。"
+        },
+        {
+          "en": "Check logistics and crane availability in the Baltics, since large-rotor turbines are now being installed there.",
+          "zh": "核查波罗的海地区的物流与吊装设备资源，因为大叶轮风机已开始在当地安装。"
+        }
+      ],
+      "source": "GreenTechLead",
+      "url": "https://greentechlead.com/energy-news/renewable-energy-news-renewable-properties-sembcorp-oq-reach-enercon-56745",
+      "published": "2026-11-23"
+    },
+    {
+      "region": "中国",
+      "country": "中国 China",
+      "title": {
+        "en": "NEA guidance links new wind and solar to river-basin hydropower bases",
+        "zh": "国家能源局发文推动流域水风光一体化发展"
+      },
+      "sentences": [
+        {
+          "en": "China's National Energy Administration issued guidance on integrated hydro-wind-solar development in river basins, released on the evening of November 18.",
+          "zh": "国家能源局于11月18日晚发布《关于加快推动流域水风光一体化发展的指导意见》。"
+        },
+        {
+          "en": "Each integrated base should in principle add at least 5 GW of new wind and solar, with bases such as the Yalong River and upper Jinsha River targeted for progress by 2030.",
+          "zh": "每个一体化基地原则上应带动新增风光装机不少于500万千瓦，雅砻江、金沙江上游等基地力争2030年取得积极进展。"
+        },
+        {
+          "en": "The document sets no wind-specific capacity figure.",
+          "zh": "文件未单独设定风电装机目标。"
+        }
+      ],
+      "insight": [
+        {
+          "en": "Pairing wind with hydropower regulation could ease curtailment in southwest China and open high-altitude sites to onshore wind.",
+          "zh": "风电与水电调节相结合有望缓解西南地区弃风问题，并推动高海拔地区陆上风电开发。"
+        }
+      ],
+      "oem": [
+        {
+          "en": "High-altitude basin sites will need turbines adapted to low air density and difficult logistics, which favours OEMs with plateau-proven models.",
+          "zh": "高海拔流域场址需要适应低空气密度和复杂运输条件的机型，有利于拥有高原机型业绩的整机商。"
+        }
+      ],
+      "watch": [
+        {
+          "en": "Contact hydropower operators in the Yalong and Jinsha basins about wind components of their integrated bases.",
+          "zh": "联系雅砻江、金沙江流域水电企业，了解其一体化基地中的风电规划。"
+        },
+        {
+          "en": "Prepare plateau-adapted turbine and transport solutions for upcoming basin tenders.",
+          "zh": "为后续流域项目招标准备高原适应性机型及运输方案。"
+        }
+      ],
+      "source": "科技日报",
+      "url": "https://www.stdaily.com/web/gdxw/2026-11/19/content_616063.html",
+      "published": "2026-11-19"
+    },
+    {
+      "region": "欧洲",
+      "country": "波兰 Poland",
+      "title": {
+        "en": "Onde and Tauron plan up to 366 MW of Polish onshore wind",
+        "zh": "Onde与Tauron计划在波兰开发最多366兆瓦陆上风电"
+      },
+      "sentences": [
+        {
+          "en": "Onde and Tauron Zielona Energia signed a letter of intent covering up to 399 MW of projects in Poland, of which up to 366 MW is onshore wind.",
+          "zh": "Onde与Tauron Zielona Energia签署意向书，涵盖波兰最多399兆瓦项目，其中陆上风电最多366兆瓦。"
+        },
+        {
+          "en": "Tauron would buy 50% of five Onde project companies for an estimated €4.5–5.4 million, subject to competition authority approval.",
+          "zh": "Tauron将以约450万至540万欧元收购Onde旗下五家项目公司50%股权，尚需竞争主管部门批准。"
+        }
+      ],
+      "insight": [
+        {
+          "en": "A state-controlled utility taking stakes in early-stage projects suggests continued appetite for Polish onshore wind among large buyers.",
+          "zh": "国有控股公用事业公司入股早期项目，显示大型买家对波兰陆上风电仍有持续兴趣。"
+        }
+      ],
+      "oem": [
+        {
+          "en": "Projects at an early stage give OEMs time to shape turbine selection, but orders are likely several years away.",
+          "zh": "早期阶段的项目让整机商有时间影响选型，但订单可能仍需数年。"
+        }
+      ],
+      "watch": [
+        {
+          "en": "Register interest with Tauron and Onde on turbine pre-selection for the five project companies.",
+          "zh": "就五家项目公司的风机预选向Tauron和Onde表达合作意向。"
+        },
+        {
+          "en": "Track the competition authority decision and the ready-to-build milestone that triggers Tauron's option.",
+          "zh": "跟踪竞争主管部门的审批决定，以及触发Tauron收购选择权的“可开工”节点。"
+        }
+      ],
+      "source": "Vindkraftsnyheter",
+      "url": "https://www.vindkraftsnyheter.se/20261116/9100/onde-och-tauron-planerar-nara-400-megawatt-vind-och-solel-i-polen",
+      "published": "2026-11-16"
+    }
+  ]
+}
