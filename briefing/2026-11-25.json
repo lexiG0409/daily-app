@@ -1,0 +1,656 @@
+{
+  "date": "2026-11-25",
+  "generatedAt": "2026-11-25T06:30:00+01:00",
+  "items": [
+    {
+      "region": "美国",
+      "country": "美国 United States",
+      "title": {
+        "en": "White House releases a few more stalled wind projects ahead of House permitting vote",
+        "zh": "众议院审议许可改革法案前，白宫再放行少量受阻风电项目"
+      },
+      "sentences": [
+        {
+          "en": "According to an NRDC statement on 24 November, the administration cleared a small additional batch of wind projects held in the federal review queue, as reported by Punchbowl News, ahead of a possible House vote on the permitting bill.",
+          "zh": "据美国自然资源保护委员会（NRDC）11月24日声明，在众议院可能就许可改革法案表决前，政府又放行了一小批滞留在联邦审查队列中的风电项目，消息最早由Punchbowl News报道。"
+        },
+        {
+          "en": "NRDC says the batch covers only about 10% of the roughly 400 wind projects that a Justice Department lawyer told a court are stuck in the FAA/Defense Department review queue.",
+          "zh": "NRDC称，司法部律师此前向法院表示约有400个风电项目卡在联邦航空局/国防部审查队列中，而此次放行的仅占约10%。"
+        },
+        {
+          "en": "The group, an advocacy organisation, also notes that President Trump has said he would not approve new wind projects, and it urges Congress to demand approvals before agreeing any permitting deal.",
+          "zh": "作为环保倡导组织，NRDC还指出特朗普曾表示不会批准新的风电项目，并敦促国会在达成许可改革协议前先要求政府放行审批。"
+        }
+      ],
+      "insight": [
+        {
+          "en": "Approvals are being released in small, politically timed batches, so US onshore pipeline timing now depends as much on the permitting negotiations in Congress as on project readiness.",
+          "zh": "审批正以小批量、配合政治节点的方式放出，美国陆上风电项目的推进节奏如今既取决于项目成熟度，也取决于国会许可改革谈判。"
+        }
+      ],
+      "oem": [
+        {
+          "en": "For OEMs, each cleared project is a potential order or delivery release, but with roughly nine in ten queued projects still blocked, US factory loading and 2027 delivery slots remain hard to plan.",
+          "zh": "对整机商而言，每个获批项目都可能转化为订单或释放交付，但队列中仍有约九成项目受阻，美国工厂负荷和2027年交付排期依然难以规划。"
+        }
+      ],
+      "watch": [
+        {
+          "en": "Ask US customers whether any of their projects were in this cleared batch and update delivery and reservation schedules accordingly.",
+          "zh": "向美国客户核实其项目是否在本批放行名单中，并据此更新交付和产能预留计划。"
+        },
+        {
+          "en": "Track the House vote on the permitting bill and any follow-up FAA/DoD determinations.",
+          "zh": "跟踪众议院对许可改革法案的表决以及后续联邦航空局/国防部的审查结论。"
+        },
+        {
+          "en": "Review delay, suspension and change-in-law clauses in US contracts for projects still awaiting federal sign-off.",
+          "zh": "对仍待联邦审批的项目，复核美国合同中的延期、暂停及法律变更条款。"
+        }
+      ],
+      "source": "NRDC",
+      "url": "https://www.nrdc.org/press-releases/trump-dribbles-out-wind-approvals-while-clean-energy-stalls",
+      "published": "2026-11-24"
+    },
+    {
+      "region": "中国",
+      "country": "中国 China",
+      "title": {
+        "en": "China's wind fleet reaches about 710 GW at end-October, up 20% year on year",
+        "zh": "截至10月底全国风电装机约7.1亿千瓦，同比增长20%"
+      },
+      "sentences": [
+        {
+          "en": "National Energy Administration data released on 25 November show installed wind capacity of about 710 GW at the end of October, 20.0% more than a year earlier.",
+          "zh": "国家能源局11月25日发布的数据显示，截至10月底全国风电装机容量约7.1亿千瓦，同比增长20.0%。"
+        },
+        {
+          "en": "Total generating capacity reached 4.16 TW, up 10.9%, while solar capacity stood at about 1.33 TW, up 16.3%.",
+          "zh": "全国累计发电装机容量41.6亿千瓦，同比增长10.9%；太阳能发电装机约13.3亿千瓦，同比增长16.3%。"
+        },
+        {
+          "en": "Average utilisation hours of generating equipment fell by 214 hours year on year to 2,406 hours in January–October.",
+          "zh": "1-10月全国发电设备累计平均利用小时2406小时，同比减少214小时。"
+        }
+      ],
+      "insight": [
+        {
+          "en": "Wind capacity is growing faster than solar and far faster than total capacity, but falling utilisation hours point to rising pressure on consumption and grid absorption.",
+          "zh": "风电装机增速高于光伏，更明显高于总装机增速，但利用小时数下降显示消纳与电网承载压力在上升。"
+        }
+      ],
+      "oem": [
+        {
+          "en": "Strong fleet growth supports domestic order volumes into 2027, while weaker utilisation will push owners to demand higher-yield, larger-rotor turbines and tougher availability guarantees.",
+          "zh": "装机快速增长将支撑国内订单延续到2027年，而利用小时下降会促使业主要求更高发电量的大叶轮机型和更严格的可利用率保证。"
+        }
+      ],
+      "watch": [
+        {
+          "en": "Watch the NEA's January–October wind additions figure, which the release did not give, to gauge the full-year installation pace.",
+          "zh": "关注国家能源局1-10月风电新增装机数据（本次稿件未给出），以判断全年装机节奏。"
+        },
+        {
+          "en": "Prepare power-curve and yield cases for customers in provinces facing curtailment, since energy yield rather than headline price may decide upcoming bids.",
+          "zh": "为面临弃风压力省份的客户准备功率曲线与发电量测算，后续招标中发电量可能比报价更具决定性。"
+        }
+      ],
+      "source": "Securities Times via Sina Finance",
+      "url": "https://k.sina.cn/article_5597884738_14da8f14202002bdq0.html",
+      "published": "2026-11-25"
+    },
+    {
+      "region": "欧洲",
+      "country": "罗马尼亚 Romania",
+      "title": {
+        "en": "Nordex wins 133 MW order from Electrica for its first wind farm",
+        "zh": "Nordex获Electrica首个风电场133兆瓦订单"
+      },
+      "sentences": [
+        {
+          "en": "Romanian utility Electrica has ordered 19 Nordex N163/6.X turbines from the Delta4000 series for the 133 MW Crucea Est wind farm in Constanța County.",
+          "zh": "罗马尼亚电力公司Electrica为康斯坦察县133兆瓦Crucea Est风电场订购了19台Nordex Delta4000系列N163/6.X风机。"
+        },
+        {
+          "en": "The contract covers supply, installation and a 20-year Premium Service agreement, with hub heights of 98 to 125 metres.",
+          "zh": "合同包括供货、安装及20年Premium全面运维服务，轮毂高度为98至125米。"
+        },
+        {
+          "en": "Installation is due to start in summer 2027 with substantial completion in 2028; this is Electrica's first wind farm and the price was not disclosed.",
+          "zh": "安装计划于2027年夏季开始，2028年基本完工；这是Electrica的首个风电场，价格未披露。"
+        }
+      ],
+      "insight": [
+        {
+          "en": "Utilities entering wind for the first time in southeast Europe are adding new demand in markets that were long dominated by a handful of independent developers.",
+          "zh": "东南欧首次进入风电领域的电力公司正在为长期由少数独立开发商主导的市场带来新增需求。"
+        }
+      ],
+      "oem": [
+        {
+          "en": "The 20-year service deal locks in long-term O&M revenue for Nordex and strengthens its foothold in Romania's Dobrogea wind cluster against Vestas and Siemens Gamesa.",
+          "zh": "20年运维合同为Nordex锁定长期服务收入，并巩固其在罗马尼亚多布罗加风电集群对抗维斯塔斯和西门子歌美飒的地位。"
+        }
+      ],
+      "watch": [
+        {
+          "en": "Map other Romanian and Black Sea utilities that may follow Electrica into self-developed wind and approach them before their first tenders.",
+          "zh": "梳理可能效仿Electrica自主开发风电的罗马尼亚及黑海地区电力公司，在其首轮招标前提前接触。"
+        },
+        {
+          "en": "Note the long-term full-service scope now expected by first-time utility buyers when pricing bids in the region.",
+          "zh": "在该区域报价时注意首次采购的电力公司对长期全包运维范围的期待。"
+        }
+      ],
+      "source": "Nordex",
+      "url": "https://www.nordex-online.com/en/2026/11/nordex-group-receives-133-mw-order-from-electrica-for-wind-farm-in-romania/",
+      "published": "2026-11-24"
+    },
+    {
+      "region": "土耳其",
+      "country": "土耳其 Türkiye",
+      "title": {
+        "en": "Minister says wind turbine local content has reached 65%",
+        "zh": "能源部长称风机国产化率已达65%"
+      },
+      "sentences": [
+        {
+          "en": "Presenting the 2027 budget to parliament's planning committee on 23 November, Energy Minister Alparslan Bayraktar said local content has reached 65% for wind turbines and 91% for solar panels.",
+          "zh": "能源部长阿尔帕斯兰·拜拉克塔尔11月23日在议会计划预算委员会介绍2027年预算时表示，风机国产化率已达65%，光伏组件达91%。"
+        },
+        {
+          "en": "He said Türkiye aims to roughly quadruple combined wind and solar capacity from about 45 GW today to 175 GW by 2040, requiring around $100 billion of investment.",
+          "zh": "他表示，土耳其计划到2040年将风光装机从目前约45吉瓦提高到175吉瓦，约为四倍，所需投资约1000亿美元。"
+        },
+        {
+          "en": "The plan also includes about $36 billion for transmission, including the country's first 10,000 km of HVDC lines, although the article does not say how the 65% figure is calculated.",
+          "zh": "规划还包括约360亿美元输电投资，其中包括土耳其首批1万公里特高压直流线路；不过报道未说明65%这一比例的计算口径。"
+        }
+      ],
+      "insight": [
+        {
+          "en": "Official emphasis on local content signals that domestic manufacturing will remain a condition for access to Türkiye's growing wind market.",
+          "zh": "官方强调国产化率，表明本土制造仍将是进入土耳其不断扩大的风电市场的前提条件。"
+        }
+      ],
+      "oem": [
+        {
+          "en": "OEMs without Turkish blade, tower or nacelle supply chains face a structural disadvantage, while those with local plants can use the 2040 targets to justify further capacity investment.",
+          "zh": "缺乏土耳其本地叶片、塔筒或机舱供应链的整机商将处于结构性劣势，而已有本地工厂的厂商可借2040目标论证进一步扩产。"
+        }
+      ],
+      "watch": [
+        {
+          "en": "Check how your current Turkish bill of materials scores against YEKA local-content rules and which components would need to be localised next.",
+          "zh": "核查现有土耳其项目物料清单在YEKA国产化规则下的得分，以及下一步需要本地化的部件。"
+        },
+        {
+          "en": "Follow the ministry's implementation of the HVDC and grid plan, which will shape where new wind zones are offered.",
+          "zh": "跟踪能源部特高压直流和电网规划的落实，这将决定新风电区域的布局。"
+        }
+      ],
+      "source": "Rüzgar Enerjisi Dergisi",
+      "url": "https://ruzgarenerjisi.com.tr/bakan-bayraktar-ruzgar-turbinlerinde-yerlilik-orani-yuzde-65e-ulasti/",
+      "published": "2026-11-24"
+    },
+    {
+      "region": "中国",
+      "country": "中国 China",
+      "title": {
+        "en": "2027 mechanism-price auctions: wind prices rise in several provinces as volumes shrink",
+        "zh": "2027年机制电价竞价：多省风电价格上涨、电量收缩"
+      },
+      "sentences": [
+        {
+          "en": "A tally by Bjx compiled as of 11 November shows that seven of the ten provinces with published 2027 results have wind outcomes, with Gansu at 0.2440 yuan/kWh (+24.9%) and Heilongjiang at 0.2845 yuan/kWh (+24.7%).",
+          "zh": "北极星截至11月11日的不完全统计显示，已公布2027年结果的10个省市中有7个涉及风电，其中甘肃风电机制电价0.2440元/千瓦时（上涨24.9%），黑龙江0.2845元/千瓦时（上涨24.7%）。"
+        },
+        {
+          "en": "Xinjiang wind rose 9.5% to 0.230 yuan/kWh, but its wind mechanism volume fell from 13.06 TWh to 7.98 TWh, and Guangxi's dropped by about 30%.",
+          "zh": "新疆风电价格上涨9.5%至0.230元/千瓦时，但风电机制电量由130.62亿千瓦时降至79.84亿千瓦时，广西风电电量下降约30%。"
+        },
+        {
+          "en": "Liaoning's result fell 9.1% after its price cap was cut from 0.33 to 0.30 yuan/kWh, so the trend is not uniform.",
+          "zh": "辽宁上限由0.33元降至0.30元/千瓦时后，结果下降9.1%，各地走势并不一致。"
+        }
+      ],
+      "insight": [
+        {
+          "en": "Higher clearing prices with smaller guaranteed volumes mean wind projects will rely more on market sales, raising the value of strong generation profiles.",
+          "zh": "出清价格上升但保障电量缩小，意味着风电项目将更多依赖市场化交易，高发电量和优质出力曲线的价值随之提升。"
+        }
+      ],
+      "oem": [
+        {
+          "en": "Better tariffs in Gansu and Heilongjiang may speed up project starts and turbine tenders there, while volume cuts in Xinjiang and Guangxi could slow some orders.",
+          "zh": "甘肃、黑龙江电价改善可能加快当地项目开工和风机招标，而新疆、广西电量削减可能拖慢部分订单。"
+        }
+      ],
+      "watch": [
+        {
+          "en": "Prioritise sales follow-up with owners holding winning mechanism-price projects in Gansu and Heilongjiang.",
+          "zh": "优先跟进在甘肃、黑龙江获得机制电价的项目业主。"
+        },
+        {
+          "en": "Note that the figures are a partial tally; confirm final provincial results before revising forecasts.",
+          "zh": "注意上述数据为不完全统计，修正预测前需核实各省正式结果。"
+        }
+      ],
+      "source": "Huxiu (via Bjx Solar)",
+      "url": "https://m.huxiu.com/article/4905816.html",
+      "published": "2026-11-16"
+    },
+    {
+      "region": "土耳其",
+      "country": "土耳其 Türkiye",
+      "title": {
+        "en": "Bill would give YEKA tenders a legal basis and add a fee for wind capacity increases",
+        "zh": "议会法案拟为YEKA招标立法并对风电扩容收费"
+      },
+      "sentences": [
+        {
+          "en": "Bill 2/4042, submitted to the Turkish parliament on 12 November and now in committee, would tie YEKA site and grid-capacity allocation to competitions in law.",
+          "zh": "11月12日提交土耳其议会、目前处于委员会审议阶段的第2/4042号法案，拟在法律层面将YEKA场址和并网容量分配与竞争性招标挂钩。"
+        },
+        {
+          "en": "It would also have grid operator TEİAŞ set a per-MW fee for wind and solar capacity increases, capped at 50% of the EPDK unit investment amount and paid upfront before licence amendment.",
+          "zh": "法案还规定由电网公司TEİAŞ对风电和光伏扩容按兆瓦收费，上限为EPDK单位投资额的50%，在执照变更前一次性缴纳。"
+        },
+        {
+          "en": "Another article would remove electricity producers from the reduced 12.5% corporate tax rate from the 2027 tax year.",
+          "zh": "另有条款拟自2027纳税年度起取消发电企业适用的12.5%优惠企业所得税率。"
+        }
+      ],
+      "insight": [
+        {
+          "en": "A capacity-increase fee would raise the cost of adding turbines to existing licences, a route many Turkish owners have used to grow without new tenders.",
+          "zh": "扩容收费将提高在既有执照上加装风机的成本，而这一直是许多土耳其业主无需新招标即可扩张的途径。"
+        }
+      ],
+      "oem": [
+        {
+          "en": "If enacted, demand from capacity-extension projects could slow or be pulled forward before the fee applies, affecting OEM order timing in Türkiye.",
+          "zh": "若法案通过，扩容项目需求可能放缓，或在收费生效前提前释放，从而影响整机商在土耳其的订单节奏。"
+        }
+      ],
+      "watch": [
+        {
+          "en": "Ask customers with pending capacity-increase applications whether they plan to accelerate orders before the bill passes.",
+          "zh": "询问有待批扩容申请的客户是否计划在法案通过前加快下单。"
+        },
+        {
+          "en": "Track the committee stage and the final fee level, as it will change project economics in bids.",
+          "zh": "跟踪委员会审议进程及最终收费水平，这将改变投标中的项目经济性。"
+        }
+      ],
+      "source": "Rüzgar Enerjisi Dergisi",
+      "url": "https://ruzgarenerjisi.com.tr/tbmmdeki-kanun-teklifi-yeka-yarismalarina-yasal-cerceve-ruzgar-ve-guneste-kapasite-artis-bedeli/",
+      "published": "2026-11-19"
+    },
+    {
+      "region": "德国",
+      "country": "德国 Germany",
+      "title": {
+        "en": "German onshore wind output up 9.1% in the first three quarters",
+        "zh": "德国前三季度陆上风电发电量增长9.1%"
+      },
+      "sentences": [
+        {
+          "en": "Onshore wind generated 76.2 TWh in January–September 2026, 9.1% more than a year earlier and 19.4% of gross generation, based on preliminary ZSW/BDEW figures.",
+          "zh": "根据ZSW/BDEW初步数据，2026年1-9月德国陆上风电发电76.2太瓦时，同比增长9.1%，占总发电量的19.4%。"
+        },
+        {
+          "en": "The article says 3.5 GW of onshore capacity was newly registered as in operation, compared with 3.1 GW a year earlier.",
+          "zh": "报道称新登记投运的陆上风电装机为3.5吉瓦，上年同期为3.1吉瓦。"
+        },
+        {
+          "en": "Citing Fachagentur Wind und Solar, it adds that new turbines in the first half averaged 228 metres total height and 5.6 MW rated output.",
+          "zh": "报道援引陆上风能与光伏专业署数据称，上半年新装风机平均总高度228米，平均额定功率5.6兆瓦。"
+        }
+      ],
+      "insight": [
+        {
+          "en": "Rising output and installations strengthen the political case for Germany's onshore expansion path while the EEG framework is being revised.",
+          "zh": "发电量与装机同步增长，在EEG框架修订期间为德国陆上风电扩张路线提供了更有力的政治支撑。"
+        }
+      ],
+      "oem": [
+        {
+          "en": "The 5.6 MW average confirms that 5–7 MW platforms are now the German volume segment, where OEMs compete mainly on yield, tower height and noise.",
+          "zh": "平均5.6兆瓦表明5-7兆瓦平台已成为德国主流量产段，整机商主要在发电量、塔筒高度和噪声方面竞争。"
+        }
+      ],
+      "watch": [
+        {
+          "en": "Use the higher output data in customer conversations on repowering business cases.",
+          "zh": "在与客户讨论以大代小商业论证时引用发电量增长数据。"
+        },
+        {
+          "en": "Check that your German offer covers the hub heights now typical of new projects, as total heights near 230 metres are becoming standard.",
+          "zh": "确认德国产品方案覆盖新项目常见的轮毂高度，总高度约230米正成为常态。"
+        }
+      ],
+      "source": "Windkraft-Journal",
+      "url": "https://www.windkraft-journal.de/2026/11/22/windstrom-an-land-legt-in-den-ersten-drei-quartalen-2026-um-91-prozent-zu/229643",
+      "published": "2026-11-22"
+    },
+    {
+      "region": "德国",
+      "country": "德国 Germany",
+      "title": {
+        "en": "Max Bögl commissions V172 on a 199-metre hybrid tower to power its own factory",
+        "zh": "Max Bögl在199米混塔上投运V172，为自家工厂供电"
+      },
+      "sentences": [
+        {
+          "en": "A Vestas V172-7.2 MW turbine with a 199-metre hub height and 285-metre tip height is now operating at Winnberg near Sengenthal in Bavaria, described as the tallest series turbine.",
+          "zh": "一台轮毂高度199米、叶尖高度285米的维斯塔斯V172-7.2兆瓦风机已在巴伐利亚Sengenthal附近的Winnberg投运，被称为最高的量产风机。"
+        },
+        {
+          "en": "Max Bögl built the concrete-steel hybrid tower and expects up to 18 million kWh a year, mainly supplying its own Sengenthal plant where towers are produced.",
+          "zh": "Max Bögl建造了混凝土-钢混合塔筒，预计年发电量最高1800万千瓦时，主要供应其生产塔筒的Sengenthal工厂。"
+        },
+        {
+          "en": "The company says it has built more than 4,600 such hybrid towers; Vestas supplied and installed the turbine.",
+          "zh": "该公司称已建造逾4600座此类混塔，风机由维斯塔斯供货并安装。"
+        }
+      ],
+      "insight": [
+        {
+          "en": "Very tall towers are becoming a commercial tool to unlock low-wind inland sites in southern Germany.",
+          "zh": "超高塔筒正成为开发德国南部低风速内陆场址的商业工具。"
+        }
+      ],
+      "oem": [
+        {
+          "en": "For OEMs, competitiveness in southern Germany increasingly depends on tower partners and certified tall-tower options as much as on the nacelle.",
+          "zh": "对整机商而言，在德国南部的竞争力越来越取决于塔筒合作伙伴和经认证的高塔方案，而不仅是机舱本身。"
+        }
+      ],
+      "watch": [
+        {
+          "en": "Review whether your tower portfolio includes certified hybrid or tall steel options above 180 metres for southern German bids.",
+          "zh": "检查塔筒产品组合是否包含适用于德国南部投标、180米以上并已认证的混塔或高钢塔方案。"
+        },
+        {
+          "en": "Approach industrial customers interested in on-site wind for self-supply, a niche this project highlights.",
+          "zh": "接触有意建设厂区自用风电的工业客户，本项目展示了这一细分需求。"
+        }
+      ],
+      "source": "CleanThinking",
+      "url": "https://www.cleanthinking.de/hoechste-serienwindrad-max-boegl",
+      "published": "2026-11-22"
+    },
+    {
+      "region": "中国",
+      "country": "中国 China",
+      "title": {
+        "en": "First units of Tibet's largest wind base connected at over 5,100 metres",
+        "zh": "西藏最大风电基地首批机组并网，平均海拔超5100米"
+      },
+      "sentences": [
+        {
+          "en": "The first turbines of the 150 MW Phase I of the Qiongjie County wind base in Shannan, Tibet, were connected to the grid on 24 November, Xinhua reported.",
+          "zh": "据新华社报道，西藏山南市琼结县风电基地一期15万千瓦项目首批机组于11月24日并网发电。"
+        },
+        {
+          "en": "The China Huadian project uses 24 turbines of 6.25 MW at sites between 4,800 and 5,350 metres, with average wind speeds above 8 m/s.",
+          "zh": "该项目由中国华电建设，采用24台6.25兆瓦风机，场址海拔4800至5350米，平均风速超过8米/秒。"
+        },
+        {
+          "en": "The full base is planned at 500 MW and Phase I includes grid-forming storage; the article does not name the turbine supplier.",
+          "zh": "整个基地规划50万千瓦，一期配套构网型储能；报道未披露风机供应商。"
+        }
+      ],
+      "insight": [
+        {
+          "en": "Ultra-high-altitude wind is moving from demonstrations to base-scale development, opening a new but technically demanding market segment.",
+          "zh": "超高海拔风电正从示范走向基地化开发，打开一个技术门槛很高的新细分市场。"
+        }
+      ],
+      "oem": [
+        {
+          "en": "Turbines for these sites need high-altitude derating, cold and lightning protection and special logistics, which favours OEMs with proven plateau references and raises service costs.",
+          "zh": "此类场址的风机需要高海拔降容、防寒防雷和特殊运输方案，有高原业绩的整机商更具优势，运维成本也更高。"
+        }
+      ],
+      "watch": [
+        {
+          "en": "Track tenders for the remaining 350 MW of the Qiongjie base and other Tibetan wind projects.",
+          "zh": "跟踪琼结基地剩余35万千瓦及西藏其他风电项目的招标。"
+        },
+        {
+          "en": "Prepare high-altitude certification and O&M staffing plans before bidding, as these sites require dedicated service set-ups.",
+          "zh": "投标前准备高海拔认证和运维人员方案，这类场址需要专门的服务配置。"
+        }
+      ],
+      "source": "Xinhua",
+      "url": "https://www.news.cn/local/20261124/4a8282f6653c4086bef9eea318f8e90f/c.html",
+      "published": "2026-11-24"
+    },
+    {
+      "region": "德国",
+      "country": "德国 Germany",
+      "title": {
+        "en": "GE Vernova books 22 MW order from wpd for Haseloff wind farm",
+        "zh": "GE Vernova获wpd Haseloff风电场22兆瓦订单"
+      },
+      "sentences": [
+        {
+          "en": "GE Vernova will supply four 5.5 MW-158m turbines to wpd for the Haseloff wind farm, with a long-term service agreement.",
+          "zh": "GE Vernova将为wpd的Haseloff风电场供应4台5.5MW-158m风机，并签订长期服务协议。"
+        },
+        {
+          "en": "Deliveries are due from November 2027 and commissioning in the first quarter of 2028, with the turbines built at the Salzbergen plant.",
+          "zh": "风机将于2027年11月开始交付，2028年一季度投运，在萨尔茨贝尔根工厂生产。"
+        },
+        {
+          "en": "It is the fifth project the two companies have agreed on this turbine type, taking wpd's German fleet of it to 24 units and 132 MW.",
+          "zh": "这是双方采用该机型合作的第五个项目，wpd在德国的该机型机组将达24台、132兆瓦。"
+        }
+      ],
+      "insight": [
+        {
+          "en": "A steady flow of small repeat orders shows German demand is being filled through established developer–OEM relationships.",
+          "zh": "持续不断的小规模复购订单显示，德国需求正通过既有开发商与整机商的合作关系释放。"
+        }
+      ],
+      "oem": [
+        {
+          "en": "GE Vernova is using its Salzbergen factory and a single 6 MW-class platform to hold share in Germany against Enercon, Nordex and Vestas.",
+          "zh": "GE Vernova依托萨尔茨贝尔根工厂和单一6兆瓦级平台，在德国与Enercon、Nordex和维斯塔斯争夺份额。"
+        }
+      ],
+      "watch": [
+        {
+          "en": "Check whether repeat customers of competitors have upcoming German projects from recent auction rounds that are still uncontracted.",
+          "zh": "核查竞争对手的复购客户在近期招标轮次中是否仍有尚未签约的德国项目。"
+        },
+        {
+          "en": "Expect delivery slots for late 2027 to fill up; confirm your own slot availability before quoting.",
+          "zh": "预计2027年末交付档期将趋紧，报价前确认自身档期。"
+        }
+      ],
+      "source": "GE Vernova",
+      "url": "https://www.gevernova.com/news/press-releases/ge-vernova-strengthens-german-wind-energy-expansion-new-order-wpd",
+      "published": "2026-11-17"
+    },
+    {
+      "region": "德国",
+      "country": "德国 Germany",
+      "title": {
+        "en": "Energiequelle starts building an Enercon E-160 under NRW's citizen-energy law",
+        "zh": "Energiequelle依据北威州公民能源法开建一台Enercon E-160"
+      },
+      "sentences": [
+        {
+          "en": "Energiequelle has begun construction of one Enercon E-160 turbine of 5.56 MW with a 166.6-metre hub height in Ennigerloh, North Rhine-Westphalia.",
+          "zh": "Energiequelle已在北莱茵-威斯特法伦州恩尼格洛开工建设一台5.56兆瓦、轮毂高度166.6米的Enercon E-160风机。"
+        },
+        {
+          "en": "The turbine is expected to generate about 16.5 million kWh a year, with foundations in early 2027 and commissioning planned for November 2027.",
+          "zh": "该风机预计年发电约1650万千瓦时，2027年初浇筑基础，计划2027年11月投运。"
+        },
+        {
+          "en": "It is Energiequelle's first project under the NRW Bürgerenergiegesetz, which gives municipalities and residents a financial stake.",
+          "zh": "这是Energiequelle首个适用北威州《公民能源法》的项目，当地市镇和居民可获得经济参与。"
+        }
+      ],
+      "insight": [
+        {
+          "en": "State citizen-participation laws are becoming a standard part of German project design, adding cost but supporting local acceptance.",
+          "zh": "州级公民参与法规正成为德国项目设计的标准环节，虽增加成本，但有助于提高当地接受度。"
+        }
+      ],
+      "oem": [
+        {
+          "en": "Single-turbine and small community projects keep the order book fragmented, favouring OEMs with efficient logistics and service coverage for dispersed sites.",
+          "zh": "单机和小型社区项目使订单高度分散，有利于在分散场址具备高效物流和服务覆盖的整机商。"
+        }
+      ],
+      "watch": [
+        {
+          "en": "Include participation-model costs in customer business cases for NRW projects.",
+          "zh": "在北威州项目的客户商业测算中纳入公民参与模式的成本。"
+        },
+        {
+          "en": "Review minimum-order economics for one- or two-turbine projects, including transport and crane costs.",
+          "zh": "复核一至两台机组项目的最小订单经济性，包括运输和吊装成本。"
+        }
+      ],
+      "source": "Windindustrie in Deutschland",
+      "url": "https://www.windindustrie-in-deutschland.de/news/energiequelle-startet-bau-einer-e-160-windenergieanlage-in-ennigerloh",
+      "published": "2026-11-25"
+    },
+    {
+      "region": "中国",
+      "country": "中国 China",
+      "title": {
+        "en": "China's wind generation jumps 33.7% in October",
+        "zh": "10月全国风电发电量同比增长33.7%"
+      },
+      "sentences": [
+        {
+          "en": "National Bureau of Statistics data show wind generation by large-scale industrial producers grew 33.7% year on year in October, 23.1 percentage points faster than in September.",
+          "zh": "国家统计局数据显示，10月规上工业风电发电量同比增长33.7%，增速比9月加快23.1个百分点。"
+        },
+        {
+          "en": "Total above-scale generation fell 2.1% to 794.0 TWh, with thermal down 7.3% and hydro down 18.9%.",
+          "zh": "同期规上工业发电量7940亿千瓦时，同比下降2.1%，其中火电下降7.3%，水电下降18.9%。"
+        }
+      ],
+      "insight": [
+        {
+          "en": "Wind is taking a larger share of a flat power market, which increases competition with thermal and hydro for grid space and market prices.",
+          "zh": "在总电量走平的市场中风电份额扩大，加剧了其与火电、水电在电网空间和市场电价上的竞争。"
+        }
+      ],
+      "oem": [
+        {
+          "en": "Strong generation data help owners justify new investment, supporting tender volumes, while also raising expectations on turbine availability.",
+          "zh": "强劲的发电数据有助于业主论证新增投资、支撑招标规模，同时也提高了对风机可利用率的期待。"
+        }
+      ],
+      "watch": [
+        {
+          "en": "Watch whether the October jump reflects wind conditions or new capacity before using it in sales forecasts.",
+          "zh": "在用于销售预测前，辨别10月增长来自风况还是新增装机。"
+        },
+        {
+          "en": "Use regional output data to prioritise service and spare-parts stocking for high-load months.",
+          "zh": "利用分区域发电数据，为高负荷月份安排运维和备件库存优先级。"
+        }
+      ],
+      "source": "National Bureau of Statistics",
+      "url": "https://www.stats.gov.cn/sj/zxfb/202611/t20261116_1965837.html",
+      "published": "2026-11-16"
+    },
+    {
+      "region": "欧洲",
+      "country": "阿尔巴尼亚 Albania",
+      "title": {
+        "en": "Nordex wins 84 MW VERBUND order for Albania's first wind farm",
+        "zh": "Nordex获VERBUND阿尔巴尼亚首个风电场84兆瓦订单"
+      },
+      "sentences": [
+        {
+          "en": "Austrian utility VERBUND has ordered 12 Nordex N163/6.X turbines for the 84 MW Spille project south of Durrës, with a 15-year Premium Service agreement.",
+          "zh": "奥地利电力公司VERBUND为都拉斯以南84兆瓦Spille项目订购12台Nordex N163/6.X风机，并签订15年Premium运维协议。"
+        },
+        {
+          "en": "Commissioning is planned for spring 2028, and the order is the first under a framework agreed in January 2026 for up to 700 MW across six European markets.",
+          "zh": "项目计划于2028年春投运，该订单是2026年1月签订的覆盖六个欧洲市场、最高700兆瓦框架协议下的首单。"
+        }
+      ],
+      "insight": [
+        {
+          "en": "The Western Balkans are opening as new onshore markets, led by Western European utilities with framework supply deals.",
+          "zh": "西巴尔干正成为新的陆上风电市场，由手握框架供货协议的西欧电力公司带头开发。"
+        }
+      ],
+      "oem": [
+        {
+          "en": "Framework agreements let an OEM capture a utility's multi-country pipeline early, making it harder for rivals to compete project by project.",
+          "zh": "框架协议使整机商能提前锁定电力公司的多国项目储备，竞争对手难以逐个项目突破。"
+        }
+      ],
+      "watch": [
+        {
+          "en": "Identify utilities with multi-country pipelines that have not yet signed turbine frameworks.",
+          "zh": "识别拥有多国项目储备但尚未签订风机框架协议的电力公司。"
+        },
+        {
+          "en": "Check grid, logistics and service-base requirements for first projects in new Balkan markets before quoting.",
+          "zh": "在新巴尔干市场首个项目报价前，核查电网、物流和服务基地要求。"
+        }
+      ],
+      "source": "Energies Media",
+      "url": "https://energiesmedia.com/nordex-verbund-albania-wind-farm",
+      "published": "2026-11-15"
+    },
+    {
+      "region": "土耳其",
+      "country": "土耳其 Türkiye",
+      "title": {
+        "en": "Türkiye sets new daily wind generation record",
+        "zh": "土耳其风电日发电量创新高"
+      },
+      "sentences": [
+        {
+          "en": "Wind plants produced a record 276,794 MWh in one day in mid-November, beating the previous high of 259,076 MWh set on 3 January, according to TEİAŞ data reported by Anadolu Agency.",
+          "zh": "阿纳多卢通讯社援引TEİAŞ数据报道，11月中旬风电单日发电量达276,794兆瓦时，创历史新高，超过1月3日创下的259,076兆瓦时。"
+        },
+        {
+          "en": "Wind supplied 28.1% of the day's electricity, ahead of hydro at 19% and imported coal at 14.9%.",
+          "zh": "当天风电占总发电量的28.1%，高于水电的19%和进口煤电的14.9%。"
+        }
+      ],
+      "insight": [
+        {
+          "en": "Record wind shares strengthen the case for faster wind build-out but also highlight the need for grid and storage investment.",
+          "zh": "风电占比创纪录，为加快风电建设提供了依据，同时也凸显电网和储能投资的必要性。"
+        }
+      ],
+      "oem": [
+        {
+          "en": "High output days show the value of fleet availability, which supports OEM service upgrades and performance contracts in Türkiye.",
+          "zh": "高发电日凸显机组可利用率的价值，有利于整机商在土耳其推广服务升级和性能合同。"
+        }
+      ],
+      "watch": [
+        {
+          "en": "Check fleet availability data for Turkish customers during peak days to support service-contract renewals.",
+          "zh": "核查土耳其客户机组在高发电日的可利用率数据，为运维合同续签提供支撑。"
+        },
+        {
+          "en": "Watch whether high wind shares trigger more curtailment instructions from TEİAŞ.",
+          "zh": "关注高风电占比是否引发TEİAŞ更多限电指令。"
+        }
+      ],
+      "source": "Anadolu Agency",
+      "url": "https://www.aa.com.tr/en/energy/renewable/turkiyes-daily-wind-power-generation-hits-record-high-on-nov-13/61012",
+      "published": "2026-11-14"
+    }
+  ]
+}
