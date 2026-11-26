@@ -525,6 +525,7 @@ $('t-clear').onclick = () => { todos = todos.filter(t => !t.done); saveTodos(); 
 const CATEGORIES = [
   { id: 'food',      name: '餐饮', emoji: '🍜' },
   { id: 'grocery',   name: '买菜', emoji: '🥬' },
+  { id: 'market',    name: '超市', emoji: '🛒' },
   { id: 'shopping',  name: '购物', emoji: '🛍️' },
   { id: 'transport', name: '交通', emoji: '🚇' },
   { id: 'home',      name: '住房', emoji: '🏠' },

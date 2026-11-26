@@ -1,6 +1,6 @@
 // 离线小助手：把 app 的文件存一份在手机里，没网也能打开。
 // 每次更新 app 文件后，把下面的版本号 +1，手机就会拿到新版本。
-const VERSION = 'daily-v25';
+const VERSION = 'daily-v26';
 const FILES = [
   './',
   'index.html',
