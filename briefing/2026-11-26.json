@@ -1,0 +1,346 @@
+{
+  "date": "2026-11-26",
+  "generatedAt": "2026-11-26T05:54:14+01:00",
+  "items": [
+    {
+      "region": "中国",
+      "country": "中国 China",
+      "title": { "en": "CSSC Haizhuang to invest 4.52 billion yuan in 1.3 GW of its own wind farms", "zh": "中船海装拟投资45.22亿元自建1.3吉瓦风电项目" },
+      "sentences": [
+        { "en": "CSSC Technology announced on 24 November that its turbine subsidiary CSSC Haizhuang plans to invest a combined 4.522 billion yuan in three wind projects totalling 1,300 MW.", "zh": "中船科技11月24日公告，其整机子公司中船海装风电拟投资三个风电项目，合计装机1300兆瓦，总投资45.22亿元。" },
+        { "en": "The largest is a 1,000 MW project in Yizhou, Hami (Xinjiang), using 100 turbines of 10 MW, with 3.32 billion yuan of investment, an 18-month build and a planned start in December 2026.", "zh": "其中规模最大的是新疆哈密伊州1000兆瓦项目，采用100台10兆瓦机组，投资33.2亿元，建设期18个月，计划2026年12月开工。" },
+        { "en": "The other two are in Hohhot, Inner Mongolia — 200 MW at Qingshuihe and 100 MW at Wuchuan — both due to start in March 2027, with after-tax project IRRs of about 5.2% versus 7.03% for Hami.", "zh": "另两个项目位于内蒙古呼和浩特——清水河200兆瓦和武川100兆瓦，均计划2027年3月开工，税后项目内部收益率约5.2%，而哈密项目为7.03%。" }
+      ],
+      "insight": [
+        { "en": "A turbine maker funding gigawatt-scale projects on its own balance sheet shows how far Chinese OEMs are moving into development to secure volume and capture project margins.", "zh": "整机商以自有资金投资吉瓦级项目，表明中国整机商正深度进入开发环节，以锁定出货量并获取项目端利润。" }
+      ],
+      "oem": [
+        { "en": "For Haizhuang this is about 137 large turbines of captive demand that loads its factories into 2027, but it also turns the OEM into a competitor of its own utility customers for sites and grid capacity.", "zh": "对中船海装而言，这相当于约137台大兆瓦机组的自有订单，可支撑其工厂负荷至2027年；但也使整机商在资源和并网容量上与自身的电力央企客户形成竞争。" }
+      ],
+      "watch": [
+        { "en": "Track whether other OEMs expand self-development in Xinjiang and Inner Mongolia, since captive volume can let them bid more aggressively in third-party tenders.", "zh": "关注其他整机商是否也在新疆、内蒙古扩大自建项目，因为自有订单可能使其在第三方招标中报价更激进。" },
+        { "en": "Note the 5.2% project IRRs in Inner Mongolia as a benchmark of how thin onshore returns have become, which constrains what owners will pay for turbines.", "zh": "将内蒙古项目约5.2%的项目收益率作为陆上风电收益已相当微薄的参考，这会限制业主对风机价格的承受能力。" },
+        { "en": "Supply-chain teams should watch the Hami build start in December 2026 for demand on 10 MW-class towers, blades and transport capacity in Xinjiang.", "zh": "供应链团队应关注哈密项目2026年12月开工后对新疆地区10兆瓦级塔筒、叶片及运输资源的需求。" }
+      ],
+      "source": "Sina Finance (风芒能源)",
+      "url": "https://k.sina.cn/article_5952915720_162d24908067057jfj.html",
+      "published": "2026-11-26"
+    },
+    {
+      "region": "美国",
+      "country": "美国 United States",
+      "title": { "en": "House schedules permitting-bill vote for next week", "zh": "众议院定于下周表决许可改革法案" },
+      "sentences": [
+        { "en": "A House Republican aide said the Senate-passed permitting reform bill is expected on the floor next week, with a rule vote on Tuesday and a final vote possibly on Wednesday or Thursday.", "zh": "一名众议院共和党助手表示，参议院已通过的许可改革法案预计下周提交众议院全院审议，周二进行程序规则表决，最终表决可能在周三或周四。" },
+        { "en": "The bill passed the Senate 62–33 and, according to The Hill, contains provisions expected to help wind and solar, though the article gives no details.", "zh": "该法案在参议院以62比33通过；据《国会山报》报道，其中包含预计利好风电和光伏的条款，但文章未披露细节。" },
+        { "en": "Some Democrats, including Reps. Mike Levin and Sean Casten, have come out against it, and Speaker Mike Johnson has urged full Republican attendance after absences forced an early recess last week.", "zh": "包括众议员Mike Levin和Sean Casten在内的部分民主党人表态反对；由于上周缺席人数过多导致提前休会，议长Mike Johnson已要求共和党议员全员出席。" }
+      ],
+      "insight": [
+        { "en": "If it passes, the bill could be the clearest federal route yet to unblock the hundreds of onshore wind projects stuck in federal reviews, but the margin in the House looks tight.", "zh": "若获通过，该法案可能成为解除数百个陆上风电项目联邦审查积压的最明确途径，但众议院表决形势看起来较为胶着。" }
+      ],
+      "oem": [
+        { "en": "For OEMs, a passed bill would mainly matter for the timing of US orders: projects waiting on approvals could move to turbine contracts in 2027 rather than slipping further.", "zh": "对整机商而言，法案通过主要影响美国订单的时间点：等待审批的项目可能在2027年进入风机采购，而非继续推迟。" }
+      ],
+      "watch": [
+        { "en": "Follow the Tuesday rule vote and the final vote the week of 30 November, and read the final text for the wind-related provisions before updating forecasts.", "zh": "跟踪11月30日当周周二的规则表决及最终表决，并在更新预测前细读最终文本中与风电相关的条款。" },
+        { "en": "Ask US customers with projects in federal review which approvals they still need and whether turbine reservation or slot agreements need extending.", "zh": "询问处于联邦审查中的美国客户还需哪些审批，以及风机产能预留或交付档期协议是否需要延期。" }
+      ],
+      "source": "The Hill (via Yahoo News)",
+      "url": "https://www.yahoo.com/news/politics/articles/house-expected-permitting-reform-bill-202643345.html",
+      "published": "2026-11-25"
+    },
+    {
+      "region": "土耳其",
+      "country": "土耳其 Türkiye",
+      "title": { "en": "Parliament begins floor debate on YEKA and capacity-increase fee bill", "zh": "土耳其议会开始全体辩论YEKA及扩容费法案" },
+      "sentences": [
+        { "en": "On 25 November the Turkish parliament's General Assembly put the renewable-energy omnibus bill first on its agenda and opened the debate on the bill as a whole; no article had been voted on yet.", "zh": "11月25日，土耳其大国民议会全体会议将可再生能源综合法案列为首项议程，并开始对法案整体进行辩论；目前尚未对任何条款进行表决。" },
+        { "en": "The bill, submitted on 13 November and approved in committee last week, would give YEKA resource-area and grid-capacity allocation a tender basis, with sealed bids, open auctions or open tenders set in the specifications.", "zh": "该法案于11月13日提交、上周已获委员会通过，将为YEKA资源区和并网容量分配确立招标依据，具体采用密封报价、公开竞拍或公开招标由招标文件规定。" },
+        { "en": "Wind and solar licence holders adding capacity would pay a per-MW fee set by TEİAŞ, capped at 50% of EPDK's unit investment amount, before their licence is amended.", "zh": "风电和光伏许可证持有人扩容时，需在许可证变更前按兆瓦缴纳由TEİAŞ确定的费用，上限为EPDK单位投资额的50%。" }
+      ],
+      "insight": [
+        { "en": "The capacity-increase fee would put a price on what has been a cheap way to grow Turkish wind farms, which could change the economics of adding turbines at existing sites.", "zh": "扩容费将为过去低成本扩建土耳其风电场的方式定价，可能改变在现有场址加装风机的经济性。" }
+      ],
+      "oem": [
+        { "en": "Capacity-extension projects have been a steady source of Turkish turbine orders, so OEMs may see some customers rush to secure extensions before the fee applies, then a slowdown.", "zh": "扩容项目一直是土耳其风机订单的稳定来源，整机商可能看到部分客户在收费生效前抢先锁定扩容，随后需求放缓。" }
+      ],
+      "watch": [
+        { "en": "Track the article-by-article votes this week and the date the law takes effect, especially any transition rules for extensions already applied for.", "zh": "跟踪本周的逐条表决及法律生效日期，尤其是对已申请扩容项目的过渡安排。" },
+        { "en": "Contact customers with pending capacity-increase applications to check how the fee would affect their order timing and project budgets.", "zh": "联系有待批扩容申请的客户，了解扩容费对其下单时间和项目预算的影响。" }
+      ],
+      "source": "Gazete Kamu",
+      "url": "https://gazetekamu.com/tbmmde-yenilenebilir-enerji-teklifi-gorusuluyor/",
+      "published": "2026-11-26"
+    },
+    {
+      "region": "欧洲",
+      "country": "爱尔兰 Ireland",
+      "title": { "en": "Ireland's RESS 6: onshore wind wins only 188 MW as solar takes 1.37 GW", "zh": "爱尔兰RESS 6拍卖：陆上风电仅获188兆瓦，光伏获1.37吉瓦" },
+      "sentences": [
+        { "en": "EirGrid's provisional RESS 6 results award 188.05 MW to six wind projects and 1,367.24 MW to 22 solar projects.", "zh": "EirGrid公布的RESS 6临时结果显示，6个风电项目获得188.05兆瓦，22个光伏项目获得1367.24兆瓦。" },
+        { "en": "Thirteen projects withdrew, seven of them wind, and the solar weighted average offer price was €0.10242/kWh; no wind price was given.", "zh": "共有13个项目退出，其中7个为风电；光伏加权平均报价为0.10242欧元/千瓦时，风电价格未披露。" },
+        { "en": "Final results are due on 9 December and the notice of awards on 11 January 2027.", "zh": "最终结果预计于12月9日公布，中标通知定于2027年1月11日发出。" }
+      ],
+      "insight": [
+        { "en": "Wind's small share and the seven withdrawals suggest that Irish onshore projects are still struggling to get through permitting and reach auction-ready status, while solar fills the volume.", "zh": "风电份额偏低且有7个风电项目退出，表明爱尔兰陆上项目在许可和达到竞拍条件方面仍困难重重，而光伏填补了容量。" }
+      ],
+      "oem": [
+        { "en": "About 188 MW is only a few dozen turbines, so this round adds little to near-term Irish order books and competition among OEMs will be for a small pool.", "zh": "约188兆瓦仅相当于几十台风机，本轮对爱尔兰近期订单贡献有限，整机商之间将争夺一个很小的订单池。" }
+      ],
+      "watch": [
+        { "en": "After final results on 9 December, identify the six winning wind projects and their developers for early turbine-supply discussions.", "zh": "12月9日最终结果公布后，识别6个中标风电项目及其开发商，尽早开展风机供货洽谈。" },
+        { "en": "Ask developers of the withdrawn wind projects whether they plan to bid in the next round, as they are a pipeline for later orders.", "zh": "询问退出项目的开发商是否计划参加下一轮竞拍，这些项目是后续订单的储备。" }
+      ],
+      "source": "IndexBox",
+      "url": "https://www.indexbox.io/blog/eirgrid-publishes-provisional-ress-6-results-as-solar-dominates/",
+      "published": "2026-11-25"
+    },
+    {
+      "region": "欧洲",
+      "country": "欧盟 EU",
+      "title": { "en": "EU opens trade probe into Chinese glass fibre and resins used in blades", "zh": "欧盟对用于叶片的中国玻璃纤维和树脂发起贸易调查" },
+      "sentences": [
+        { "en": "The EU opened an investigation on 23 November into Chinese composite resins and glass fibre, materials used among other things in wind turbine blades.", "zh": "欧盟于11月23日对中国复合树脂和玻璃纤维发起调查，这些材料用途之一是风电叶片。" },
+        { "en": "According to Aju Press, it is the EU's third broad trade-shield case in less than a month and is expected to take 9–11 months.", "zh": "据Aju Press报道，这是欧盟不到一个月内发起的第三起大范围贸易防护调查，预计耗时9至11个月。" },
+        { "en": "The article does not make clear which trade instrument is being used, and it gives no wind-specific figures.", "zh": "文章未明确所用的贸易工具类型，也未提供风电相关的具体数据。" }
+      ],
+      "insight": [
+        { "en": "Any duties on Chinese glass fibre or resin would raise blade material costs in Europe, adding cost pressure on a supply chain that already relies heavily on imports.", "zh": "若对中国玻璃纤维或树脂征税，将推高欧洲叶片原材料成本，给本已高度依赖进口的供应链增加成本压力。" }
+      ],
+      "oem": [
+        { "en": "European blade plants and suppliers that source Chinese inputs may face higher costs in 2027, which OEMs would need to absorb or pass through in turbine prices.", "zh": "使用中国原材料的欧洲叶片工厂和供应商可能在2027年面临成本上升，整机商需自行消化或传导至风机价格。" }
+      ],
+      "watch": [
+        { "en": "Procurement should map how much glass fibre and resin in European blades comes from China, and look for alternative suppliers.", "zh": "采购部门应梳理欧洲叶片中来自中国的玻璃纤维和树脂占比，并寻找替代供应商。" },
+        { "en": "Commercial teams should check whether long-term turbine contracts for 2027–28 deliveries allow price adjustment for trade-related cost changes.", "zh": "商务团队应核查2027–2028年交付的长期风机合同是否允许因贸易相关成本变化调价。" }
+      ],
+      "source": "Aju Press",
+      "url": "https://www.ajupress.com/view/20261124035202581",
+      "published": "2026-11-24"
+    },
+    {
+      "region": "中国",
+      "country": "中国 China",
+      "title": { "en": "China's new wind additions fall 2.7% in Jan–Oct; October down 16.5%", "zh": "1–10月中国风电新增装机同比降2.7%，10月单月降16.5%" },
+      "sentences": [
+        { "en": "Based on NEA data, China added 68.11 GW of wind capacity in January–October 2026, 2.7% less than a year earlier.", "zh": "根据国家能源局数据，2026年1–10月中国风电新增装机6811万千瓦，同比下降2.7%。" },
+        { "en": "By subtracting the January–September total of 60.66 GW, the article works out that October alone added 7.45 GW, down 16.48% year on year.", "zh": "文章用1–9月的6066万千瓦相减，计算出10月单月新增745万千瓦，同比下降16.48%。" }
+      ],
+      "insight": [
+        { "en": "Additions are slipping slightly even though the total fleet keeps growing, which suggests that the post-reform market is building at a slower pace than last year's record.", "zh": "尽管总装机持续增长，新增装机却略有下滑，表明市场化改革后的建设节奏慢于去年的创纪录水平。" }
+      ],
+      "oem": [
+        { "en": "Weaker October installations point to a softer year-end delivery rush, so OEMs may carry more finished turbines and backlog into 2027.", "zh": "10月装机偏弱预示年末抢装力度减弱，整机商可能将更多成品机组和在手订单带入2027年。" }
+      ],
+      "watch": [
+        { "en": "Check with key customers whether scheduled year-end deliveries and grid connections are being pushed into early 2027, and adjust collections plans.", "zh": "与重点客户核实原定年末的交付和并网是否推迟至2027年初，并相应调整回款计划。" },
+        { "en": "Track NEA's November and full-year figures to confirm whether 2026 additions end below 2025.", "zh": "跟踪国家能源局11月及全年数据，确认2026年新增装机是否低于2025年。" }
+      ],
+      "source": "Sina (NEA data)",
+      "url": "https://k.sina.cn/article_2442012107_918e25cb00101qgz3.html",
+      "published": "2026-11-25"
+    },
+    {
+      "region": "德国",
+      "country": "德国 Germany",
+      "title": { "en": "Citizen-wind sector warns EEG 2027 draft lacks workable rules", "zh": "公民风电行业警告EEG 2027草案缺乏可行规则" },
+      "sentences": [
+        { "en": "At a meeting in Münster, about 200 managing directors from more than 140 citizen wind projects — 370 turbines and over 2 GW — discussed the draft EEG 2027 reform.", "zh": "在明斯特举行的会议上，来自140多个公民风电项目（370台风机、逾2吉瓦）的约200名总经理讨论了EEG 2027改革草案。" },
+        { "en": "Organiser BBWind says the current draft has no effective, legally certain and economic rules for genuine citizen wind companies and shifts risk onto developers and operators.", "zh": "主办方BBWind表示，现有草案缺乏针对真正公民风电公司的有效、法律确定且经济可行的规则，并把风险转嫁给开发商和运营商。" },
+        { "en": "BBWind has set out a six-point paper and backs a joint initiative of farmers' and renewables associations from seven federal states.", "zh": "BBWind提出了六点主张文件，并支持七个联邦州的农民协会和可再生能源协会的联合倡议。" }
+      ],
+      "insight": [
+        { "en": "The EEG 2027 rewrite is becoming the main policy risk for German onshore wind, and pushback from local and community owners could shape the final rules.", "zh": "EEG 2027修订正成为德国陆上风电最主要的政策风险，地方和社区业主的反对意见可能影响最终规则。" }
+      ],
+      "oem": [
+        { "en": "Citizen wind companies are a meaningful buyer group for German turbines, so uncertain rules could make them delay orders until the law is settled.", "zh": "公民风电公司是德国风机的重要买家群体，规则不确定可能导致其推迟下单，直至法律落定。" }
+      ],
+      "watch": [
+        { "en": "Ask citizen-wind and agricultural customers whether EEG uncertainty is delaying their turbine decisions for 2027 tenders.", "zh": "询问公民风电及农业类客户，EEG不确定性是否推迟了其参加2027年招标的风机采购决策。" },
+        { "en": "Follow the cabinet and Bundestag timetable for the EEG draft and note any changes to bidding or risk rules that affect contract structures.", "zh": "跟踪EEG草案在内阁和联邦议院的时间表，留意影响合同结构的投标或风险分担规则变化。" }
+      ],
+      "source": "windmesse.de",
+      "url": "https://w3.windmesse.de/windenergie/news/49947-burgerenergie-burgerwind-bbwind-energiewende-eeg-2027",
+      "published": "2026-11-24"
+    },
+    {
+      "region": "美国",
+      "country": "美国 United States",
+      "title": { "en": "Michigan Supreme Court declines local challenge to state siting rules", "zh": "密歇根州最高法院驳回地方政府对州级选址规则的上诉" },
+      "sentences": [
+        { "en": "On 20 November the Michigan Supreme Court declined to hear an appeal by 79 local governments against the rules implementing Public Act 233.", "zh": "11月20日，密歇根州最高法院拒绝受理79个地方政府针对第233号公法实施细则的上诉。" },
+        { "en": "The 2023 law lets developers of large wind, solar and storage projects seek approval from the state Public Service Commission when local rules block them; 13 renewable projects have applied so far.", "zh": "这部2023年法律允许大型风电、光伏和储能项目在地方规定受阻时向州公用事业委员会申请审批；目前已有13个可再生能源项目提出申请。" },
+        { "en": "The court will still consider limited questions on notification timelines, with oral arguments expected to be scheduled in January.", "zh": "法院仍将审理有关通知时限的有限问题，口头辩论预计在1月安排。" }
+      ],
+      "insight": [
+        { "en": "The ruling keeps a state-level route around local bans in place, a model that matters as local opposition is one of the biggest barriers to US onshore wind.", "zh": "该裁决保留了绕开地方禁令的州级审批通道；鉴于地方反对是美国陆上风电最大障碍之一，这一模式意义重大。" }
+      ],
+      "oem": [
+        { "en": "A working state siting path makes Michigan projects more bankable, which could support future Midwest turbine demand, though no wind project approval under the rules is reported yet.", "zh": "可行的州级选址通道提高了密歇根项目的可融资性，有望支撑未来美国中西部风机需求，但目前尚未有风电项目依此获批的报道。" }
+      ],
+      "watch": [
+        { "en": "Ask Midwest developers whether any of the 13 applications are wind projects and when they expect decisions.", "zh": "询问中西部开发商，13个申请中是否有风电项目，以及预计何时获批。" },
+        { "en": "Watch the January arguments on notification timelines, which could affect how long state approvals take.", "zh": "关注1月关于通知时限的辩论，其结果可能影响州级审批周期。" }
+      ],
+      "source": "Michigan News Source",
+      "url": "https://www.michigannewssource.com/2026/11/michigan-supreme-court-rejects-local-challenge-to-wind-and-solar-farm-rules/",
+      "published": "2026-11-23"
+    },
+    {
+      "region": "欧洲",
+      "country": "罗马尼亚 Romania",
+      "title": { "en": "OX2 and Nala inaugurate 99.2 MW Vestas-equipped wind farm in Romania", "zh": "OX2与Nala在罗马尼亚为99.2兆瓦维斯塔斯风电场举行落成仪式" },
+      "sentences": [
+        { "en": "OX2 and Nala Renewables held the inauguration of the 99.2 MW Green Breeze wind farm in Galați County on 24 November.", "zh": "OX2与Nala Renewables于11月24日在加拉茨县为99.2兆瓦的Green Breeze风电场举行落成仪式。" },
+        { "en": "The farm uses 16 Vestas V162-6.2 MW turbines and is expected to produce about 312 GWh a year, sold to Apple under a long-term PPA.", "zh": "该风电场采用16台维斯塔斯V162-6.2兆瓦机组，预计年发电量约312吉瓦时，并通过长期购电协议售予苹果公司。" },
+        { "en": "OX2 developed the project and Nala owns it; the investment amount was not disclosed.", "zh": "项目由OX2开发、Nala持有，投资金额未披露。" }
+      ],
+      "insight": [
+        { "en": "A corporate PPA with a global tech buyer shows Romanian onshore wind can be financed on private offtake as well as state CfDs.", "zh": "与全球科技企业签订的企业购电协议表明，罗马尼亚陆上风电除国家差价合约外，也可依靠私人购电实现融资。" }
+      ],
+      "oem": [
+        { "en": "The project adds 16 large Vestas units to Romania's fleet, giving the OEM a recent reference in a market where several European OEMs are competing for orders.", "zh": "该项目为罗马尼亚新增16台维斯塔斯大型机组，使其在多家欧洲整机商竞逐的市场中获得新的业绩案例。" }
+      ],
+      "watch": [
+        { "en": "Service teams should note the 16-turbine fleet as a possible future O&M or extended-warranty opportunity.", "zh": "服务团队可将这16台机组列为未来运维或延保业务的潜在机会。" },
+        { "en": "Sales teams should track other Romanian projects seeking corporate PPAs, as buyers like Apple can speed up turbine decisions.", "zh": "销售团队应跟踪罗马尼亚其他寻求企业购电协议的项目，苹果等买家可加快风机采购决策。" }
+      ],
+      "source": "The Diplomat Bucharest",
+      "url": "https://www.thediplomat.ro/2026/11/25/ox2-and-nala-renewables-inaugurate-99-2-mw-wind-farm-in-romania/",
+      "published": "2026-11-25"
+    },
+    {
+      "region": "德国",
+      "country": "德国 Germany",
+      "title": { "en": "BKW buys Nordex-equipped Schwerte wind farm from ABO Energy", "zh": "BKW从ABO Energy收购采用北德机组的施韦尔特风电场" },
+      "sentences": [
+        { "en": "Swiss utility BKW is acquiring the Schwerte wind farm in North Rhine-Westphalia, which ABO Energy is developing and will hand over turnkey.", "zh": "瑞士能源公司BKW将收购北莱茵-威斯特法伦州的施韦尔特风电场，该项目由ABO Energy开发并以交钥匙方式移交。" },
+        { "en": "It will have three Nordex turbines — two of 5.7 MW and one of 7 MW, about 18.4 MW in total by our count — with commissioning planned for Q4 2027 and expected output of about 42 GWh a year.", "zh": "项目将安装3台北德机组——2台5.7兆瓦和1台7兆瓦，按我们计算合计约18.4兆瓦——计划2027年第四季度投运，预计年发电量约42吉瓦时。" }
+      ],
+      "insight": [
+        { "en": "Foreign utilities keep buying small, permitted German projects, showing steady investor appetite for German onshore wind despite the EEG reform debate.", "zh": "外国能源企业持续收购已获许可的德国小型项目，表明尽管EEG改革存在争议，投资者对德国陆上风电兴趣依然稳定。" }
+      ],
+      "oem": [
+        { "en": "The mixed 5.7 MW and 7 MW layout shows Nordex fitting different turbine classes to site limits, a flexibility that helps it win small repeat projects.", "zh": "5.7兆瓦与7兆瓦混合布局显示北德能按场址限制匹配不同机型，这种灵活性有助于其赢得小型重复项目。" }
+      ],
+      "watch": [
+        { "en": "Check whether turbine supply contracts stay with the developer or transfer to the buyer in turnkey deals, as this decides who your counterparty is.", "zh": "在交钥匙交易中，核实风机供货合同是留在开发商还是转给买方，这决定了合同相对方。" },
+        { "en": "Keep BKW on the key-account list for Germany, as this follows its roughly 34 MW Öhringen purchase in October.", "zh": "将BKW列入德国重点客户名单，此次收购紧随其10月约34兆瓦的厄林根项目。" }
+      ],
+      "source": "Windkraft-Journal",
+      "url": "https://www.windkraft-journal.de/2026/11/24/bkw-staerkt-windenergieportfolio-mit-weiterem-windpark-in-deutschland/229721",
+      "published": "2026-11-24"
+    },
+    {
+      "region": "中国",
+      "country": "中国 China",
+      "title": { "en": "Jilin 400 MW turbine tender fails for lack of bidders", "zh": "吉林400兆瓦风机招标因投标人不足流标" },
+      "sentences": [
+        { "en": "The northern lot of the Songyuan Changling phase-two 400 MW wind turbine tender in Jilin was declared failed on 25 November because it had fewer than three valid bidders.", "zh": "吉林松原能发长岭二期400兆瓦风电项目风机北区标段于11月25日因有效投标人不足三家而流标。" },
+        { "en": "The southern lot had already failed for the same reason; each lot covered 20 turbines of 8.5 MW and 4 of 7.5 MW at 125 m hub height.", "zh": "南区标段此前已因同样原因流标；每个标段包括20台8.5兆瓦和4台7.5兆瓦机组，轮毂高度125米。" }
+      ],
+      "insight": [
+        { "en": "Failed tenders for lack of bidders are unusual in China's crowded market and may suggest that some OEMs are becoming more selective about bid terms, though the article gives no reason.", "zh": "在竞争激烈的中国市场，因投标人不足而流标较为少见，可能意味着部分整机商对投标条件更加挑剔，但文章未说明原因。" }
+      ],
+      "oem": [
+        { "en": "If OEMs are walking away from unattractive terms, it supports the industry's recent push away from loss-making price competition.", "zh": "若整机商主动放弃条件不佳的项目，则印证了行业近期摆脱亏损式价格竞争的趋势。" }
+      ],
+      "watch": [
+        { "en": "Watch for the re-tender and compare its terms, such as price caps, payment terms and warranty, with the failed round.", "zh": "关注重新招标，并比较其限价、付款条件、质保等条款与流标轮次的差异。" },
+        { "en": "Track whether other tenders in Northeast China also fail, which would signal a broader shift in bidding behaviour.", "zh": "跟踪东北其他招标是否也出现流标，这将是投标行为整体转变的信号。" }
+      ],
+      "source": "Sina (风芒能源)",
+      "url": "https://k.sina.cn/article_5953466437_162dab0450670bivth.html",
+      "published": "2026-11-26"
+    },
+    {
+      "region": "美国",
+      "country": "美国 United States",
+      "title": { "en": "Oklahoma plans record state-land wind lease auction; ranchers push back", "zh": "俄克拉荷马州拟举行创纪录州有土地风电租赁拍卖，牧场主反对" },
+      "sentences": [
+        { "en": "Oklahoma's Commissioners of the Land Office plan 7 December auctions of 55-year commercial wind leases on more than 169,000 acres in Cimarron County, its largest commercial lease ever.", "zh": "俄克拉荷马州土地管理委员会计划于12月7日拍卖锡马龙县逾16.9万英亩土地的55年期商业风电租约，这是其史上最大规模的商业租赁。" },
+        { "en": "Intersect, described as a Google sister company, is among the bidders, while the Oklahoma Cattlemen's Association has asked for a delay.", "zh": "被称为谷歌姊妹公司的Intersect是竞标方之一，而俄克拉荷马牧牛者协会已要求推迟拍卖。" },
+        { "en": "Outgoing commissioners could approve the leases on 14 December, before all five seats change hands in January.", "zh": "即将卸任的委员可能在12月14日批准租约，所有五个席位将于1月换届。" }
+      ],
+      "insight": [
+        { "en": "Data-centre-linked developers are now competing for wind land, a sign that tech power demand is becoming a driver for new onshore wind in the US.", "zh": "与数据中心相关的开发商开始争夺风电用地，表明科技企业用电需求正成为美国新增陆上风电的推动力。" }
+      ],
+      "oem": [
+        { "en": "The leases are early-stage land rights with no MW figure, so any turbine demand is years away, but tech-backed buyers could become important customers.", "zh": "这些租约属于早期土地权益，未公布装机规模，风机需求尚需数年，但有科技背景的买家可能成为重要客户。" }
+      ],
+      "watch": [
+        { "en": "Note the winning bidders after 7 December and whether the leases are approved on 14 December.", "zh": "关注12月7日后的中标方，以及租约是否在12月14日获批。" },
+        { "en": "Business development should build contacts with data-centre-linked developers such as Intersect.", "zh": "业务拓展团队应与Intersect等数据中心相关开发商建立联系。" }
+      ],
+      "source": "Oklahoma Energy Today (Oklahoma Watch)",
+      "url": "https://okenergytoday.com/2026/11/ranchers-concerned-about-expanded-wind-turbines-in-panhandle/",
+      "published": "2026-11-24"
+    },
+    {
+      "region": "欧洲",
+      "country": "爱尔兰 Ireland",
+      "title": { "en": "FuturEnergy Ireland forward-sells stake in 58 MW Drumnahough wind farm", "zh": "FuturEnergy Ireland远期出售58兆瓦Drumnahough风电场股权" },
+      "sentences": [
+        { "en": "FuturEnergy Ireland agreed to transfer its net 50% stake in the 58 MW Drumnahough project in County Donegal in two 25% shares, to Schroders Greencoat and ESB, once it reaches commercial operation.", "zh": "FuturEnergy Ireland同意在多尼戈尔郡58兆瓦Drumnahough项目商业运行后，将其50%净权益分两份各25%转让给Schroders Greencoat和ESB。" },
+        { "en": "Danske Bank is providing a €55 million construction loan backed by the forward sale, while SSE Renewables leads construction, with completion due before the end of 2027.", "zh": "丹斯克银行提供5500万欧元建设贷款，以该远期出售为支撑；SSE Renewables牵头建设，计划2027年底前完工。" }
+      ],
+      "insight": [
+        { "en": "Forward sales to long-term investors are helping developers finance construction, a structure that could ease funding for other Irish onshore projects.", "zh": "向长期投资者远期出售股权正帮助开发商为建设融资，这一结构可能缓解爱尔兰其他陆上项目的资金压力。" }
+      ],
+      "oem": [
+        { "en": "The turbine supplier is not named, but the financing confirms the project is moving into construction, so turbine deliveries should fall in 2027.", "zh": "风机供应商未披露，但融资确认项目已进入建设阶段，风机交付应在2027年。" }
+      ],
+      "watch": [
+        { "en": "Find out which OEM supplies Drumnahough and whether a service contract is still open after commissioning.", "zh": "了解Drumnahough的风机供应商，以及投运后运维合同是否仍有机会。" },
+        { "en": "Track the partnership's target of more than 500 MW by 2030 as a pipeline for future Irish orders.", "zh": "将该合作伙伴关系2030年前超500兆瓦的目标作为爱尔兰未来订单储备进行跟踪。" }
+      ],
+      "source": "Energy Global",
+      "url": "https://www.energyglobal.com/wind/23112026/futurenergy-ireland-and-schroders-greencoat-agree-forward-sale-of-stake-in-58-mw-drumnahough-wind-farm/",
+      "published": "2026-11-23"
+    },
+    {
+      "region": "土耳其",
+      "country": "土耳其 Türkiye",
+      "title": { "en": "EÜAŞ repowers Alaçatı wind farm with two domestic 4.3 MW turbines", "zh": "EÜAŞ以两台4.3兆瓦国产机组完成阿拉恰蒂风电场以大代小" },
+      "sentences": [
+        { "en": "State generator EÜAŞ replaced 12 end-of-life turbines at its Alaçatı wind farm with two domestically built 4.3 MW turbines, raising capacity from 7.2 MW to 8.6 MW.", "zh": "国有发电企业EÜAŞ将阿拉恰蒂风电场12台到寿机组替换为两台4.3兆瓦国产机组，装机容量由7.2兆瓦增至8.6兆瓦。" },
+        { "en": "Provisional acceptance took place on 13 November and the plant targets about 30 million kWh a year; the project was carried out with ASELSAN under an industrial cooperation model.", "zh": "项目于11月13日完成临时验收，年发电目标约3000万千瓦时；项目以产业合作模式与ASELSAN共同实施。" }
+      ],
+      "insight": [
+        { "en": "The project shows Türkiye using state projects to build a domestic turbine maker, supporting its push for higher local content.", "zh": "该项目表明土耳其正借助国有项目培育本土整机商，以支撑其提高本地化率的政策。" }
+      ],
+      "oem": [
+        { "en": "A state-backed domestic turbine could compete with foreign OEMs for public and repowering projects, even if its scale is small for now.", "zh": "国家支持的国产风机虽目前规模较小，但可能在公共项目和以大代小项目上与外资整机商竞争。" }
+      ],
+      "watch": [
+        { "en": "Track whether EÜAŞ or other public owners plan more repowering with the domestic turbine, and at what turbine sizes.", "zh": "跟踪EÜAŞ或其他公共业主是否计划更多采用国产机组的以大代小项目，以及机型规格。" },
+        { "en": "Review the repowering pipeline of ageing Turkish wind farms, as this is a growing segment for both new turbines and service.", "zh": "梳理土耳其老旧风电场的以大代小储备，这是新机和服务业务均在增长的细分市场。" }
+      ],
+      "source": "Rüzgar Enerjisi Dergisi",
+      "url": "https://ruzgarenerjisi.com.tr/euas-alacati-resi-yerli-turbinlerle-yeniledi-kurulu-guc-86-mwa-cikti/",
+      "published": "2026-11-18"
+    },
+    {
+      "region": "德国",
+      "country": "德国 Germany",
+      "title": { "en": "365-metre 'height wind tower' prototype starts producing power in Brandenburg", "zh": "365米“高空风塔”样机在勃兰登堡开始发电" },
+      "sentences": [
+        { "en": "Gicon's 3.8 MW prototype in Schipkau, with a 300 m hub height and 365 m tip height, was inaugurated on 19 November for Beventum, a subsidiary of the federal innovation agency SPRIND.", "zh": "Gicon位于施普考的3.8兆瓦样机（轮毂高度300米、总高365米）于11月19日落成，业主为联邦创新机构SPRIND的子公司Beventum。" },
+        { "en": "Measured mean wind speed at 300 m was 8.51 m/s versus 6.66 m/s at 150 m, and Gicon reports letters of intent for 100 units in Germany with series production planned by 2030.", "zh": "实测300米高度平均风速为8.51米/秒，150米处为6.66米/秒；Gicon称已获德国100台的意向书，计划最迟2030年批量生产。" }
+      ],
+      "insight": [
+        { "en": "If the concept works commercially, very tall towers could add output at existing wind sites, but costs and supply chains are unproven.", "zh": "若该概念实现商业化，超高塔架可提升现有风电场址的发电量，但成本和供应链尚未得到验证。" }
+      ],
+      "oem": [
+        { "en": "No turbine supplier is named, and towers of this height would need new tower and installation approaches that today's OEM supply chains do not offer.", "zh": "报道未提及风机供应商，如此高度的塔架需要当前整机商供应链尚不具备的新型塔筒和安装方案。" }
+      ],
+      "watch": [
+        { "en": "Engineering teams should follow measured output data from the prototype and whether SPRIND publishes the cost results.", "zh": "技术团队应跟踪样机的实测发电数据，以及SPRIND是否公布成本结果。" },
+        { "en": "Watch whether any OEM partners with Gicon for the five further towers it plans.", "zh": "关注是否有整机商与Gicon合作建设其计划中的另外五座塔。" }
+      ],
+      "source": "windbranche.de (IWR)",
+      "url": "https://www.windbranche.de/news/nachrichten/artikel-40200-365-meter-hoechstes-windrad-der-welt-produziert-strom-gicon-plant-serienfertigung-ab-2030",
+      "published": "2026-11-20"
+    }
+  ]
+}
