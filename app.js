@@ -161,16 +161,20 @@ function renderTodos() {
     sec.dataset.area = a.key;
 
     const head = el('div', 't-sec-head');
-    head.append(el('span', 't-sec-name', a.icon + ' ' + a.name), el('span', 't-sec-count'));
+    // 分区标题右边：数量 + 圆圆的 ＋ 按钮
+    const add = el('button', 't-sec-add', '＋');
+    add.setAttribute('aria-label', '在' + a.name + '里加待办');
+    add.onclick = () => startNewTodo(a.key);
+    const right = el('span', 't-sec-right');
+    right.append(el('span', 't-sec-count'), add);
+    head.append(el('span', 't-sec-name', a.icon + ' ' + a.name), right);
 
-    // 没做完的 + 最下面一行「＋ 添加」
+    // 没做完的（空的时候显示一句小提示）
     const items = el('div', 't-items');
     items.dataset.area = a.key;
     items.dataset.kind = 'undone';
+    items.appendChild(el('div', 't-empty-hint', '还没有待办，点右上角 ＋'));
     undone.forEach(t => items.appendChild(todoRow(t)));
-    const add = el('button', 't-add-row', '＋ 添加');
-    add.onclick = () => startNewTodo(a.key);
-    items.appendChild(add);
     sec.append(head, items);
 
     // 做完的：收进一个可以点开的小折叠
@@ -210,7 +214,7 @@ function updateTodoMeta() {
   $('t-clear').style.display = doneCount ? '' : 'none';
 }
 
-// 点分区底部「＋ 添加」：这个分区最下面直接出现一行空白待办，光标就在里面
+// 点分区标题右边的 ＋：这个分区最下面直接出现一行空白待办，光标就在里面
 // 回车 = 保存并自动开下一行；点别处 = 保存（空的就不要了）
 function startNewTodo(area) {
   const old = document.querySelector('.todo-new');
@@ -233,7 +237,7 @@ function startNewTodo(area) {
   input.placeholder = '要做什么？';
   row.append(check, input);
 
-  items.insertBefore(row, items.querySelector('.t-add-row'));
+  items.appendChild(row);
   input.focus(); // 必须在点击里立刻 focus，iPhone 才会弹出键盘
   row.scrollIntoView({ block: 'nearest' });
 
@@ -352,7 +356,7 @@ function beginDrag() {
 
 // 其它行顺滑地让位（先记下原来的位置，挪完再从原位置滑过去）
 function slideAround(mutate) {
-  const els = [...$('t-list').querySelectorAll('.todo:not(.dragging), .t-add-row, .t-done-toggle, .t-sec-head')];
+  const els = [...$('t-list').querySelectorAll('.todo:not(.dragging), .t-empty-hint, .t-done-toggle, .t-sec-head')];
   const before = els.map(e => e.getBoundingClientRect().top);
   mutate();
   els.forEach(e => { e.style.transition = 'none'; e.style.transform = ''; });
@@ -382,7 +386,7 @@ function placeHolder() {
 
   const rows = [...box.querySelectorAll(':scope > .todo:not(.dragging):not(.todo-new)')];
   const before = rows.find(r => center < r.offsetTop + r.offsetHeight / 2)
-    || box.querySelector(':scope > .t-add-row, :scope > .todo-new')
+    || box.querySelector(':scope > .todo-new')
     || null;
   if (drag.box === box && drag.before === before) return; // 位置没变
   drag.box = box;
@@ -1493,7 +1497,7 @@ function renderPrices() {
 }
 
 
-const APP_VERSION = 'v19';
+const APP_VERSION = 'v20';
 
 // ================================
 // 启动

@@ -269,18 +269,21 @@ main { padding: 10px 16px; }
 .t-sec-count:empty { display: none; }
 .t-items { display: flex; flex-direction: column; gap: 10px; }
 .t-items[hidden] { display: none; }
-.t-add-row {
-  width: 100%;
-  text-align: left;
-  padding: 12px 16px;
-  border-radius: 18px;
-  border: 2px dashed var(--lavender-dark);
-  color: var(--lavender-text);
-  font-size: 15px; font-weight: 600;
-  background: transparent;
+.t-sec-right { display: flex; align-items: center; gap: 8px; }
+.t-sec-add {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: var(--lavender-dark);
+  color: #fff;
+  font-size: 20px; font-weight: 700; line-height: 1;
+  display: grid; place-items: center;
+  box-shadow: 0 3px 8px rgba(98, 154, 141, .35);
   touch-action: manipulation;
+  transition: transform .15s;
 }
-.t-add-row:active { background: rgba(255, 255, 255, .6); }
+.t-sec-add:active { transform: scale(.9); }
+.t-empty-hint { font-size: 13px; color: var(--text-light); padding: 4px 6px 6px; }
+.t-empty-hint:not(:only-child) { display: none; }
 .t-done-toggle {
   display: flex; align-items: center; gap: 6px;
   margin: 10px 6px 0;
