@@ -286,8 +286,11 @@ main { padding: 10px 16px; }
 .t-empty-hint:not(:only-child) { display: none; }
 .t-done-toggle {
   display: flex; align-items: center; gap: 6px;
-  margin: 10px 6px 0;
-  padding: 4px 0;
+  margin: 12px auto 0;
+  padding: 7px 14px;
+  background: var(--card);
+  border-radius: 999px;
+  box-shadow: 0 2px 6px rgba(120, 118, 140, .10);
   font-size: 13px; font-weight: 600;
   color: var(--lavender-text);
 }
@@ -308,16 +311,47 @@ main { padding: 10px 16px; }
 }
 .todo.done .check { background: var(--lavender-dark); }
 .todo.done .item-title { text-decoration: line-through; color: var(--text-light); }
+.todo { align-items: flex-start; }
 .todo-text { flex: 1; min-width: 0; text-align: left; padding: 4px 0; }
-.del-x { color: var(--text-light); font-size: 18px; padding: 4px 6px; }
+/* 长待办自动换行，整条都能看到 */
+.todo .item-title { white-space: normal; overflow: visible; overflow-wrap: anywhere; line-height: 1.45; }
+/* ✕ 和文字之间隔开一点，减少误删 */
+.todo .del-x {
+  margin-left: 10px;
+  padding: 4px 4px 4px 12px;
+  border-left: 1px solid var(--line);
+  font-size: 16px;
+  opacity: .7;
+}
+
+/* 删除后的「撤销」小条 */
+.undo-bar {
+  position: fixed;
+  left: 16px; right: 16px;
+  bottom: calc(92px + env(safe-area-inset-bottom));
+  display: flex; align-items: center; gap: 12px;
+  background: #4E4A57; color: #fff;
+  border-radius: 16px;
+  padding: 12px 16px;
+  font-size: 14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,.18);
+  transform: translateY(20px); opacity: 0; pointer-events: none;
+  transition: transform .2s, opacity .2s;
+  z-index: 100;
+}
+.undo-bar.show { transform: none; opacity: 1; pointer-events: auto; }
+.undo-msg { flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.undo-btn { color: var(--lavender); font-weight: 700; font-size: 15px; padding: 2px 4px; }
 
 /* 新建待办：直接在行里打字，没有输入框 */
 .todo-new:active, .todo.editing:active { transform: none; }
 .todo .todo-new-input {
   flex: 1; min-width: 0;
+  resize: none; overflow: hidden; line-height: 1.45; display: block;
   border: none; outline: none; background: transparent;
   padding: 4px 0; margin: 0;
   font: inherit; font-size: 16px; font-weight: 600; color: var(--text);
+  line-height: 1.45;
   caret-color: var(--lavender-dark);
   -webkit-appearance: none; appearance: none;
   -webkit-user-select: text; user-select: text;

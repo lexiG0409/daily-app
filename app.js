@@ -142,11 +142,56 @@ function todoRow(t) {
 
   const del = el('button', 'del-x', '✕');
   del.setAttribute('aria-label', '删除');
-  del.onclick = () => { todos = todos.filter(x => x.id !== t.id); saveTodos(); };
+  del.onclick = () => deleteTodo(t);
 
   row.append(check, text, del);
   return row;
 }
+
+// 删除：先删掉，底部弹出「撤销」小条，5 秒内点一下就能恢复到原来的位置
+let undoTimer = 0;
+function deleteTodo(t) {
+  const at = todos.findIndex(x => x.id === t.id);
+  if (at < 0) return;
+  todos.splice(at, 1);
+  saveTodos();
+
+  let bar = $('undo-bar');
+  if (!bar) {
+    bar = el('div', 'undo-bar');
+    bar.id = 'undo-bar';
+    document.body.appendChild(bar);
+  }
+  bar.innerHTML = '';
+  const msg = el('span', 'undo-msg', '已删除「' + t.text + '」');
+  const btn = el('button', 'undo-btn', '撤销');
+  btn.onclick = () => {
+    if (!todos.some(x => x.id === t.id)) {
+      todos.splice(Math.min(at, todos.length), 0, t);
+      saveTodos();
+    }
+    bar.classList.remove('show');
+  };
+  bar.append(msg, btn);
+  bar.classList.add('show');
+  clearTimeout(undoTimer);
+  undoTimer = setTimeout(() => bar.classList.remove('show'), 5000);
+}
+
+// 打字的地方：用会自动变高的多行框，长待办能整条看到（回车不换行，而是保存）
+function makeTodoInput(hint) {
+  const input = document.createElement('textarea');
+  input.className = 'todo-new-input';
+  input.rows = 1;
+  input.maxLength = 200;
+  input.autocomplete = 'off';
+  input.enterKeyHint = hint;
+  const grow = () => { input.style.height = 'auto'; input.style.height = input.scrollHeight + 'px'; };
+  input.addEventListener('input', grow);
+  input.grow = grow;
+  return input;
+}
+const cleanText = v => v.replace(/\s*\n\s*/g, ' ').trim();
 
 function renderTodos() {
   const list = $('t-list');
@@ -181,7 +226,7 @@ function renderTodos() {
     if (done.length) {
       const open = !!doneOpen[a.key];
       const toggle = el('button', 't-done-toggle' + (open ? ' open' : ''));
-      toggle.append(el('span', '', `✓ 已完成 ${done.length}`), el('span', 't-arrow', '›'));
+      toggle.append(el('span', '', `✓ 已完成 ${done.length} 条 · ${open ? '点这里收起' : '点这里展开'}`), el('span', 't-arrow', '›'));
       toggle.onclick = () => {
         doneOpen[a.key] = !open;
         store.set('todoDoneOpen', doneOpen);
@@ -220,8 +265,8 @@ function updateTodoMeta() {
 function startNewTodo(area, afterId) {
   const old = document.querySelector('.todo-new');
   if (old) {
-    if (old.dataset.area === area && !afterId) { old.querySelector('input').focus(); return; }
-    old.querySelector('input').blur(); // 另一个分区正在写的那行先保存
+    if (old.dataset.area === area && !afterId) { old.querySelector('.todo-new-input').focus(); return; }
+    old.querySelector('.todo-new-input').blur(); // 另一个分区正在写的那行先保存
   }
   const items = document.querySelector(`.t-items[data-kind="undone"][data-area="${area}"]`);
   if (!items) return;
@@ -229,12 +274,7 @@ function startNewTodo(area, afterId) {
   const row = el('div', 'item todo todo-new');
   row.dataset.area = area;
   const check = el('span', 'check');
-  const input = document.createElement('input');
-  input.type = 'text';
-  input.className = 'todo-new-input';
-  input.maxLength = 100;
-  input.autocomplete = 'off';
-  input.enterKeyHint = 'next';
+  const input = makeTodoInput('next');
   input.placeholder = '要做什么？';
   row.append(check, input);
 
@@ -247,7 +287,7 @@ function startNewTodo(area, afterId) {
   const finish = (again) => {
     if (finished) return;
     finished = true;
-    const text = input.value.trim();
+    const text = cleanText(input.value);
     let t = null;
     if (text) {
       t = { id: uid(), text, done: false, area, createdAt: Date.now() };
@@ -276,14 +316,10 @@ function editTodo(row, t) {
   if (row.classList.contains('editing')) return;
   row.classList.add('editing');
   const text = row.querySelector('.todo-text');
-  const input = document.createElement('input');
-  input.type = 'text';
-  input.className = 'todo-new-input';
-  input.maxLength = 100;
-  input.autocomplete = 'off';
-  input.enterKeyHint = t.done ? 'done' : 'next';
+  const input = makeTodoInput(t.done ? 'done' : 'next');
   input.value = t.text;
   text.replaceWith(input);
+  input.grow();
   input.focus(); // 必须在点击里立刻 focus，iPhone 才会弹出键盘
   const end = input.value.length;
   input.setSelectionRange(end, end);
@@ -292,7 +328,7 @@ function editTodo(row, t) {
   const finish = (keep) => {
     if (finished) return;
     finished = true;
-    const v = input.value.trim();
+    const v = cleanText(input.value);
     if (keep && v && v !== t.text) { t.text = v; store.set('todos', todos); }
     if (row.isConnected) row.replaceWith(todoRow(t)); // 只换这一行
   };
@@ -315,11 +351,11 @@ let suppressClick = false; // 刚拖完，别把松手当成“打勾”
 
 function enableDrag(row) {
   row.addEventListener('touchstart', e => {
-    if (e.touches.length !== 1 || e.target.closest('.del-x, input')) return;
+    if (e.touches.length !== 1 || e.target.closest('.del-x, .todo-new-input')) return;
     pressStart(row, e.touches[0].clientY);
   }, { passive: true });
   row.addEventListener('mousedown', e => {
-    if (e.button !== 0 || e.target.closest('.del-x, input')) return;
+    if (e.button !== 0 || e.target.closest('.del-x, .todo-new-input')) return;
     pressStart(row, e.clientY);
   });
 }
@@ -1506,7 +1542,7 @@ function renderPrices() {
 }
 
 
-const APP_VERSION = 'v21';
+const APP_VERSION = 'v22';
 
 // ================================
 // 启动
