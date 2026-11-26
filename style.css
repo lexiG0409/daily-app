@@ -234,14 +234,63 @@ main { padding: 10px 16px; }
   position: relative;
 }
 .todo.pressing { transform: scale(.97); transition: transform .22s ease; }
-.list.sorting .todo { transition: transform .12s ease-out; will-change: transform; }
-.list.sorting .todo:active { transform: none; }
+.t-list.sorting .todo:active { transform: none; }
 .todo.dragging {
   transition: none !important;
-  z-index: 5;
+  z-index: 50;
+  will-change: transform;
   box-shadow: 0 10px 24px rgba(0,0,0,.16);
 }
-.todo.dropping { z-index: 5; transition: transform .12s ease-out !important; }
+.todo.dropping { z-index: 50; transition: transform .12s ease-out !important; }
+/* 拖动时原位置留下的空位 */
+.todo-placeholder {
+  border-radius: 18px;
+  border: 2px dashed var(--lavender-dark);
+  background: rgba(141, 191, 180, .10);
+  flex: none;
+}
+
+/* 工作 / 生活 分区：高度跟着里面的待办数量自动变 */
+.t-list { position: relative; display: flex; flex-direction: column; gap: 16px; padding-bottom: 24px; }
+.t-section {
+  background: rgba(210, 231, 226, .45);
+  border-radius: var(--radius);
+  padding: 12px 10px 10px;
+}
+.t-sec-head {
+  display: flex; align-items: center; justify-content: space-between;
+  margin: 0 6px 10px;
+}
+.t-sec-name { font-size: 16px; font-weight: 700; color: var(--text); }
+.t-sec-count {
+  font-size: 12px; font-weight: 600; color: var(--lavender-text);
+  background: var(--card); padding: 2px 9px; border-radius: 999px;
+}
+.t-sec-count:empty { display: none; }
+.t-items { display: flex; flex-direction: column; gap: 10px; }
+.t-items[hidden] { display: none; }
+.t-add-row {
+  width: 100%;
+  text-align: left;
+  padding: 12px 16px;
+  border-radius: 18px;
+  border: 2px dashed var(--lavender-dark);
+  color: var(--lavender-text);
+  font-size: 15px; font-weight: 600;
+  background: transparent;
+  touch-action: manipulation;
+}
+.t-add-row:active { background: rgba(255, 255, 255, .6); }
+.t-done-toggle {
+  display: flex; align-items: center; gap: 6px;
+  margin: 10px 6px 0;
+  padding: 4px 0;
+  font-size: 13px; font-weight: 600;
+  color: var(--lavender-text);
+}
+.t-done-toggle .t-arrow { display: inline-block; font-size: 16px; transition: transform .2s; }
+.t-done-toggle.open .t-arrow { transform: rotate(90deg); }
+.t-done-list { margin-top: 8px; }
 .check {
   width: 28px; height: 28px;
   flex: none;

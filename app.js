@@ -102,6 +102,12 @@ $('today').textContent = (() => {
 // ================================
 // 2. 待办猫猫
 // ================================
+// 两个分区：工作 / 生活。每个分区自己的高度跟着待办数量变，不是固定高度。
+const AREAS = [
+  { key: 'work', name: '工作', icon: '💼' },
+  { key: 'life', name: '生活', icon: '🏡' },
+];
+
 let todos = store.get('todos', []);
 // 一次性整理：以前新的排在最前面，现在改成按加入时间排，最新的在最后
 if (!store.get('todosOrderV2', false)) {
@@ -109,50 +115,114 @@ if (!store.get('todosOrderV2', false)) {
   store.set('todos', todos);
   store.set('todosOrderV2', true);
 }
+// 一次性整理：以前没有分区的待办，都放进「生活」
+if (todos.some(t => !AREAS.some(a => a.key === t.area))) {
+  todos.forEach(t => { if (!AREAS.some(a => a.key === t.area)) t.area = 'life'; });
+  store.set('todos', todos);
+}
+
+// 每个分区的「已完成」是展开还是收起（默认收起）
+const doneOpen = store.get('todoDoneOpen', {});
 
 function saveTodos() { store.set('todos', todos); renderTodos(); }
+
+// 做一行待办
+function todoRow(t) {
+  const row = el('div', 'item todo' + (t.done ? ' done' : ''));
+  row.dataset.id = t.id;
+  enableDrag(row);
+
+  const check = el('button', 'check', t.done ? '✓' : '');
+  check.setAttribute('aria-label', t.done ? '标为未完成' : '标为完成');
+  check.onclick = () => { t.done = !t.done; saveTodos(); };
+
+  const text = el('button', 'todo-text');
+  text.appendChild(el('div', 'item-title', t.text));
+  text.onclick = () => editTodo(row, t); // 点文字 = 原地改字；打勾请点左边圆圈
+
+  const del = el('button', 'del-x', '✕');
+  del.setAttribute('aria-label', '删除');
+  del.onclick = () => { todos = todos.filter(x => x.id !== t.id); saveTodos(); };
+
+  row.append(check, text, del);
+  return row;
+}
 
 function renderTodos() {
   const list = $('t-list');
   list.innerHTML = '';
-  // 没做完的在上面，做完的沉到下面
-  const sorted = [...todos.filter(t => !t.done), ...todos.filter(t => t.done)];
 
-  sorted.forEach(t => {
-    const row = el('div', 'item todo' + (t.done ? ' done' : ''));
-    row.dataset.id = t.id;
-    enableDrag(row);
+  AREAS.forEach(a => {
+    const mine = todos.filter(t => t.area === a.key);
+    const undone = mine.filter(t => !t.done);
+    const done = mine.filter(t => t.done);
 
-    const check = el('button', 'check', t.done ? '✓' : '');
-    check.setAttribute('aria-label', t.done ? '标为未完成' : '标为完成');
-    check.onclick = () => { t.done = !t.done; saveTodos(); };
+    const sec = el('section', 't-section');
+    sec.dataset.area = a.key;
 
-    const text = el('button', 'todo-text');
-    text.appendChild(el('div', 'item-title', t.text));
-    text.onclick = () => editTodo(row, t); // 点文字 = 原地改字；打勾请点左边圆圈
+    const head = el('div', 't-sec-head');
+    head.append(el('span', 't-sec-name', a.icon + ' ' + a.name), el('span', 't-sec-count'));
 
-    const del = el('button', 'del-x', '✕');
-    del.setAttribute('aria-label', '删除');
-    del.onclick = () => { todos = todos.filter(x => x.id !== t.id); saveTodos(); };
+    // 没做完的 + 最下面一行「＋ 添加」
+    const items = el('div', 't-items');
+    items.dataset.area = a.key;
+    items.dataset.kind = 'undone';
+    undone.forEach(t => items.appendChild(todoRow(t)));
+    const add = el('button', 't-add-row', '＋ 添加');
+    add.onclick = () => startNewTodo(a.key);
+    items.appendChild(add);
+    sec.append(head, items);
 
-    row.append(check, text, del);
-    list.appendChild(row);
+    // 做完的：收进一个可以点开的小折叠
+    if (done.length) {
+      const open = !!doneOpen[a.key];
+      const toggle = el('button', 't-done-toggle' + (open ? ' open' : ''));
+      toggle.append(el('span', '', `✓ 已完成 ${done.length}`), el('span', 't-arrow', '›'));
+      toggle.onclick = () => {
+        doneOpen[a.key] = !open;
+        store.set('todoDoneOpen', doneOpen);
+        renderTodos();
+      };
+      const dl = el('div', 't-items t-done-list');
+      dl.dataset.area = a.key;
+      dl.dataset.kind = 'done';
+      dl.hidden = !open;
+      done.forEach(t => dl.appendChild(todoRow(t)));
+      sec.append(toggle, dl);
+    }
+
+    list.appendChild(sec);
   });
 
-  const left = todos.filter(t => !t.done).length;
-  const doneCount = todos.length - left;
-  $('t-left').textContent = todos.length ? `还有 ${left} 件没做` + ' · 点文字可修改' + (todos.length > 1 ? ' · 长按可拖动排序' : '') : '';
-  $('t-clear').style.display = doneCount ? '' : 'none';
-  $('t-empty').style.display = todos.length ? 'none' : '';
+  updateTodoMeta();
 }
 
-// 点右下角 ＋：列表（没做完的那部分）最下面直接出现一行空白待办，光标就在里面
+// 只更新数字和提示文字（不重画列表）
+function updateTodoMeta() {
+  AREAS.forEach(a => {
+    const c = document.querySelector(`.t-section[data-area="${a.key}"] .t-sec-count`);
+    const n = todos.filter(t => t.area === a.key && !t.done).length;
+    if (c) c.textContent = n ? `${n} 件` : '';
+  });
+  const left = todos.filter(t => !t.done).length;
+  const doneCount = todos.length - left;
+  $('t-left').textContent = todos.length ? `还有 ${left} 件没做` + ' · 点文字可修改 · 长按可拖动' : '点分区里的 ＋ 添加';
+  $('t-clear').style.display = doneCount ? '' : 'none';
+}
+
+// 点分区底部「＋ 添加」：这个分区最下面直接出现一行空白待办，光标就在里面
 // 回车 = 保存并自动开下一行；点别处 = 保存（空的就不要了）
-function startNewTodo() {
+function startNewTodo(area) {
   const old = document.querySelector('.todo-new');
-  if (old) { old.querySelector('input').focus(); return; }
+  if (old) {
+    if (old.dataset.area === area) { old.querySelector('input').focus(); return; }
+    old.querySelector('input').blur(); // 另一个分区正在写的那行先保存
+  }
+  const items = document.querySelector(`.t-items[data-kind="undone"][data-area="${area}"]`);
+  if (!items) return;
 
   const row = el('div', 'item todo todo-new');
+  row.dataset.area = area;
   const check = el('span', 'check');
   const input = document.createElement('input');
   input.type = 'text';
@@ -163,9 +233,7 @@ function startNewTodo() {
   input.placeholder = '要做什么？';
   row.append(check, input);
 
-  // 放在“没做完”的最后一行，已完成的上面
-  $('t-list').insertBefore(row, $('t-list').querySelector('.todo.done'));
-  $('t-empty').style.display = 'none';
+  items.insertBefore(row, items.querySelector('.t-add-row'));
   input.focus(); // 必须在点击里立刻 focus，iPhone 才会弹出键盘
   row.scrollIntoView({ block: 'nearest' });
 
@@ -175,13 +243,15 @@ function startNewTodo() {
     finished = true;
     const text = input.value.trim();
     if (text) {
-      todos.push({ id: uid(), text, done: false, createdAt: Date.now() });
-      saveTodos();          // 会重画列表，这一行会被换成正式的待办
+      const t = { id: uid(), text, done: false, area, createdAt: Date.now() };
+      todos.push(t);
+      store.set('todos', todos);
+      row.replaceWith(todoRow(t)); // 只换掉这一行，不重画整个列表（这样点别的按钮不会“点空”）
+      updateTodoMeta();
     } else {
       row.remove();
-      renderTodos();
     }
-    if (again && text) startNewTodo();
+    if (again && text) startNewTodo(area);
   };
 
   input.addEventListener('keydown', e => {
@@ -190,8 +260,6 @@ function startNewTodo() {
   });
   input.addEventListener('blur', () => finish(false));
 }
-
-$('t-add').onclick = startNewTodo;
 
 // 点一条待办的文字：文字变成可以打字的样子，光标在最后
 // 回车 / 点别处 = 保存；改成空的 = 保留原来的字（删除请点 ✕）
@@ -216,8 +284,8 @@ function editTodo(row, t) {
     if (finished) return;
     finished = true;
     const v = input.value.trim();
-    if (keep && v && v !== t.text) { t.text = v; saveTodos(); }
-    else renderTodos();
+    if (keep && v && v !== t.text) { t.text = v; store.set('todos', todos); }
+    if (row.isConnected) row.replaceWith(todoRow(t)); // 只换这一行
   };
   input.addEventListener('keydown', e => {
     if (e.key === 'Enter' && !e.isComposing) { e.preventDefault(); finish(true); }
@@ -226,9 +294,9 @@ function editTodo(row, t) {
   input.addEventListener('blur', () => finish(true));
 }
 
-// ---- 长按拖动排序 ----
-// 手指按住一行不动约 0.35 秒 → 这行“浮起来”，上下拖到想要的位置再松手。
-// 没做完的只能在没做完的里面换位置，已完成的也一样。
+// ---- 长按拖动排序（可以跨分区） ----
+// 手指按住一行不动约 0.2 秒 → 这行“浮起来”，拖到想要的位置再松手。
+// 没做完的可以拖到另一个分区（就变成那个分区的待办）；已完成的只在展开的“已完成”里换位置。
 let drag = null;          // 正在拖的那一行的信息
 let suppressClick = false; // 刚拖完，别把松手当成“打勾”
 
@@ -245,6 +313,7 @@ function enableDrag(row) {
 
 function pressStart(row, y) {
   cancelPress();
+  if (row.classList.contains('editing') || row.classList.contains('todo-new')) return;
   drag = { row, startY: y, y, active: false };
   row.classList.add('pressing');           // 一按下就有反馈，不用干等
   drag.timer = setTimeout(() => beginDrag(), 220);
@@ -260,40 +329,71 @@ function cancelPress() {
 
 function beginDrag() {
   const { row } = drag;
-  const done = row.classList.contains('done');
-  const group = [...$('t-list').querySelectorAll('.todo:not(.todo-new)')]
-    .filter(r => r.classList.contains('done') === done);
-  if (group.length < 2) { row.classList.remove('pressing'); drag = null; return; }
-
+  if (!row.isConnected) { drag = null; return; }
   drag.active = true;
   row.classList.remove('pressing');
-  drag.group = group;
-  drag.index = group.indexOf(row);
-  drag.newIndex = drag.index;
-  drag.startScroll = window.scrollY;
-  drag.mids = group.map(r => { const b = r.getBoundingClientRect(); return b.top + b.height / 2 + window.scrollY; });
-  drag.step = group[1].getBoundingClientRect().top - group[0].getBoundingClientRect().top;
+
+  const r = row.getBoundingClientRect();
+  drag.kind = row.classList.contains('done') ? 'done' : 'undone';
+  drag.h = r.height;
+  drag.grab = drag.startY - r.top;   // 手指按在这一行的哪个高度
+  drag.top = r.top;
+
+  // 原位置放一个“空位”，这一行浮起来跟着手指走
+  const ph = el('div', 'todo-placeholder');
+  ph.style.height = r.height + 'px';
+  row.before(ph);
+  drag.ph = ph;
+  Object.assign(row.style, { position: 'fixed', left: r.left + 'px', top: r.top + 'px', width: r.width + 'px', margin: '0' });
   row.classList.add('dragging');
   $('t-list').classList.add('sorting');
   if (navigator.vibrate) navigator.vibrate(15);
 }
 
+// 其它行顺滑地让位（先记下原来的位置，挪完再从原位置滑过去）
+function slideAround(mutate) {
+  const els = [...$('t-list').querySelectorAll('.todo:not(.dragging), .t-add-row, .t-done-toggle, .t-sec-head')];
+  const before = els.map(e => e.getBoundingClientRect().top);
+  mutate();
+  els.forEach(e => { e.style.transition = 'none'; e.style.transform = ''; });
+  const after = els.map(e => e.getBoundingClientRect().top);
+  els.forEach((e, i) => {
+    const d = before[i] - after[i];
+    if (Math.abs(d) > 0.5) e.style.transform = `translate3d(0,${d}px,0)`;
+  });
+  void $('t-list').offsetHeight; // 让浏览器先“记住”起点
+  els.forEach(e => {
+    if (e.style.transform) { e.style.transition = 'transform .16s ease-out'; e.style.transform = ''; }
+  });
+}
+
+// 根据浮起来那一行的中心，决定空位应该在哪个分区、哪一行前面
+function placeHolder() {
+  const list = $('t-list');
+  const center = drag.y - drag.grab + drag.h / 2 - list.getBoundingClientRect().top;
+  const conts = [...list.querySelectorAll(`.t-items[data-kind="${drag.kind}"]:not([hidden])`)];
+  let box = null, best = Infinity;
+  conts.forEach(c => {
+    const top = c.offsetTop, bottom = top + c.offsetHeight;
+    const d = center < top ? top - center : center > bottom ? center - bottom : 0;
+    if (d < best) { best = d; box = c; }
+  });
+  if (!box) return;
+
+  const rows = [...box.querySelectorAll(':scope > .todo:not(.dragging):not(.todo-new)')];
+  const before = rows.find(r => center < r.offsetTop + r.offsetHeight / 2)
+    || box.querySelector(':scope > .t-add-row, :scope > .todo-new')
+    || null;
+  if (drag.box === box && drag.before === before) return; // 位置没变
+  drag.box = box;
+  drag.before = before;
+  slideAround(() => box.insertBefore(drag.ph, before));
+}
+
 function moveDrag(y) {
   drag.y = y;
-  const dy = y - drag.startY + (window.scrollY - drag.startScroll);
-  drag.row.style.transform = `translate3d(0,${dy}px,0) scale(1.03)`;
-
-  const center = drag.mids[drag.index] + dy;
-  let newIndex = drag.index;
-  drag.group.forEach((r, j) => {
-    if (j === drag.index) return;
-    let shift = 0;
-    if (j > drag.index && drag.mids[j] < center) { shift = -drag.step; newIndex++; }
-    if (j < drag.index && drag.mids[j] > center) { shift = drag.step; newIndex--; }
-    const tf = shift ? `translate3d(0,${shift}px,0)` : '';
-    if (r.style.transform !== tf) r.style.transform = tf; // 没变就不动它，省力
-  });
-  drag.newIndex = newIndex;
+  drag.row.style.transform = `translate3d(0,${y - drag.startY}px,0) scale(1.03)`;
+  placeHolder();
 }
 
 // 拖到屏幕上下边缘时，页面自己慢慢滚
@@ -317,7 +417,7 @@ function onMove(y, e) {
   if (!drag.scrolling) { drag.scrolling = true; requestAnimationFrame(autoScroll); }
   // 每一帧只画一次（手指事件可能比屏幕刷新还快）
   drag.y = y;
-  if (!drag.frame) drag.frame = requestAnimationFrame(() => { if (drag) { drag.frame = 0; moveDrag(drag.y); } });
+  if (!drag.frame) drag.frame = requestAnimationFrame(() => { if (drag && drag.active) { drag.frame = 0; moveDrag(drag.y); } });
 }
 
 function endDrag(e) {
@@ -325,29 +425,35 @@ function endDrag(e) {
   if (!drag.active) { cancelPress(); return; }
   if (e && e.cancelable) e.preventDefault();
   moveDrag(drag.y);
-  const { group, index, newIndex, row, step } = drag;
+  const { row, ph, top } = drag;
   drag = null;
   suppressClick = true;
   setTimeout(() => { suppressClick = false; }, 400);
 
-  // 松手：这一行顺滑地落进空位，然后再更新列表
+  // 松手：这一行顺滑地落进空位，然后再保存顺序
   row.classList.remove('dragging');
   row.classList.add('dropping');
-  row.style.transform = `translate3d(0,${(newIndex - index) * step}px,0)`;
-  setTimeout(() => finishDrop(group, index, newIndex), 120);
+  row.style.transform = `translate3d(0,${ph.getBoundingClientRect().top - top}px,0)`;
+  setTimeout(() => finishDrop(row, ph), 130);
 }
 
-function finishDrop(group, index, newIndex) {
+function finishDrop(row, ph) {
   $('t-list').classList.remove('sorting');
+  const area = ph.parentNode && ph.parentNode.dataset.area;
+  ph.replaceWith(row);
 
-  const ids = group.map(r => r.dataset.id);
-  const [moved] = ids.splice(index, 1);
-  ids.splice(newIndex, 0, moved);
   const byId = Object.fromEntries(todos.map(t => [t.id, t]));
-  const groupDone = byId[moved].done;
-  const others = todos.filter(t => t.done !== groupDone);
-  const reordered = ids.map(id => byId[id]);
-  todos = groupDone ? [...others, ...reordered] : [...reordered, ...others];
+  const moved = byId[row.dataset.id];
+  if (moved && area) moved.area = area;   // 拖到哪个分区，就属于哪个分区
+
+  // 按现在屏幕上的顺序重新排（收起来的“已完成”也在里面，只是看不见）
+  const ordered = [];
+  $('t-list').querySelectorAll('.todo:not(.todo-new)').forEach(r => {
+    const t = byId[r.dataset.id];
+    if (t && !ordered.includes(t)) ordered.push(t);
+  });
+  todos.forEach(t => { if (!ordered.includes(t)) ordered.push(t); });
+  todos = ordered;
   saveTodos();
 }
 
@@ -1387,7 +1493,7 @@ function renderPrices() {
 }
 
 
-const APP_VERSION = 'v18';
+const APP_VERSION = 'v19';
 
 // ================================
 // 启动
