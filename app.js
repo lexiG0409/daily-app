@@ -216,10 +216,11 @@ function updateTodoMeta() {
 
 // 点分区标题右边的 ＋：这个分区最下面直接出现一行空白待办，光标就在里面
 // 回车 = 保存并自动开下一行；点别处 = 保存（空的就不要了）
-function startNewTodo(area) {
+// afterId：新的一行要紧跟在哪条待办后面（不给 = 放在分区最下面）
+function startNewTodo(area, afterId) {
   const old = document.querySelector('.todo-new');
   if (old) {
-    if (old.dataset.area === area) { old.querySelector('input').focus(); return; }
+    if (old.dataset.area === area && !afterId) { old.querySelector('input').focus(); return; }
     old.querySelector('input').blur(); // 另一个分区正在写的那行先保存
   }
   const items = document.querySelector(`.t-items[data-kind="undone"][data-area="${area}"]`);
@@ -237,7 +238,8 @@ function startNewTodo(area) {
   input.placeholder = '要做什么？';
   row.append(check, input);
 
-  items.appendChild(row);
+  const afterRow = afterId && items.querySelector(`:scope > .todo[data-id="${afterId}"]`);
+  if (afterRow) afterRow.after(row); else items.appendChild(row);
   input.focus(); // 必须在点击里立刻 focus，iPhone 才会弹出键盘
   row.scrollIntoView({ block: 'nearest' });
 
@@ -246,16 +248,19 @@ function startNewTodo(area) {
     if (finished) return;
     finished = true;
     const text = input.value.trim();
+    let t = null;
     if (text) {
-      const t = { id: uid(), text, done: false, area, createdAt: Date.now() };
-      todos.push(t);
+      t = { id: uid(), text, done: false, area, createdAt: Date.now() };
+      // 在数据里也放在“前一条”的后面，这样顺序和屏幕上一样
+      const at = afterRow ? todos.findIndex(x => x.id === afterId) : -1;
+      if (at >= 0) todos.splice(at + 1, 0, t); else todos.push(t);
       store.set('todos', todos);
       row.replaceWith(todoRow(t)); // 只换掉这一行，不重画整个列表（这样点别的按钮不会“点空”）
       updateTodoMeta();
     } else {
       row.remove();
     }
-    if (again && text) startNewTodo(area);
+    if (again && t) startNewTodo(area, t.id); // 紧跟在刚写好的这条下面再开一行
   };
 
   input.addEventListener('keydown', e => {
@@ -266,7 +271,7 @@ function startNewTodo(area) {
 }
 
 // 点一条待办的文字：文字变成可以打字的样子，光标在最后
-// 回车 / 点别处 = 保存；改成空的 = 保留原来的字（删除请点 ✕）
+// 回车 = 保存，并在这条下面马上开一行新的；点别处 = 只保存；改成空的 = 保留原来的字（删除请点 ✕）
 function editTodo(row, t) {
   if (row.classList.contains('editing')) return;
   row.classList.add('editing');
@@ -276,7 +281,7 @@ function editTodo(row, t) {
   input.className = 'todo-new-input';
   input.maxLength = 100;
   input.autocomplete = 'off';
-  input.enterKeyHint = 'done';
+  input.enterKeyHint = t.done ? 'done' : 'next';
   input.value = t.text;
   text.replaceWith(input);
   input.focus(); // 必须在点击里立刻 focus，iPhone 才会弹出键盘
@@ -292,7 +297,11 @@ function editTodo(row, t) {
     if (row.isConnected) row.replaceWith(todoRow(t)); // 只换这一行
   };
   input.addEventListener('keydown', e => {
-    if (e.key === 'Enter' && !e.isComposing) { e.preventDefault(); finish(true); }
+    if (e.key === 'Enter' && !e.isComposing) {
+      e.preventDefault();
+      finish(true);
+      if (!t.done) startNewTodo(t.area, t.id); // 没做完的：在这条下面紧接着开一行新的
+    }
     if (e.key === 'Escape') finish(false);
   });
   input.addEventListener('blur', () => finish(true));
@@ -1497,7 +1506,7 @@ function renderPrices() {
 }
 
 
-const APP_VERSION = 'v20';
+const APP_VERSION = 'v21';
 
 // ================================
 // 启动
