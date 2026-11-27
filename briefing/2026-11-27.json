@@ -1,0 +1,421 @@
+{
+  "date": "2026-11-27",
+  "generatedAt": "2026-11-27T05:55:00+01:00",
+  "items": [
+    {
+      "region": "欧洲",
+      "country": "罗马尼亚 Romania",
+      "title": {
+        "en": "Vestas wins 292.5 MW Dunarea East order from Rezolv Energy",
+        "zh": "维斯塔斯斩获Rezolv Energy罗马尼亚292.5兆瓦Dunarea East项目订单"
+      },
+      "sentences": [
+        {
+          "en": "Rezolv Energy, backed by Actis and Mubadala, ordered 45 Vestas V162-6.5 MW EnVentus turbines for its 292.5 MW Dunarea East wind farm in Constanța County, with a 15-year service agreement.",
+          "zh": "由Actis和穆巴达拉支持的Rezolv Energy为其位于康斯坦察县的292.5兆瓦Dunarea East风电场订购了45台维斯塔斯V162-6.5兆瓦EnVentus机组，并签署15年运维服务协议。"
+        },
+        {
+          "en": "The project has up to €367 million of bank financing, a CfD covering 211 MW from Romania's 2025 auction, and a 10-year virtual PPA with Ahold Delhaize.",
+          "zh": "该项目获得最高3.67亿欧元银行融资，211兆瓦容量来自罗马尼亚2025年差价合约（CfD）拍卖，另有与Ahold Delhaize签订的10年期虚拟购电协议。"
+        },
+        {
+          "en": "Construction is due to start before the end of November 2026, with turbine deliveries from end-2027 and commercial operation in early 2029.",
+          "zh": "项目计划于2026年11月底前开工，风机自2027年底起交付，2029年初实现商业运行。"
+        }
+      ],
+      "insight": [
+        {
+          "en": "Pairing a CfD with a corporate PPA and multilateral bank debt is becoming the template that turns Romania's large onshore pipelines into firm turbine orders.",
+          "zh": "“差价合约+企业购电协议+多边银行贷款”的组合，正成为罗马尼亚大型陆上风电储备项目转化为确定风机订单的标准模式。"
+        }
+      ],
+      "oem": [
+        {
+          "en": "With this deal Vestas has 117 turbines (753.5 MW) across Rezolv's VIFOR and Dunarea East projects, showing how a repeat-customer platform locks in follow-on volume in Southeast Europe.",
+          "zh": "加上本单，维斯塔斯在Rezolv的VIFOR和Dunarea East项目中累计供货117台、753.5兆瓦，显示“老客户+统一机型平台”在东南欧锁定后续订单的能力。"
+        }
+      ],
+      "watch": [
+        {
+          "en": "Map other Romanian CfD-round winners that have not yet named a turbine supplier; financing close is the point where turbine selection becomes final.",
+          "zh": "梳理罗马尼亚CfD中标但尚未确定整机商的项目；融资关闭时点往往就是风机选型最终敲定之时。"
+        },
+        {
+          "en": "Note that the balance of plant went to a separate contractor (CJR Renewables), so prepare supply-only offers with clear interface terms alongside turnkey options.",
+          "zh": "本项目BoP单独发包给CJR Renewables，投标时应同时准备纯设备供货方案并明确界面条款，而不仅是EPC总包方案。"
+        },
+        {
+          "en": "Expect lenders such as the EBRD to scrutinise service terms; 15-year O&M scope and availability guarantees should be ready early in negotiations.",
+          "zh": "欧洲复兴开发银行等贷款方会审查运维条款，谈判早期就应准备好15年运维范围及可利用率保证。"
+        }
+      ],
+      "source": "The Diplomat Bucharest",
+      "url": "https://www.thediplomat.ro/2026/11/26/vestas-to-supply-turbines-for-rezolv-energys-dunarea-east-wind-farm-in-romania/",
+      "published": "2026-11-26"
+    },
+    {
+      "region": "美国",
+      "country": "美国 United States",
+      "title": {
+        "en": "Pentagon tells court only eight staff can clear about 400 stalled wind projects",
+        "zh": "五角大楼向法院表示：约400个积压风电项目仅有8人可审批"
+      },
+      "sentences": [
+        {
+          "en": "In a court declaration, a Defense Department official said about 400 onshore wind projects are waiting in its review queue and only eight civilian employees can sign off on them.",
+          "zh": "美国国防部一名官员在法庭声明中表示，约400个陆上风电项目在其审查队列中等待，而能签字放行的文职人员只有8人。"
+        },
+        {
+          "en": "The department normally signs about 13 mitigation agreements a year, recently closer to 30; about 33 projects with signed agreements are closest to approval.",
+          "zh": "该部门通常每年签署约13份缓解协议，近期约30份；已签署协议的约33个项目最接近获批。"
+        },
+        {
+          "en": "Judge Karin Immergut moved the wind groups' filing deadline to December 17, with the department's response due December 24.",
+          "zh": "法官Karin Immergut将风电行业方的提交期限推迟至12月17日，国防部须在12月24日前答复。"
+        }
+      ],
+      "insight": [
+        {
+          "en": "Even if Congress passes permitting reform, military radar clearance remains a separate bottleneck that keeps US onshore construction schedules uncertain.",
+          "zh": "即便国会通过许可改革，军事雷达审查仍是一道独立瓶颈，美国陆上风电的开工节奏依旧不确定。"
+        }
+      ],
+      "oem": [
+        {
+          "en": "For OEMs, a queue of this size means US orders may arrive in bursts tied to clearance batches rather than smoothly, complicating factory loading plans.",
+          "zh": "对整机商而言，如此规模的积压意味着美国订单可能随审批批次集中释放，而非平稳到来，工厂排产更难规划。"
+        }
+      ],
+      "watch": [
+        {
+          "en": "Ask US customers whether each project has a signed DoD mitigation agreement; those roughly 33 projects are the nearest-term order candidates.",
+          "zh": "逐一确认美国客户项目是否已签署国防部缓解协议，这约33个项目是近期最可能下单的对象。"
+        },
+        {
+          "en": "Build clearance-linked conditions precedent and delivery-date flexibility into turbine supply agreements for projects still in review.",
+          "zh": "对仍在审查中的项目，在供货合同中加入与审批挂钩的先决条件以及交付日期的灵活条款。"
+        },
+        {
+          "en": "Track the December 17 and December 24 court filings for any order forcing faster reviews.",
+          "zh": "关注12月17日和24日的法庭文件，看是否会有要求加快审查的裁定。"
+        }
+      ],
+      "source": "Daily Caller",
+      "url": "https://dailycaller.com/2026/11/21/pentagon-wind-projects-backlog-staff-dale-marks-tom-vinson-american-clean-power/",
+      "published": "2026-11-21"
+    },
+    {
+      "region": "德国",
+      "country": "德国 Germany",
+      "title": {
+        "en": "Navaris commissions 39.9 MW Dalkendorf wind farm with Nordex N149 turbines",
+        "zh": "Navaris投运39.9兆瓦Dalkendorf风电场，采用Nordex N149机组"
+      },
+      "sentences": [
+        {
+          "en": "Navaris has commissioned the Dalkendorf wind farm in Mecklenburg-Vorpommern's Rostock district, built with seven Nordex N149 turbines of 5.7 MW each, totalling 39.9 MW.",
+          "zh": "Navaris在梅克伦堡-前波莫瑞州罗斯托克县投运Dalkendorf风电场，共7台单机5.7兆瓦的Nordex N149机组，总装机39.9兆瓦。"
+        },
+        {
+          "en": "The park is expected to generate about 87.7 GWh a year.",
+          "zh": "该风电场预计年发电量约8770万千瓦时。"
+        },
+        {
+          "en": "Navaris also won 11 projects totalling 304.5 MW in the latest Bundesnetzagentur onshore auction and has more than 3 GW in advanced development.",
+          "zh": "Navaris还在联邦网络局最新一轮陆上风电招标中赢得11个项目、共304.5兆瓦，另有超过3吉瓦项目处于后期开发阶段。"
+        }
+      ],
+      "insight": [
+        {
+          "en": "Steady commissioning of 5–6 MW-class parks shows Germany's record auction volumes are now turning into installed capacity.",
+          "zh": "5–6兆瓦级风电场持续投运，说明德国创纪录的招标量正在转化为实际装机。"
+        }
+      ],
+      "oem": [
+        {
+          "en": "A developer holding 304.5 MW of fresh awards plus a 3 GW pipeline is a priority account; Nordex's incumbency at Dalkendorf gives it a head start for the next lots.",
+          "zh": "手握304.5兆瓦新中标容量和3吉瓦储备的开发商是重点客户；Nordex凭借Dalkendorf项目已占得先机。"
+        }
+      ],
+      "watch": [
+        {
+          "en": "Contact Navaris on turbine selection for the 11 newly awarded projects, since EEG award deadlines push procurement into the coming months.",
+          "zh": "就11个新中标项目的风机选型尽快联系Navaris，EEG中标后的建设期限会推动采购在未来数月内落地。"
+        },
+        {
+          "en": "Check whether the operator is tendering long-term service separately, which could open an O&M opportunity even where the turbine order is lost.",
+          "zh": "了解业主是否单独招标长期运维服务，即便未拿到设备订单也可能争取运维机会。"
+        }
+      ],
+      "source": "Windindustrie in Deutschland",
+      "url": "https://www.windindustrie-in-deutschland.de/news/navaris-nimmt-39-9-mw-windpark-in-mecklenburg-vorpommern-in-betrieb",
+      "published": "2026-11-23"
+    },
+    {
+      "region": "土耳其",
+      "country": "土耳其 Türkiye",
+      "title": {
+        "en": "Taşucu port lands 91-metre blades as Turkish blade output wobbles",
+        "zh": "塔舒朱港卸运91米叶片，土耳其叶片产能起伏"
+      },
+      "sentences": [
+        {
+          "en": "CEYPORT Taşucu port in Mersin handled 42 blades of 91 metres in two sets, about 1,200 tonnes, plus 70 tower sections — which the article calls the longest blades handled in Türkiye.",
+          "zh": "梅尔辛省CEYPORT塔舒朱港分两批卸运42支91米长叶片（约1200吨）及70节塔筒，文章称这是土耳其迄今装卸的最长叶片。"
+        },
+        {
+          "en": "Citing TÜREB, it says Türkiye added 297 MW of wind in the first half of 2026, reaching 16,231 MW, while TÜREB's chair expects 2,000–2,500 MW for the full year.",
+          "zh": "文章援引土耳其风能协会（TÜREB）数据称，2026年上半年土耳其新增风电297兆瓦，累计达16,231兆瓦；协会主席预计全年新增2000–2500兆瓦。"
+        },
+        {
+          "en": "All four İzmir blade factories had stopped by March 2026; one restarted in April and a 450-blade-a-year plant in Bergama is expected in Q4 2026.",
+          "zh": "伊兹密尔的四家叶片厂到2026年3月全部停产，其中一家4月复产，贝尔加马一座年产450支叶片的新厂预计2026年四季度投产。"
+        }
+      ],
+      "insight": [
+        {
+          "en": "A weak first half followed by a strong expected second half means installation activity in Türkiye is heavily back-loaded, straining logistics and local supply.",
+          "zh": "上半年装机偏弱、下半年预期大幅放量，意味着土耳其装机高度集中在年底，物流和本地供应链压力加大。"
+        }
+      ],
+      "oem": [
+        {
+          "en": "With 2026 YEKA rules requiring 65% local content for blades and 51% for towers, unstable domestic blade capacity is a direct delivery and compliance risk for OEMs.",
+          "zh": "2026年YEKA规则要求叶片本地化率65%、塔筒51%，国内叶片产能不稳直接构成整机商的交付和合规风险。"
+        }
+      ],
+      "watch": [
+        {
+          "en": "Confirm blade supply sources and local-content documentation for every Turkish project due in 2027, and qualify backup suppliers.",
+          "zh": "对2027年交付的每个土耳其项目确认叶片来源及本地化证明文件，并认证备用供应商。"
+        },
+        {
+          "en": "Check port capacity and transport permits for 90-metre-plus blades early, as Mediterranean ports like Taşucu are becoming the preferred entry points.",
+          "zh": "提前核实90米以上叶片的港口能力和运输许可，塔舒朱等地中海港口正成为首选卸货点。"
+        }
+      ],
+      "source": "Satınalma Dergisi",
+      "url": "https://satinalmadergisi.com/ceyport-tasucu-91-metre-ruzgar-turbini-kanadi/",
+      "published": "2026-11-26"
+    },
+    {
+      "region": "欧洲",
+      "country": "乌克兰 Ukraine",
+      "title": {
+        "en": "UK commits £9.5 million to a 200 MW wind farm in Ukraine",
+        "zh": "英国向乌克兰一座200兆瓦风电场投入950万英镑"
+      },
+      "sentences": [
+        {
+          "en": "The UK government is investing £9.5 million (about €11.3 million) in a planned 200 MW wind farm in Ukraine, to be built and operated by UK-registered Elementum Energy.",
+          "zh": "英国政府将向乌克兰一座规划200兆瓦的风电场投资950万英镑（约1130万欧元），由在英国注册的Elementum Energy建设和运营。"
+        },
+        {
+          "en": "The location was not disclosed, and the article does not say whether the site is onshore, although that appears likely.",
+          "zh": "项目地点未披露，报道也未说明是否为陆上项目，但看来大概率为陆上。"
+        },
+        {
+          "en": "The project is expected to supply about 300,000 households.",
+          "zh": "该项目预计可为约30万户家庭供电。"
+        }
+      ],
+      "insight": [
+        {
+          "en": "Government co-funding is starting to make wartime Ukrainian wind projects financeable, opening a reconstruction market alongside EU onshore demand.",
+          "zh": "政府联合出资开始让战时乌克兰风电项目具备融资可行性，在欧盟陆上需求之外打开了重建市场。"
+        }
+      ],
+      "oem": [
+        {
+          "en": "Ukrainian projects carry high political and logistics risk, so OEMs that can offer flexible delivery and security-adapted service will have an edge.",
+          "zh": "乌克兰项目政治和物流风险高，能提供灵活交付及适应安全环境的运维方案的整机商更具优势。"
+        }
+      ],
+      "watch": [
+        {
+          "en": "Reach out to Elementum Energy on turbine selection timing and on which export-credit or development-bank cover the project will use.",
+          "zh": "联系Elementum Energy了解选型时间表，以及项目将采用哪类出口信贷或开发性银行担保。"
+        },
+        {
+          "en": "Review force-majeure, war-risk insurance and payment-security terms before quoting any Ukrainian project.",
+          "zh": "对乌克兰项目报价前，先审查不可抗力、战争险及付款保障条款。"
+        }
+      ],
+      "source": "European Pravda",
+      "url": "https://www.eurointegration.com.ua/eng/news/2026/11/26/7250840/",
+      "published": "2026-11-26"
+    },
+    {
+      "region": "中国",
+      "country": "中国 China",
+      "title": {
+        "en": "Hebei launches investor tenders for 1.08 GW of wind projects",
+        "zh": "河北启动1.08吉瓦风电项目投资主体招标"
+      },
+      "sentences": [
+        {
+          "en": "On November 19, Hebei's public resource trading platform published five investor-selection tenders for wind projects totalling 1,081 MW.",
+          "zh": "11月19日，河北省公共资源交易服务平台发布5个风电项目投资主体招标公告，合计规模1081兆瓦。"
+        },
+        {
+          "en": "The report did not give owners, turbine requirements or deadlines in its text.",
+          "zh": "报道正文未给出业主、风机要求或截止时间等细节。"
+        }
+      ],
+      "insight": [
+        {
+          "en": "Provinces allocating wind capacity through competitive investor selection keeps the domestic pipeline moving even as national additions slowed in October.",
+          "zh": "在全国10月新增装机放缓的背景下，各省通过竞争性配置投资主体，仍在持续补充国内项目储备。"
+        }
+      ],
+      "oem": [
+        {
+          "en": "Winning investors will run turbine procurement later, so these tenders are an early signal of 2027 onshore orders in North China.",
+          "zh": "中标投资方之后才会开展风机采购，这批招标是华北地区2027年陆上订单的早期信号。"
+        }
+      ],
+      "watch": [
+        {
+          "en": "Track which developers win the five Hebei lots and add them to the key-account list for upcoming turbine tenders.",
+          "zh": "跟踪河北5个项目的中标投资方，并将其列入后续风机招标的重点客户名单。"
+        },
+        {
+          "en": "Check the tender documents for any equipment or industrial-support commitments that could favour particular OEMs.",
+          "zh": "核查招标文件中是否有设备或产业配套承诺条款，这可能对特定整机商有利。"
+        }
+      ],
+      "source": "风芒能源 (via Sina)",
+      "url": "https://k.sina.cn/article_5952915705_162d248f906703tw9i.html",
+      "published": "2026-11-20"
+    },
+    {
+      "region": "欧洲",
+      "country": "法国 France",
+      "title": {
+        "en": "wpd windmanager takes over operations of four CEZ wind farms in France",
+        "zh": "wpd windmanager接管CEZ在法国的四座风电场运营管理"
+      },
+      "sentences": [
+        {
+          "en": "From November 1, wpd windmanager took over technical and commercial management of four CEZ wind farms in France with 16 Nordex N117 turbines and over 45 MW in total.",
+          "zh": "自11月1日起，wpd windmanager接管CEZ在法国四座风电场的技术和商务管理，共16台Nordex N117机组，总装机超过45兆瓦。"
+        },
+        {
+          "en": "The parks, commissioned in 2023 and 2024, raise wpd windmanager's French portfolio to 753 MW; it already manages about 133 MW for CEZ in Germany.",
+          "zh": "这些风电场于2023和2024年投运，使wpd windmanager在法国的管理规模增至753兆瓦；该公司在德国已为CEZ管理约133兆瓦。"
+        }
+      ],
+      "insight": [
+        {
+          "en": "Independent asset managers are consolidating operations of young onshore fleets, so owners increasingly separate asset management from turbine service.",
+          "zh": "独立资产管理商正在整合较新陆上风电场的运营，业主越来越多地把资产管理与风机运维分开采购。"
+        }
+      ],
+      "oem": [
+        {
+          "en": "For OEMs, a third-party operator sitting between owner and turbine supplier shapes how future service renewals and upgrades are tendered.",
+          "zh": "对整机商而言，介于业主与设备商之间的第三方运营商将影响未来运维续约和技改的招标方式。"
+        }
+      ],
+      "watch": [
+        {
+          "en": "Build relationships with large third-party operators like wpd windmanager, which may influence service contract renewals across many parks.",
+          "zh": "与wpd windmanager等大型第三方运营商建立联系，它们可能影响大量风电场的运维续约。"
+        },
+        {
+          "en": "Review full-service contracts on young fleets for change-of-operator clauses and data-access obligations.",
+          "zh": "检查新机组全包运维合同中关于运营方变更和数据访问义务的条款。"
+        }
+      ],
+      "source": "Windkraft-Journal",
+      "url": "https://www.windkraft-journal.de/2026/11/24/cez-group-und-wpd-windmanager-bauen-ihre-erfolgreiche-zusammenarbeit-weiter-aus/229707",
+      "published": "2026-11-24"
+    },
+    {
+      "region": "欧洲",
+      "country": "奥地利 Austria",
+      "title": {
+        "en": "Austria's first demand-controlled night lighting switched on at a wind farm",
+        "zh": "奥地利首个风电场按需夜间航空灯系统启用"
+      },
+      "sentences": [
+        {
+          "en": "Light:Guard and operator Windkraft Simonsfeld activated demand-controlled night marking at the Dürnkrut III wind farm in Lower Austria, which has three Nordex turbines with 17.1 MW.",
+          "zh": "Light:Guard与运营商Windkraft Simonsfeld在下奥地利州Dürnkrut III风电场启用按需夜间航空标识系统，该场有3台Nordex机组、共17.1兆瓦。"
+        },
+        {
+          "en": "Under Austria's aviation act the activation signal comes centrally from Austro Control, and this is Light:Guard's first active system in the country.",
+          "zh": "根据奥地利航空法，开灯信号由奥地利空管机构集中发出；这是Light:Guard在奥地利的首个投运系统。"
+        }
+      ],
+      "insight": [
+        {
+          "en": "Switching off permanent red lights addresses one of the most common resident complaints and can ease local acceptance of new onshore projects.",
+          "zh": "关闭常亮红色航空灯回应了居民最常见的投诉之一，有助于提高新陆上项目的本地接受度。"
+        }
+      ],
+      "oem": [
+        {
+          "en": "Demand-controlled lighting is becoming a standard permit expectation, so OEMs need compatible aviation-light interfaces on new and existing turbines.",
+          "zh": "按需航空灯正成为许可审批中的常规要求，整机商需在新机组和存量机组上提供兼容接口。"
+        }
+      ],
+      "watch": [
+        {
+          "en": "Check that turbines offered in Austria support integration with the Austro Control signalling system.",
+          "zh": "确认在奥地利报价的机型支持与奥地利空管信号系统的集成。"
+        },
+        {
+          "en": "Offer retrofit packages to Austrian operators of existing parks as a service upsell.",
+          "zh": "向奥地利存量风电场业主推介航空灯改造包，作为运维增值服务。"
+        }
+      ],
+      "source": "Baltic Wind",
+      "url": "https://balticwind.eu/lightguard-switches-off-night-lighting-at-first-austrian-wind-farm-under-new-aviation-rules/",
+      "published": "2026-11-24"
+    },
+    {
+      "region": "欧洲",
+      "country": "欧盟 EU",
+      "title": {
+        "en": "WindEurope: 97% of reported blade waste kept out of landfill in 2025",
+        "zh": "欧洲风能协会：2025年申报的叶片废弃物97%未进入填埋"
+      },
+      "sentences": [
+        {
+          "en": "WindEurope said 97% of reported 2025 blade waste was diverted from landfill, up from 89% in 2024 and 70% in 2023.",
+          "zh": "欧洲风能协会表示，2025年申报的叶片废弃物中97%未进入填埋，高于2024年的89%和2023年的70%。"
+        },
+        {
+          "en": "Blade waste is expected to grow from about 27,000 tonnes today to 80,000 tonnes by 2040, and the European Commission is due to present a Circular Economy Act shortly.",
+          "zh": "叶片废弃物预计将从目前约2.7万吨增至2040年的8万吨，欧盟委员会即将提出《循环经济法》。"
+        }
+      ],
+      "insight": [
+        {
+          "en": "As onshore repowering accelerates, end-of-life rules are set to become a cost and compliance factor in European projects.",
+          "zh": "随着陆上“以大代小”加速，退役处置规则将成为欧洲项目的成本和合规因素。"
+        }
+      ],
+      "oem": [
+        {
+          "en": "OEMs with recyclable-blade products and take-back programmes can turn upcoming EU circularity rules into a tender differentiator.",
+          "zh": "拥有可回收叶片和回收计划的整机商，可将欧盟即将出台的循环规则转化为投标差异点。"
+        }
+      ],
+      "watch": [
+        {
+          "en": "Follow the Circular Economy Act proposal for any blade-specific obligations on manufacturers.",
+          "zh": "跟踪《循环经济法》提案中是否有针对制造商的叶片专项义务。"
+        },
+        {
+          "en": "Prepare recycling-route documentation for repowering bids, where dismantling of old blades is part of the scope.",
+          "zh": "为包含旧叶片拆除的“以大代小”投标准备回收路径证明文件。"
+        }
+      ],
+      "source": "Baltic Wind",
+      "url": "https://balticwind.eu/windeurope-97-of-reported-blade-waste-diverted-from-landfill-as-eu-circular-economy-act-nears/",
+      "published": "2026-11-25"
+    }
+  ]
+}
