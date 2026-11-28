@@ -533,6 +533,7 @@ const CATEGORIES = [
   { id: 'fun',       name: '娱乐', emoji: '🎮' },
   { id: 'health',    name: '健康', emoji: '💊' },
   { id: 'travel',    name: '旅行', emoji: '✈️' },
+  { id: 'gift',      name: '人情', emoji: '🧧' },
   { id: 'other',     name: '其他', emoji: '📦' }
 ];
 const catOf = id => CATEGORIES.find(c => c.id === id) || CATEGORIES[CATEGORIES.length - 1];
